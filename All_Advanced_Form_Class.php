@@ -1,17 +1,11 @@
 <?php
-
-class All_Advanced_Form_Class
-{
+class All_Advanced_Form_Class{
     protected static $instance;
-
-    public static function init()
-    {
+    public static function init(){
         is_null( self::$instance ) AND self::$instance = new self;
         return self::$instance;
     }
-
-    public static function on_activation()
-    {
+    public static function on_activation(){
         global $wpdb;
         if ( ! current_user_can( 'activate_plugins' ) )
             return;
@@ -35,150 +29,113 @@ class All_Advanced_Form_Class
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
     }
-
-    public static function on_deactivation()
-    {
+    public static function on_deactivation(){
         if ( ! current_user_can( 'activate_plugins' ) )
             return;
         $plugin = isset( $_REQUEST['plugin'] ) ? $_REQUEST['plugin'] : '';
         check_admin_referer( "deactivate-plugin_{$plugin}" );
     }
-
-    public static function on_uninstall()
-    {
-        
+    public static function on_uninstall(){        
     }
-    public function __construct()
-    {
+    public function __construct(){
         add_action('wp_enqueue_scripts', array($this, 'frontend_scripts'));
         add_action('admin_enqueue_scripts', array($this, 'backend_scripts'));
         add_action( 'init', array($this, 'my_custom_post_type') );
         add_shortcode('advanced-form', array($this, 'advanced_form_front_view'));
 
         /* Ajax Hooks */
-
         add_action('wp_ajax_select_field', array($this,'select_field'));
         add_action( 'save_post', array($this,'get_before_update_postdata'));
         add_action( 'admin_menu', array($this,'vcf_options_page'));
         add_action( 'edit_form_after_title', array($this, 'contact_form_tab_content'));
 
         add_action('wp_ajax_recaptcha_generate',array($this, 'recaptcha_generate'));
-        add_action('wp_ajax_smtp_generate',array($this, 'smtp_generate'));
         add_action('wp_ajax_advance_setting_form',array($this, 'advance_setting_form'));
         add_action('wp_ajax_vcfform_insert_data',array($this, 'vcfform_insert_data'));
         add_action('wp_ajax_nopriv_vcfform_insert_data',array($this, 'vcfform_insert_data'));
 
         add_action('wp_ajax_recaptcha_reset',array($this, 'recaptcha_reset'));
-
         add_action('wp_ajax_delete_list_view',array($this, 'delete_list_view'));
-
-        add_action('wp_ajax_smtp_reset',array($this, 'smtp_reset'));
-
         add_action('wp_ajax_advance_setting_reset',array($this, 'advance_setting_reset'));
-
         add_filter( 'gettext', array($this, 'change_publish_button'), 10, 2 );
 
         /** Start Woocommerce Hooks **/
         add_action( 'woocommerce_before_cart',array($this, 'action_woocommerce_after_cart_table'), 10, 0 );
         add_action( 'woocommerce_after_single_product_summary',array($this, 'woocommerce_after_add_to_cart_button'), 10, 0 );
-
-        add_action( 'woocommerce_after_add_to_cart_form',array($this, 'woocommerce_add_pinquiry_button'), 10, 0 );
-		
+        add_action( 'woocommerce_after_add_to_cart_form',array($this, 'woocommerce_add_pinquiry_button'), 10, 0 );		
 		add_shortcode('advanced_product_enquiry',array($this,'wc_add_pinquiry_button_shortcode'));
-
-        add_action( 'woocommerce_after_cart_table',array($this, 'woocommerce_cart_pinquiry_button'), 10, 0 );
-		
+        add_action( 'woocommerce_after_cart_table',array($this, 'woocommerce_cart_pinquiry_button'), 10, 0 );		
 		add_shortcode('advanced_cart_enquiry',array($this,'wc_cart_pinquiry_button_shortcode'));
-
         /** End Woocommerce Hooks **/
-
-
     }
-    public function backend_scripts()
-    {
-        wp_register_style( 'custom-css', plugin_dir_url( __FILE__ ) . 'assets/css/backend/custom.css' );
-        wp_enqueue_style( 'custom-css' );
-        wp_register_style( 'fonts-css', plugin_dir_url( __FILE__ ) . 'assets/css/font-awesome.min.css' );
-        wp_enqueue_style( 'fonts-css' );
-        wp_register_style( 'dataTable-css', plugin_dir_url( __FILE__ ) . 'assets/css/backend/jquery.dataTables.min.css' );
-        wp_enqueue_style( 'dataTable-css' );
-        wp_enqueue_script( 'ui-js', plugin_dir_url( __FILE__ ) . 'assets/js/backend/jquery-ui.min.js', array( 'jquery' ) );
-        wp_enqueue_script( 'jquery-js', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.validate.min.js', array( 'jquery' ) );
-        wp_enqueue_script( 'dataTables-js', plugin_dir_url( __FILE__ ) . 'assets/js/backend/jquery.dataTables.min.js', array( 'jquery' ) );
-        wp_enqueue_script( 'custom-js', plugin_dir_url( __FILE__ ) . 'assets/js/backend/custom.js', array( 'jquery' ) );
-        wp_localize_script( 'custom-js', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
-
+    public function backend_scripts(){
+        wp_register_style( 'backend', plugin_dir_url( __FILE__ ) . 'assets/css/backend.css' );
+        wp_enqueue_style( 'backend' );
+        wp_register_style( 'font-awesome', plugin_dir_url( __FILE__ ) . 'assets/css/font-awesome.min.css' );
+        wp_enqueue_style( 'font-awesome' );
+        wp_register_style( 'dataTable', plugin_dir_url( __FILE__ ) . 'assets/css/jquery.dataTables.min.css' );
+        wp_enqueue_style( 'dataTable' );
+        wp_enqueue_script('jquery-ui-core');
+        wp_enqueue_script("jquery-ui-tabs");
+        wp_enqueue_script( 'jquery-validate', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.validate.min.js', array( 'jquery' ) );
+        wp_enqueue_script( 'dataTables', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.dataTables.min.js', array( 'jquery' ) );
+        wp_enqueue_script( 'backend', plugin_dir_url( __FILE__ ) . 'assets/js/backend.js', array( 'jquery' ) );
+        wp_localize_script( 'backend', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
     }
-    public function frontend_scripts()
-    {
-        wp_register_style( 'bootstrap-css', plugin_dir_url( __FILE__ ) . 'assets/css/bootstrap.min.css' );
-        wp_enqueue_style( 'bootstrap-css' );
-        wp_register_style( 'custom-css', plugin_dir_url( __FILE__ ) . 'assets/css/frontend/custom.css' );
-        wp_enqueue_style( 'custom-css' );
-         wp_register_style( 'timepicker-css', plugin_dir_url( __FILE__ ) . 'assets/css/frontend/jquery.timepicker.min.css' );
-        wp_enqueue_style( 'timepicker-css' );
-        wp_register_style( 'jquery-ui-css', plugin_dir_url( __FILE__ ) . 'assets/css/frontend/jquery-ui.css' );
-        wp_enqueue_style( 'jquery-ui-css' );
-        wp_enqueue_script( 'bootstrap-js', plugin_dir_url( __FILE__ ) . 'assets/js/bootstrap.min.js', array( 'jquery' ) );
-        wp_enqueue_script( 'jquery-js', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.min.js', array( 'jquery' ) );
-        wp_enqueue_script( 'validate-js', plugin_dir_url( __FILE__ ) . 'assets/js/frontend/jquery.validate.min.js', array( 'jquery' ) );
-        wp_enqueue_script( 'ui-js', plugin_dir_url( __FILE__ ) . 'assets/js/frontend/jquery-ui.min.js', array( 'jquery' ) );
-        wp_enqueue_script( 'custom-js', plugin_dir_url( __FILE__ ) . 'assets/js/frontend/custom.js', array( 'jquery' ) );
-        wp_enqueue_script( 'additional-js', plugin_dir_url( __FILE__ ) . 'assets/js/frontend/additional-methods.min.js', array( 'jquery' ) );
-        wp_enqueue_script( 'timepicker-js', plugin_dir_url( __FILE__ ) . 'assets/js/frontend/jquery.timepicker.min.js', array( 'jquery' ) );
-         wp_localize_script( 'custom-js', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
-    }
-    public function my_custom_post_type()
-    {
-        $supports = array(
-            'title'
-            );
+    public function frontend_scripts(){
+        wp_register_style( 'bootstrap', plugin_dir_url( __FILE__ ) . 'assets/css/bootstrap.min.css' );
+        wp_enqueue_style( 'bootstrap' );
+        wp_register_style( 'frontend', plugin_dir_url( __FILE__ ) . 'assets/css/frontend.css' );
+        wp_enqueue_style( 'frontend' );
+        wp_register_style( 'timepicker', plugin_dir_url( __FILE__ ) . 'assets/css/jquery.timepicker.min.css' );
+        wp_enqueue_style( 'timepicker' );
+        wp_register_style( 'jquery-ui', plugin_dir_url( __FILE__ ) . 'assets/css/jquery-ui.css' );
+        wp_enqueue_style( 'jquery-ui' );
+        wp_enqueue_script( 'bootstrap', plugin_dir_url( __FILE__ ) . 'assets/js/bootstrap.min.js', array( 'jquery' ) );
+        wp_enqueue_script('jquery-ui-core');
+        wp_enqueue_script( 'jquery-ui-datepicker' );
+        wp_enqueue_script( 'jquery-validate', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.validate.min.js', array( 'jquery' ) );
+        wp_enqueue_script( 'frontend', plugin_dir_url( __FILE__ ) . 'assets/js/frontend.js', array( 'jquery' ) );
+        wp_enqueue_script( 'additional', plugin_dir_url( __FILE__ ) . 'assets/js/additional-methods.min.js', array( 'jquery' ) );
+        wp_enqueue_script( 'timepicker', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.timepicker.min.js', array( 'jquery' ) );
+        wp_localize_script( 'frontend', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+    }    
+    public function my_custom_post_type(){
+        $supports = array('title');
         $args = array(
-          'supports' => $supports,
-          'public' => true,
-          'publicly_queryable' => false,
-          'show_ui' => true,
-          'exclude_from_search' => true,
-          'show_in_nav_menus' => false,
-          'rewrite' => false,
-          'labels' => array(
+        'supports' => $supports,
+        'public' => true,
+        'publicly_queryable' => false,
+        'show_ui' => true,
+        'exclude_from_search' => true,
+        'show_in_nav_menus' => false,
+        'rewrite' => false,
+        'labels' => array(
             'name' => __( 'All In One Forms' ),
             'singular_name' => __( 'All In One Form' ),
             'add_new_item' => __( 'Add New Form' ),
             'add_new' => __( 'Add New Form' ),
             'edit_item' => __( 'Edit Form' ),
-            ),
-          'has_archive' => false,
-
+        ),
+        'has_archive' => false,
         );
         register_post_type( 'advanced_form', $args );
     }
-
-
-
-    function change_publish_button( $translation, $text )
-    {
-        if ( 'advanced_form' == get_post_type() && $text == 'Update')
-        {
+    function change_publish_button( $translation, $text ){
+        if ( 'advanced_form' == get_post_type() && $text == 'Update'){
             return 'Save';
         }
-
         return $translation;
     }
-    public function vcf_options_page()
-    {
+    public function vcf_options_page(){
         remove_submenu_page('edit.php?post_type=advanced_form','post-new.php?post_type=advanced_form');
         add_submenu_page( 'edit.php?post_type=advanced_form', 'Recaptcha', 'Recaptcha', 'manage_options', 'cf-recaptcha-page', array($this,'advanced_form_submenu_captcha_page' ));
-        add_submenu_page( 'edit.php?post_type=advanced_form', 'Overview', 'Overview', 'manage_options', 'cf-overview-page', array($this,'advanced_form_submenu_overview_page' ));
-        add_submenu_page( 'edit.php?post_type=advanced_form', 'SMTP Setting', 'SMTP Setting', 'manage_options', 'cf-smtp-page', array($this,'advanced_form_submenu_smtp_page' ));
-        if ( class_exists( 'WooCommerce' ) )
-        {
-        add_submenu_page( 'edit.php?post_type=advanced_form', 'Advance Setting', 'Advance Setting', 'manage_options', 'cf-advance-page', array($this,'advanced_form_submenu_advance_page' ));
-            }
+        add_submenu_page( 'edit.php?post_type=advanced_form', 'Overview', 'Overview', 'manage_options', 'cf-overview-page', array($this,'advanced_form_submenu_overview_page' ));        
+        if ( class_exists( 'WooCommerce' ) ){
+            add_submenu_page( 'edit.php?post_type=advanced_form', 'Advance Setting', 'Advance Setting', 'manage_options', 'cf-advance-page', array($this,'advanced_form_submenu_advance_page' ));
+        }
     }
-
-    public function recaptcha_generate()
-    {
+    public function recaptcha_generate(){
         $params = array();
         parse_str($_POST['formData'], $params);
         $sitekey = $params['sitekey'];
@@ -187,30 +144,10 @@ class All_Advanced_Form_Class
         update_option('gcaptcha_sitekey', $sitekey );
         update_option('gcaptcha_secret', $secretkey );
     }
-
-    public function smtp_generate()
-    {
-        $params = array();
-        parse_str($_POST['formData'], $params);
-        $vcf7_smtp_host = $params['vcf7_smtp_host'];
-        $vcf7_smtp_port = $params['vcf7_smtp_port'];
-        $vcf7_smtp_ssl = $params['vcf7_smtp_ssl'];
-        $vcf7_smtp_username = $params['vcf7_smtp_username'];
-        $vcf7_smtp_pwd = $params['vcf7_smtp_pwd'];
-
-        update_option('vcf7_smtp_host', $vcf7_smtp_host );
-        update_option('vcf7_smtp_port', $vcf7_smtp_port );
-        update_option('vcf7_smtp_ssl', $vcf7_smtp_ssl );
-        update_option('vcf7_smtp_username', $vcf7_smtp_username );
-        update_option('vcf7_smtp_pwd', $vcf7_smtp_pwd );
-    }
-
-    public function advance_setting_form()
-    {
+    public function advance_setting_form(){
         $params = array();
         parse_str($_POST['formData'], $params);
 
-       // print_r($params); die();
         $show_enquiry_detail_page = $params['show_enquiry_detail_page'];
         $pdetail_form_id = $params['pdetail_form_id'];
         $show_enquiry_cart_page = $params['show_enquiry_cart_page'];
@@ -229,84 +166,46 @@ class All_Advanced_Form_Class
 		update_option('add_enquiry_btn_details', $add_enquiry_btn_details );
 		update_option('add_enquiry_btn_cart', $add_enquiry_btn_cart );
     }
-
-    public function recaptcha_reset()
-    {
+    public function recaptcha_reset(){
         update_option('gcaptcha_sitekey', '');
         update_option('gcaptcha_secret', '');
     }
-
-    public function delete_list_view()
-    {
+    public function delete_list_view(){
         $id = $_POST['data_id'];
         global $wpdb;
         $table = $wpdb->prefix . "advanced_all_form_entry";
         $results = $wpdb->delete( $table, array( 'data_id' => $id ) );
         echo $results; die();
     }
-
-    public function smtp_reset()
-    {
-        update_option('vcf7_smtp_host', '');
-        update_option('vcf7_smtp_port', '');
-        update_option('vcf7_smtp_ssl', '');
-        update_option('vcf7_smtp_username', '');
-        update_option('vcf7_smtp_pwd', '');
-    }
-
-    public function advance_setting_reset()
-    {
-        //echo 'tewst'; die();
+    public function advance_setting_reset(){
         update_option('show_enquiry_detail_page','');
         update_option('pdetail_form_id', '');
         update_option('show_enquiry_cart_page', '');
         update_option('cart_form_id', '');
     }
-
-    public function advanced_form_submenu_captcha_page()
-    {
-        if ( ! class_exists( 'reCaptcha_Form_Class' ) )
-        {
+    public function advanced_form_submenu_captcha_page(){
+        if ( ! class_exists( 'reCaptcha_Form_Class' ) ){
             require_once('reCaptcha_Form_Class.php');
         }
         $captcha = new reCaptcha_Form_Class;
         $captcha->recaptcha_form_details();
     }
-
-    public function advanced_form_submenu_overview_page()
-    {
-        if ( ! class_exists( 'Overview_Class' ) )
-        {
+    public function advanced_form_submenu_overview_page(){
+        if ( ! class_exists( 'Overview_Class' ) ){
             require_once('Overview_Class.php');
         }
         $overviw = new Overview_Class;
         $overviw->wp_list_tables();
     }
-
-    public function advanced_form_submenu_smtp_page()
-    {
-        if ( ! class_exists( 'Smtp_Form_Class' ) )
-        {
-            require_once('Smtp_Form_Class.php');
-        }
-        $captcha = new Smtp_Form_Class;
-        $captcha->smtp_form_details();
-    }
-
-    public function advanced_form_submenu_advance_page()
-    {
-        if ( ! class_exists( 'Advance_Form_Class' ) )
-        {
+    public function advanced_form_submenu_advance_page(){
+        if ( ! class_exists( 'Advance_Form_Class' ) ){
             require_once('Advance_Form_Class.php');
         }
         $advance = new Advance_Form_Class;
         $advance->advance_form_details();
-    }
-    
-    public function select_field()
-    {
-        if ( ! class_exists( 'Custom_Fields_Class' ) )
-        {
+    }    
+    public function select_field(){
+        if ( ! class_exists( 'Custom_Fields_Class' ) ){
             require_once('Custom_Fields_Class.php');
         }
         $field = $_POST['field'];
@@ -315,14 +214,9 @@ class All_Advanced_Form_Class
         $fieldsobj->$field($field,$rand);
         die();  
     }
-
-    public function get_before_update_postdata( $post_id )
-    {
-
-		if(isset($_POST['input']))
-		{
-			foreach($_POST['input'] as $key=>$value)
-			{
+    public function get_before_update_postdata( $post_id ){
+		if(isset($_POST['input'])){
+			foreach($_POST['input'] as $key=>$value){
 				$data['type'] = $value;
 				$data['label'] = $_POST['label'][$key];
 				$data['name'] = $_POST['name'][$key];
@@ -345,15 +239,12 @@ class All_Advanced_Form_Class
                 $data['col-data'] = $_POST['col-data'][$key];
                 $data['col-data-num'] = $_POST['col-data-num'][$key];
 
-				if(!empty($data['type']))
-				{
+				if(!empty($data['type'])){
 					$field[$key] = $data;
 				}
 			}
         }
         $field_data = serialize($field);
-
-     ///   echo $field_data; die();
 
         $vcf_mail = $_POST['vcf7-mail'];
 
@@ -380,97 +271,58 @@ class All_Advanced_Form_Class
         update_post_meta( $post_id, 'vcf_mail_body2', $vcf_mail2['body']);
         update_post_meta( $post_id, 'vcf_mail_data', $mail_data);
 
-
         $message = $_POST['vcf7-message'];
         $message = serialize($message);
         update_post_meta( $post_id, 'vcf_success_sms', $message);
     }
-
-    public function contact_form_tab_content($post)
-    {
-        if ( ! class_exists( 'Tabs_Form_Class' ) )
-        {
+    public function contact_form_tab_content($post){
+        if ( ! class_exists( 'Tabs_Form_Class' ) ){
             require_once('Tabs_Form_Class.php');
         }
         $tabs = new Tabs_Form_Class;
         $tabs->contact_form_tab_content($post);
     }
-    public function advanced_form_front_view($attr)
-    {
-        if ( ! class_exists( 'Front_Form_Class' ) )
-        {
+    public function advanced_form_front_view($attr){
+        if ( ! class_exists( 'Front_Form_Class' ) ){
             require_once('Front_Form_Class.php');
         }
         $front = new Front_Form_Class;
         $front->front_design_view($attr);
     }
-    public function vcfform_insert_data()
-    {
-        //print_r($_FILES); die();
+    public function vcfform_insert_data(){
         global $wpdb;
         $table_name2 = $wpdb->prefix . "advanced_all_form_entry";
         $params = array();
         parse_str($_POST['fields'], $params);
-
         $vcfid = $_POST['vcf_id'];
-
-        if(!empty($_FILES['file']))
-        {
+        if(!empty($_FILES['file'])){
             $file = $_FILES['file'];
             $filesize = $_POST['filesize'];
-
-           // echo  $filesize; die();
             $extension = $_POST['extension'];
-
-
             $file_img = $this->image_upload($file,$filesize,$extension);
-
-            if($file_img['success'])
-            {
+            if($file_img['success']){
                 $file_img1 = $file_img['success'];
-
             }
-            else
-            {
+            else{
                 echo json_encode($file_img['error']);
                 die();
             }
-
             $params['file'] = $file_img1;
-
         }
-
-
-       // print_r($params); die();
-        if ( ! class_exists( 'Mail_Form_Class' ) )
-        {
+        if ( ! class_exists( 'Mail_Form_Class' ) ){
             require_once('Mail_Form_Class.php');
         }
         $front = new Mail_Form_Class;
         $result = $front->mail_sent_format($params,$vcfid);
 
-
-
-
-        if($result == 1)
-        {
-           // echo 'test'; die();
+        if($result == 1){
             $last_id = $wpdb->get_var( 'SELECT data_id FROM ' . $table_name2 .' ORDER BY data_id DESC LIMIT 1');
-
             $data_id = $last_id+1;
-
-          //  print_r($params); die();
-
-            foreach($params as $key=>$value)
-            {
-                if($key == 'g-recaptcha-response')
-                {
-                    
+            foreach($params as $key=>$value){
+                if($key == 'g-recaptcha-response'){                    
                 }
-                else
-                {
-                    if(is_array($value))
-                    {
+                else{
+                    if(is_array($value)){
                         $value = implode( ", ", $value);
                     }
                     $result_check = $wpdb->insert($table_name2, array('vcf_id'=>$vcfid, 'data_id'=>$data_id, 'name' => $key, 'value' => $value) );
@@ -480,45 +332,27 @@ class All_Advanced_Form_Class
         }
         die();
     }
-    public function image_upload($file,$filesize,$extension)
-    {
-        if(isset($file))
-        {
+    public function image_upload($file,$filesize,$extension){
+        if(isset($file)){
             $errors= array();
             $file_name = explode(".", $file["name"]);
-
             $newfilename = round(microtime(true)) . '.' . end($file_name);
             $file_size = $file['size'];
             $file_tmp = $file['tmp_name'];
             $file_type = $file['type'];
             $file_ext = strtolower(end(explode('.',$file['name'])));
-
-            //echo $file_ext; die();
-
-
-
             $extension = str_replace(".","",$extension);
-
-            $extensions = explode(',', $extension);
-
-              
-          
-            if(in_array($file_ext,$extensions) === false && $extensions != '' && $extensions[0] != 'undefined')
-            {
+            $extensions = explode(',', $extension);          
+            if(in_array($file_ext,$extensions) === false && $extensions != '' && $extensions[0] != 'undefined'){
                $errors['error'] = "Only files with a following extensions are allowed : ".$extension;
             }
-
-            
             $file_size = round($file_size / 1024,4);
           
-            if($file_size > $filesize)
-            {
+            if($file_size > $filesize){
                $errors['error'] = 'File size must be smaller than '.$filesize.'KB';
             }
             
-              
-            if(empty($errors)==true)
-            {
+            if(empty($errors)==true){
                 mkdir("../wp-content/uploads/contact_form");
                 move_uploaded_file($file_tmp,"../wp-content/uploads/contact_form/".$newfilename);
 
@@ -527,11 +361,8 @@ class All_Advanced_Form_Class
             return $errors;
         }
     }
-
     /** Start Woocommerce Hooks **/
-
-    public function action_woocommerce_after_cart_table()
-    {
+    public function action_woocommerce_after_cart_table(){
         $show_enquiry_cart_page = get_option('show_enquiry_cart_page');
         $enquiry_modal_title = get_option('enquiry_modal_title');
 
@@ -556,16 +387,11 @@ class All_Advanced_Form_Class
                 </div>';
         }
     }
-
-    public function woocommerce_after_add_to_cart_button()
-    {
-        
+    public function woocommerce_after_add_to_cart_button(){        
         $show_enquiry_detail_page = get_option('show_enquiry_detail_page');
         $enquiry_modal_title = get_option('enquiry_modal_title');
-        if($show_enquiry_detail_page == 1)
-        {
+        if($show_enquiry_detail_page == 1){
             $pdetail_form_id = get_option('pdetail_form_id');
-
             $pdetail_form_title = get_option('pdetail_form_title');
 
             echo '<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -583,55 +409,37 @@ class All_Advanced_Form_Class
                     </div>
                   </div>
                 </div>';
-            
         }
     }
-
-    public function woocommerce_add_pinquiry_button()
-    {
+    public function woocommerce_add_pinquiry_button(){
         $show_enquiry_detail_page = get_option('show_enquiry_detail_page');
-
         $add_btn_title_enquiry = get_option('add_btn_title_enquiry');
 		$add_enquiry_btn_details = get_option('add_enquiry_btn_details');
-        if($show_enquiry_detail_page == 1 && $add_enquiry_btn_details == 1)
-        {
+        if($show_enquiry_detail_page == 1 && $add_enquiry_btn_details == 1){
             echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">'.$add_btn_title_enquiry.'</button>';
         }
     }
-
-    public function woocommerce_cart_pinquiry_button()
-    {
+    public function woocommerce_cart_pinquiry_button(){
         $show_enquiry_cart_page = get_option('show_enquiry_cart_page');
-
         $add_btn_title_enquiry = get_option('add_btn_title_enquiry');
 		$add_enquiry_btn_cart = get_option('add_enquiry_btn_cart');
-        if($show_enquiry_cart_page == 1 && $add_enquiry_btn_cart == 1)
-        {
+        if($show_enquiry_cart_page == 1 && $add_enquiry_btn_cart == 1){
             echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">'.$add_btn_title_enquiry.'</button>';
         }
-    }
-	
-	 public function wc_cart_pinquiry_button_shortcode()
-    {
+    }	
+	public function wc_cart_pinquiry_button_shortcode(){
         $show_enquiry_cart_page = get_option('show_enquiry_cart_page');
-
         $add_btn_title_enquiry = get_option('add_btn_title_enquiry');
-        if($show_enquiry_cart_page == 1)
-        {
+        if($show_enquiry_cart_page == 1){
             echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">'.$add_btn_title_enquiry.'</button>';
         }
-    }
-	
-	public function wc_add_pinquiry_button_shortcode()
-    {
+    }	
+	public function wc_add_pinquiry_button_shortcode(){
         $show_enquiry_detail_page = get_option('show_enquiry_detail_page');
-
         $add_btn_title_enquiry = get_option('add_btn_title_enquiry');
-        if($show_enquiry_detail_page == 1)
-        {
+        if($show_enquiry_detail_page == 1){
             echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">'.$add_btn_title_enquiry.'</button>';
         }
     }
     /** End Woocommerce Hooks **/
 }
-?>

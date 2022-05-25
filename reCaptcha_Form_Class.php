@@ -1,8 +1,6 @@
 <?php
-class reCaptcha_Form_Class
-{
-    public function recaptcha_form_details()
-    {
+class reCaptcha_Form_Class{
+    public function recaptcha_form_details(){
         $sitekey = get_option('gcaptcha_sitekey');
         $secretkey = get_option('gcaptcha_secret');
         echo '<div class="captcha_details" id="captcha-integration">

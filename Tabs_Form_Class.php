@@ -1,70 +1,49 @@
 <?php
-if ( ! class_exists( 'Custom_Fields_Class' ) )
-{
+if(!class_exists( 'Custom_Fields_Class')){
   require_once('Custom_Fields_Class.php');
 }
-class Tabs_Form_Class
-{
-  public function contact_form_tab_content($post)
-  {
-        
-        if($post->post_type == 'advanced_form')
-        {
-          echo '
-    <div class="form_details">';
-       if(!empty($_GET['post']))
-       {
-       echo '<p>Copy this shortcode and paste it into your post, page, or text widget content:</p>
-       <span class="shortcode wp-ui-highlight"><input type="text" id="vcf-shortcode" readonly="readonly" class="large-text code" value="[advanced-form id='.$_GET['post'].']"></span><br><br>';
-        }
-       echo '<div id="vcf7_tabs">
-          <ul>
-             <li><a href="#tabs-1">Form</a></li>
-             <li><a href="#tabs-2">Mail</a></li>
-             <li><a href="#tabs-3">Message</a></li>
-          </ul>
-          <div id="tabs-1">';
-             $this->get_tab1_html($post);
-          echo '</div>
-          <div id="tabs-2">';
-            $this->get_tab2_html($post);
-          echo '</div>
-          <div id="tabs-3">';
-
-            $this->get_tab3_html($post);
-
-          echo '</div>
-       </div>
-    </div>';
+class Tabs_Form_Class{
+  public function contact_form_tab_content($post){
+        if($post->post_type == 'advanced_form'){
+            echo '<div class="form_details">';
+            if(!empty($_GET['post'])){
+                echo '<p>Copy this shortcode and paste it into your post, page, or text widget content:</p>
+                <span class="shortcode wp-ui-highlight"><input type="text" id="vcf-shortcode" readonly="readonly" class="large-text code" value="[advanced-form id='.$_GET['post'].']"></span><br><br>';
+            }
+            echo '<div id="vcf7_tabs">
+                <ul>
+                <li><a href="#tabs-1">Form</a></li>
+                <li><a href="#tabs-2">Mail</a></li>
+                <li><a href="#tabs-3">Message</a></li>
+                </ul>
+                <div id="tabs-1">';
+                $this->get_tab1_html($post);
+                echo '</div>
+                <div id="tabs-2">';
+                $this->get_tab2_html($post);
+                echo '</div>
+                <div id="tabs-3">';
+                    $this->get_tab3_html($post);
+                echo '</div>
+                </div>
+            </div>';
         }
      }
-     public function get_mail_tags($post)
-     {
+     public function get_mail_tags($post){
         $field = get_post_meta( $post->ID, 'vcf_fields_data', true);
         $get_fields = unserialize($field);
-
         echo '<h3>In the following fields, you can use these mail-tags : ';
-
-        foreach($get_fields as $key=>$value)
-        {
-
-            if($value['type'] != 'recaptcha' && $value['type'] != 'submit')
-            {
-                if($value['type'] == 'password' || $value['type'] == 'description')
-                {
-
-                }
-                else
-                {
+        foreach($get_fields as $key=>$value){
+            if($value['type'] != 'recaptcha' && $value['type'] != 'submit'){
+                if($value['type'] == 'password' || $value['type'] == 'description'){
+                }else{
                   echo '['.$value['name'].']';
                 }
             }
         }
-
         echo '</h3>';
      }
-     public function get_tab1_html($post)
-     {
+     public function get_tab1_html($post){
         echo '<div class="container">
                 <div class="form-group dropdown_fields">
                    <label for="field">Select Fields:</label>
@@ -84,13 +63,13 @@ class Tabs_Form_Class
                       
                       <option value="checkbox">Checkboxes</option><option value="acceptance">Acceptance</option><option value="description">Description</option>';
 
-                    if ( class_exists( 'WooCommerce' ) )
-                    {
-                      echo '<option value="product_title">Product Title</option>
-                      <option value="product_url">Product Url</option>
-                      <option value="product_price">Product Price</option>
-                      <option value="product_qty">Product Quantity</option>';
-                    }
+                        if ( class_exists( 'WooCommerce' ) )
+                        {
+                        echo '<option value="product_title">Product Title</option>
+                        <option value="product_url">Product Url</option>
+                        <option value="product_price">Product Price</option>
+                        <option value="product_qty">Product Quantity</option>';
+                        }
                     echo '<option value="recaptcha">reCaptcha</option>
                       <option value="submit">Submit</option>
                    </select>
@@ -120,22 +99,18 @@ class Tabs_Form_Class
                 </div>
              </div>';
      }
-     public function get_tab2_html($post)
-     {
+     public function get_tab2_html($post){
             $mail_field = get_post_meta( $post->ID, 'vcf_mail_data', true);
             $mail_body = get_post_meta( $post->ID, 'vcf_body_data', true);
 
             $vcf_mail2 = get_post_meta( $post->ID, 'vcf_mail_data2', true);
             $mail_body2 = get_post_meta( $post->ID, 'vcf_mail_body2', true);
             $get_mail = unserialize($mail_field);
-           // $get_body = unserialize($mail_body);
             $vcf_mail2 = unserialize($vcf_mail2);
-           // $get_body2 = unserialize($mail_body2);
-
+           
             $body_html = htmlspecialchars($mail_body);
             $body_html2 = htmlspecialchars($mail_body2);
-             
-             
+                          
              echo '<table class="form-table">
                 <tbody>
                   <tr>';
@@ -259,10 +234,8 @@ class Tabs_Form_Class
               </fieldset>
               </div>';
      }
-     public function get_tab3_html($post)
-     {
+     public function get_tab3_html($post){
           $message = unserialize(get_post_meta( $post->ID, 'vcf_success_sms', true));
-
           echo '<table class="form-table">
               <tbody>
                   <tr>

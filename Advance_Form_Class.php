@@ -1,8 +1,6 @@
 <?php
-class Advance_Form_Class
-{
-    public function advance_form_details()
-    {
+class Advance_Form_Class{
+    public function advance_form_details(){
         $show_enquiry_detail_page = get_option('show_enquiry_detail_page');
         $pdetail_form_id = get_option('pdetail_form_id');
         $show_enquiry_cart_page = get_option('show_enquiry_cart_page');
@@ -11,7 +9,6 @@ class Advance_Form_Class
         $add_btn_title_enquiry = get_option('add_btn_title_enquiry');
 		$add_enquiry_btn_details = get_option('add_enquiry_btn_details');
 		$add_enquiry_btn_cart = get_option('add_enquiry_btn_cart');
-
 
         echo '<div class="captcha_details" id="captcha-integration">
                 <h1>Integration Advance Product Setting</h1>
@@ -43,8 +40,7 @@ class Advance_Form_Class
                                             $args = array( 'post_type' => $_GET['post_type'],'post_status' => 'publish');
                                             $myposts = get_posts( $args );
                                             echo '<option value="">Select Form</option>';
-                                            foreach ( $myposts as $post )
-                                            {
+                                            foreach ( $myposts as $post ){
                                                 echo '<option value="'.get_the_ID().'" '.(($pdetail_form_id==get_the_ID())?'selected':"").'>'.get_the_title().'</option>';
                                             }
                                             wp_reset_postdata();
@@ -95,8 +91,7 @@ class Advance_Form_Class
                                                 $args = array( 'post_type' => $_GET['post_type'],'post_status' => 'publish');
                                                 $myposts = get_posts( $args );
                                                 echo '<option value="">Select Form</option>';
-                                                foreach ( $myposts as $post )
-                                                {
+                                                foreach ( $myposts as $post ){
                                                     echo '<option value="'.get_the_ID().'" '.(($cart_form_id==get_the_ID())?'selected':"").'>'.get_the_title().'</option>';
                                                 }
                                                 wp_reset_postdata();
@@ -159,4 +154,3 @@ class Advance_Form_Class
             </div>';
     }
 }
-?>

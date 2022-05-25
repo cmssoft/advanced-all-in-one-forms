@@ -1,17 +1,13 @@
 <?php
-class Custom_Fields_Class
-{
-    public function text($field,$rand)
-    {
+class Custom_Fields_Class{
+    public function text($field,$rand){
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
                     		<h2>Text Field</h2>
                     	</div>
-                    	<div class="col-sm-4 box_button">
-
-                    	
+                    	<div class="col-sm-4 box_button">                    	
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -47,8 +43,7 @@ class Custom_Fields_Class
                         <div class="form-group">
                             <label for="class-'.$rand.'">Minlength:</label>
                             <input type="text" class="form-control min_textval" id="min-'.$rand.'" name="min['.$rand.']" value="'.(isset($field['min'])?''.$field['min'].'':"").'">
-                        </div>
-                        
+                        </div>                        
                         <div class="form-group">
                             <label for="raws-'.$rand.'">Raw Start:</label>
                             <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
@@ -56,8 +51,7 @@ class Custom_Fields_Class
                         <div class="form-group">
                             <label for="rawed-'.$rand.'">Raw End:</label>
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
-                        </div>
-                        
+                        </div>                        
                         <div class="form-group">
                             <label for="column-'.$rand.'">Culumn :</label>
                             col-
@@ -93,12 +87,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-
-
-    public function description($field,$rand)
-    {
-
-        //print_r($field);
+    public function description($field,$rand){
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -106,8 +95,6 @@ class Custom_Fields_Class
                             <h2>Description Field</h2>
                         </div>
                         <div class="col-sm-4 box_button">
-
-                        
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -175,20 +162,14 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-
-    public function rating($field,$rand)
-    {
-
-        //print_r($field);
+    public function rating($field,$rand){
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
                             <h2>Rating Field</h2>
                         </div>
-                        <div class="col-sm-4 box_button">
-
-                        
+                        <div class="col-sm-4 box_button">                        
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -256,10 +237,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-
-
-    public function password($field,$rand)
-    {
+    public function password($field,$rand){
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -267,8 +245,6 @@ class Custom_Fields_Class
                             <h2>Password Field</h2>
                         </div>
                         <div class="col-sm-4 box_button">
-
-                        
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -348,9 +324,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    
-    public function email($field,$rand)
-    {
+    public function email($field,$rand){
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -358,8 +332,6 @@ class Custom_Fields_Class
                     		<h2>Email Field</h2>
                     	</div>
                     	<div class="col-sm-4 box_button">
-
-                    	
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -431,8 +403,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    public function phone($field,$rand)
-    {
+    public function phone($field,$rand){
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -440,8 +411,6 @@ class Custom_Fields_Class
                     		<h2>Phone Field</h2>
                     	</div>
                     	<div class="col-sm-4 box_button">
-
-                    	
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -521,8 +490,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    public function textarea($field,$rand)
-    {
+    public function textarea($field,$rand){
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -530,8 +498,6 @@ class Custom_Fields_Class
                     		<h2>Textarea Field</h2>
                     	</div>
                     	<div class="col-sm-4 box_button">
-
-                    	
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -611,9 +577,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    public function url($field,$rand)
-    {
-
+    public function url($field,$rand){
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -621,8 +585,6 @@ class Custom_Fields_Class
                     		<h2>URL Field</h2>
                     	</div>
                     	<div class="col-sm-4 box_button">
-
-                    	
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -694,8 +656,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    public function date($field,$rand)
-    {
+    public function date($field,$rand){
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -703,8 +664,6 @@ class Custom_Fields_Class
                     		<h2>Date Field</h2>
                     	</div>
                     	<div class="col-sm-4 box_button">
-
-                    	
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -772,8 +731,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    public function time($field,$rand)
-    {
+    public function time($field,$rand){
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -848,8 +806,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    public function file($field,$rand)
-    {
+    public function file($field,$rand){
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -857,8 +814,6 @@ class Custom_Fields_Class
                     		<h2>File Field</h2>
                     	</div>
                     	<div class="col-sm-4 box_button">
-
-                    	
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -934,8 +889,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    public function select($field,$rand)
-    {
+    public function select($field,$rand){
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -943,8 +897,6 @@ class Custom_Fields_Class
                     		<h2>Select Field</h2>
                     	</div>
                     	<div class="col-sm-4 box_button">
-
-                    	
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -1060,8 +1012,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    public function radio($field,$rand)
-    {
+    public function radio($field,$rand){
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -1182,8 +1133,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    public function checkbox($field,$rand)
-    {
+    public function checkbox($field,$rand){
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -1308,8 +1258,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    public function submit($field,$rand)
-    {
+    public function submit($field,$rand){
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -1317,8 +1266,6 @@ class Custom_Fields_Class
                     		<h2>Submit</h2>
                     	</div>
                     	<div class="col-sm-4 box_button">
-
-                    	
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -1381,16 +1328,14 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    public function recaptcha($field,$rand)
-    {
+    public function recaptcha($field,$rand){
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
                     		<h2>reCaptcha</h2>
                     	</div>
-                    	<div class="col-sm-4 box_button">
-                    	
+                    	<div class="col-sm-4 box_button">                    	
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -1453,42 +1398,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-     /*public function signature($field,$rand)
-    {
-        echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
-                    <div class="row">
-                        <div class="col-sm-8 head_box">
-                            <h2>Signature</h2>
-                        </div>
-                        <div class="col-sm-4 box_button">
-                        
-                        <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
-                    <div class="card-body">
-                        <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="signature">
-                        <input type="hidden" class="form-control" name="name['.$rand.']" value="signature-'.$rand.'">
-                        <div class="form-group">
-                            <label for="label-'.$rand.'">Label:</label>
-                            <input type="text" class="form-control" id="label-'.$rand.'" name="label['.$rand.']" value="'.(isset($field['label'])?''.$field['label'].'':"").'">
-                        </div>
-                        <div class="form-group">
-                            <label for="id-'.$rand.'">ID:</label>
-                            <input type="text" class="form-control" id="id-'.$rand.'" name="id['.$rand.']" value="'.(isset($field['id'])?''.$field['id'].'':"").'">
-                        </div>
-                        <div class="form-group">
-                            <label for="class-'.$rand.'">Class:</label>
-                            <input type="text" class="form-control" id="class-'.$rand.'" name="class['.$rand.']" value="'.(isset($field['class'])?''.$field['class'].'':"").'">
-                        </div>
-                    </div>
-                </div>
-            </li>';
-    }*/
-    public function acceptance($field,$rand)
-    {
+    public function acceptance($field,$rand){
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -1496,8 +1406,6 @@ class Custom_Fields_Class
                             <h2>Acceptance Field</h2>
                         </div>
                         <div class="col-sm-4 box_button">
-
-                        
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -1565,11 +1473,8 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-
     /** Product Title and Urls Details **/
-
-    public function product_title($field,$rand)
-    {
+    public function product_title($field,$rand){
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -1577,8 +1482,6 @@ class Custom_Fields_Class
                             <h2>Product Title</h2>
                         </div>
                         <div class="col-sm-4 box_button">
-
-                        
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -1634,8 +1537,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    public function product_url($field,$rand)
-    {
+    public function product_url($field,$rand){
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -1700,8 +1602,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    public function product_price($field,$rand)
-    {
+    public function product_price($field,$rand){
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -1766,8 +1667,7 @@ class Custom_Fields_Class
                 </div>
             </li>';
     }
-    public function product_qty($field,$rand)
-    {
+    public function product_qty($field,$rand){
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="'.$field.'-'.$rand.'">
                     <div class="row">
@@ -1775,8 +1675,6 @@ class Custom_Fields_Class
                             <h2>Product Quantity</h2>
                         </div>
                         <div class="col-sm-4 box_button">
-
-                        
                         <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
                         </div>
                     </div>
@@ -1833,4 +1731,3 @@ class Custom_Fields_Class
             </li>';
     }
 }
-?>

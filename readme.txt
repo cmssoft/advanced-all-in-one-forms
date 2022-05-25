@@ -1,16 +1,16 @@
 === Advanced All In One Forms ===
  
-Contributors: pramodvrinsoft
+Contributors: cmssoft
 Donate link: https://www.vrinsofts.com/
-Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, smtp, overview, product enquiry, builder form, thank you page.
+Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, overview, product enquiry, builder form, thank you page.
 Requires at least: 5.5
 Tested up to: 5.9
-Stable tag: 1.0
+Stable tag: 1.0.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
   
-Advanced All In One Forms can manage multiple forms and product inquiry. The form supports Ajax-powered submitting, CAPTCHA, SMTP, OVERVIEW and so on.
+Advanced All In One Forms can manage multiple forms and product inquiry. The form supports Ajax-powered submitting, CAPTCHA, OVERVIEW and so on.
   
 == Description ==
   
@@ -85,9 +85,6 @@ It is very simple, you just need to select the field you want in your form and j
 = How can I specify a subject for the email? =
 All you need to do is just choose the subject name, and you can then specify the subject for your email.
 
-= Can I use this plugin for SMTP details? =
-Yes, you can use the plugin for SMTP details.
-
 = How can I create thank you page with this plugin? =
 You need to go to the ‘Message’ section. Either you can type a message or you can add Thank you page and add any URL, where you want users to be redirected.
 
@@ -104,7 +101,7 @@ Yes! The user can redirect to another page after submitting the form. All you ha
 You can create wide range of forms like Email form, contact form, product inquiry forms, registration, estimations forms, Donation. The plugin also allows you to customize the fields in your form.
 
 = Can I send email by using Advanced all in one forms? =
-Yes, the plugin supports multiplier receiver in backhand. All you need to do is login into SMTP and further send the emails at any time to anyone.
+Yes, the plugin supports multiplier receiver in backhand. 
 
 = What type of support will I get from your end? =
 The professionals will be available to provide you full support only at Indian Standard time (IST).
@@ -117,7 +114,7 @@ One of the best security methods in our form is Google reCaptcha. When you use o
 
 = Why WordPress is not sending my mails? =
 Sometimes, the receiver will not get your email. In such circumstances, our lets you add multiple email and receiver will get notification in all those email.
-Just login in into SMTP and follow the simple steps. If you want, you can also find the entries of these mails in backend. Still not receiving mail then you can contact the respective admin for the same.
+Still not receiving mail then you can contact the respective admin for the same.
   
 = How to uninstall the plugin? =
   
