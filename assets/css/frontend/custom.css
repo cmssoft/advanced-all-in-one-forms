@@ -1,0 +1,107 @@
+form.vcf7form label.error {
+    color: #f30f0f;
+}
+.vcf7form .success-error-captcha,.form-group.success-error.error
+{
+	color: #f30f0f;
+}
+.vcf7form .rating {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 50px;
+}
+
+.vcf7form .rating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.vcf7form .rating label:last-child {
+  position: static;
+}
+
+.vcf7form .rating label:nth-child(1) {
+  z-index: 5;
+}
+
+.vcf7form .rating label:nth-child(2) {
+  z-index: 4;
+}
+
+.vcf7form .rating label:nth-child(3) {
+  z-index: 3;
+}
+
+.vcf7form .rating label:nth-child(4) {
+  z-index: 2;
+}
+
+.vcf7form .rating label:nth-child(5) {
+  z-index: 1;
+}
+
+.vcf7form .rating label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.vcf7form .rating label .icon {
+  float: left;
+  color: transparent;
+  font-size: 25px;
+}
+
+.vcf7form .rating label:last-child .icon {
+  color: #000;
+}
+
+.vcf7form .rating:not(:hover) label input:checked ~ .icon,
+.vcf7form .rating:hover label:hover input ~ .icon {
+  color: #09f;
+}
+
+.vcf7form .rating label input:focus:not(:checked) ~ .icon:last-child {
+  color: #000;
+  text-shadow: 0 0 5px #09f;
+}
+.vcf7form .checkbox label.error, .radio label.error {
+    position: absolute;
+    left: 3px;
+    bottom: 22px;
+}
+.vcf7form .checkbox span {
+   	position: absolute;
+    top: 8px;
+    left: 54px;
+}
+.vcf7form img.loader_gif
+{
+  width: 20px;
+}
+input[type=file]{
+	padding: 4px;
+}
+.form-control
+{
+	appearance: auto;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator
+{
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    width: 100%;
+}
+div#ui-datepicker-div {
+    width: 50%;
+}

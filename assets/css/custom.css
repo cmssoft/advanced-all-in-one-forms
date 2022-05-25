@@ -1,0 +1,38 @@
+.col-sm-8.head_box h2{
+	font-size: 20px;
+    color: #007cba;
+    margin-top: 0px;
+}
+.col-sm-4.box_button button {
+    border: 1px solid;
+    margin-top: 7px;
+}
+.dropdown_fields label
+{
+	margin: 10px;
+    color: #007cba;
+    font-size: 19px;
+}
+.dropdown_fields select
+{
+	margin: 5px 20px 8px 10px;
+}
+.dropdown_fields
+{
+	display: flex;
+    margin: 20px 20px 30px 20px;
+}
+.dropdown_fields button i.fa.fa-plus
+{
+	border: 1px solid;
+    padding: 10px;
+    margin-top: -4px;
+}
+ul#sortable1 input[type=checkbox], ul#sortable1 input[type=radio] {
+    margin: -6px 0 0;
+    margin-top: 1px\9;
+    line-height: normal;
+}
+form.vcf7form label.error {
+    color: #f30f0f;
+}
