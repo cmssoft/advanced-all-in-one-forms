@@ -131,9 +131,9 @@ Simply deactivate and delete the plugin.
 8. screenshot-8.png
   
 == Changelog ==
-= 1.1.0 =
+= 1.0.0 =
 * Plugin released. 
 
 == Upgrade Notice ==
-= 1.1.0 =
+= 1.0.0 =
 Upgrade notices describe the reason a user should upgrade.
