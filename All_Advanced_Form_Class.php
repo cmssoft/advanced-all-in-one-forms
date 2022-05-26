@@ -94,7 +94,6 @@ class All_Advanced_Form_Class{
         wp_enqueue_script( 'bootstrap', plugin_dir_url( __FILE__ ) . 'assets/js/bootstrap.min.js', array( 'jquery' ) );
         wp_enqueue_script('jquery-ui-core');
         wp_enqueue_script( 'jquery-ui-datepicker' );
-        wp_enqueue_script( 'timepicker' );
         wp_enqueue_script( 'jquery-validate', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.validate.min.js', array( 'jquery' ) );
         wp_enqueue_script( 'frontend', plugin_dir_url( __FILE__ ) . 'assets/js/frontend.js', array( 'jquery' ) );
         wp_enqueue_script( 'additional', plugin_dir_url( __FILE__ ) . 'assets/js/additional-methods.min.js', array( 'jquery' ) );
