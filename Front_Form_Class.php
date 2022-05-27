@@ -552,7 +552,7 @@ class Front_Form_Class{
         echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
         $message = unserialize(get_post_meta( $attr['id'], 'vcf_success_sms', true));
         echo '<button type="submit" class="btn btn-default  '.$data['class'].''.$data['class'].'" id="'.$data['id'].'">'.$data['label'].'</button>';
-        echo '<img src="'.plugin_dir_url( __FILE__ ).'/assets/images/loading.gif" class="loader_gif" width="50" height="50" />';
+        echo '<img src="'.plugin_dir_url( __FILE__ ).'/assets/images/loading.gif" class="loader_gif" />';
         echo '<div class="form-group success-error" data-url="'.$message['thankyou'].'">'.$message['success'].'</div>';
         echo '</div>';
         echo $rawed;        
