@@ -83,15 +83,12 @@ class All_Advanced_Form_Class{
         wp_localize_script( 'backend', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
     }
     public function frontend_scripts(){
-        wp_register_style( 'bootstrap', plugin_dir_url( __FILE__ ) . 'assets/css/bootstrap.min.css' );
-        wp_enqueue_style( 'bootstrap' );
         wp_register_style( 'frontend', plugin_dir_url( __FILE__ ) . 'assets/css/frontend.css' );
         wp_enqueue_style( 'frontend' );
         wp_register_style( 'timepicker', plugin_dir_url( __FILE__ ) . 'assets/css/jquery.timepicker.min.css' );
         wp_enqueue_style( 'timepicker' );
         wp_register_style( 'jquery-ui', plugin_dir_url( __FILE__ ) . 'assets/css/jquery-ui.css' );
         wp_enqueue_style( 'jquery-ui' );
-        wp_enqueue_script( 'bootstrap', plugin_dir_url( __FILE__ ) . 'assets/js/bootstrap.min.js', array( 'jquery' ) );
         wp_enqueue_script('jquery-ui-core');
         wp_enqueue_script( 'jquery-ui-datepicker' );
         wp_enqueue_script( 'jquery-validate', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.validate.min.js', array( 'jquery' ) );
@@ -148,14 +145,14 @@ class All_Advanced_Form_Class{
         $params = array();
         parse_str($_POST['formData'], $params);
 
-        $show_enquiry_detail_page = $params['show_enquiry_detail_page'];
-        $pdetail_form_id = $params['pdetail_form_id'];
-        $show_enquiry_cart_page = $params['show_enquiry_cart_page'];
-        $cart_form_id = $params['cart_form_id'];
-        $enquiry_modal_title = $params['enquiry_modal_title'];
-        $add_btn_title_enquiry = $params['add_btn_title_enquiry'];
-		$add_enquiry_btn_details = $params['add_enquiry_btn_details'];
-		$add_enquiry_btn_cart = $params['add_enquiry_btn_cart'];
+        $show_enquiry_detail_page = sanitize_text_field($params['show_enquiry_detail_page']);
+        $pdetail_form_id = sanitize_text_field($params['pdetail_form_id']);
+        $show_enquiry_cart_page = sanitize_text_field($params['show_enquiry_cart_page']);
+        $cart_form_id = sanitize_text_field($params['cart_form_id']);
+        $enquiry_modal_title = sanitize_text_field($params['enquiry_modal_title']);
+        $add_btn_title_enquiry = sanitize_text_field($params['add_btn_title_enquiry']);
+		$add_enquiry_btn_details = sanitize_text_field($params['add_enquiry_btn_details']);
+		$add_enquiry_btn_cart = sanitize_text_field($params['add_enquiry_btn_cart']);
 
         update_option('show_enquiry_detail_page', $show_enquiry_detail_page );
         update_option('pdetail_form_id', $pdetail_form_id );
@@ -171,7 +168,7 @@ class All_Advanced_Form_Class{
         update_option('gcaptcha_secret', '');
     }
     public function delete_list_view(){
-        $id = $_POST['data_id'];
+        $id = sanitize_text_field($_POST['data_id']);
         global $wpdb;
         $table = $wpdb->prefix . "advanced_all_form_entry";
         $results = $wpdb->delete( $table, array( 'data_id' => $id ) );
@@ -208,7 +205,7 @@ class All_Advanced_Form_Class{
         if ( ! class_exists( 'Custom_Fields_Class' ) ){
             require_once('Custom_Fields_Class.php');
         }
-        $field = $_POST['field'];
+        $field = sanitize_text_field($_POST['field']);
         $fieldsobj = new Custom_Fields_Class;
         $rand = rand();
         $fieldsobj->$field($field,$rand);
@@ -218,27 +215,26 @@ class All_Advanced_Form_Class{
 		if(isset($_POST['input'])){
 			foreach($_POST['input'] as $key=>$value){
 				$data['type'] = $value;
-				$data['label'] = $_POST['label'][$key];
-				$data['name'] = $_POST['name'][$key];
-				$data['placeholder'] = $_POST['placeholder'][$key];
-				$data['required'] = $_POST['required'][$key];
-				$data['id'] = $_POST['id'][$key];
-				$data['class'] = $_POST['class'][$key];
-				$data['max'] = $_POST['max'][$key];
-				$data['min'] = $_POST['min'][$key];
-				$data['filesize'] = $_POST['filesize'][$key];
-				$data['extension'] = $_POST['extension'][$key];
-				$data['rows'] = $_POST['rows'][$key];
-				$data['columns'] = $_POST['columns'][$key];
-				$data['option'] = $_POST['option'][$key];
-				$data['option_val'] = $_POST['option_val'][$key];
-                $data['rw-cls'] = $_POST['rw-cls'][$key];
-                $data['raws'] = $_POST['raws'][$key];
-                $data['rawed'] = $_POST['rawed'][$key];
-                $data['cl-cls'] = $_POST['cl-cls'][$key];
-                $data['col-data'] = $_POST['col-data'][$key];
-                $data['col-data-num'] = $_POST['col-data-num'][$key];
-
+				$data['label'] = sanitize_text_field($_POST['label'][$key]);
+				$data['name'] = sanitize_text_field($_POST['name'][$key]);
+				$data['placeholder'] = sanitize_text_field($_POST['placeholder'][$key]);
+				$data['required'] = sanitize_text_field($_POST['required'][$key]);
+				$data['id'] = sanitize_text_field($_POST['id'][$key]);
+				$data['class'] = sanitize_text_field($_POST['class'][$key]);
+				$data['max'] = sanitize_text_field($_POST['max'][$key]);
+				$data['min'] = sanitize_text_field($_POST['min'][$key]);
+				$data['filesize'] = sanitize_text_field($_POST['filesize'][$key]);
+				$data['extension'] = sanitize_text_field($_POST['extension'][$key]);
+				$data['rows'] = sanitize_text_field($_POST['rows'][$key]);
+				$data['columns'] = sanitize_text_field($_POST['columns'][$key]);
+				$data['option'] = sanitize_text_field($_POST['option'][$key]);
+				$data['option_val'] = sanitize_text_field($_POST['option_val'][$key]);
+                $data['rw-cls'] = sanitize_text_field($_POST['rw-cls'][$key]);
+                $data['raws'] = sanitize_text_field($_POST['raws'][$key]);
+                $data['rawed'] = sanitize_text_field($_POST['rawed'][$key]);
+                $data['cl-cls'] = sanitize_text_field($_POST['cl-cls'][$key]);
+                $data['col-data'] = sanitize_text_field($_POST['col-data'][$key]);
+                $data['col-data-num'] = sanitize_text_field($_POST['col-data-num'][$key]);
 				if(!empty($data['type'])){
 					$field[$key] = $data;
 				}
@@ -247,31 +243,29 @@ class All_Advanced_Form_Class{
         $field_data = serialize($field);
 
         $vcf_mail = $_POST['vcf7-mail'];
-
-        $mail['recipient'] = $vcf_mail['recipient'];
-        $mail['sender'] = $vcf_mail['sender'];
-        $mail['subject'] = $vcf_mail['subject'];
-        $mail['attachments'] = $vcf_mail['attachments'];
-        $mail['additional_headers'] = $vcf_mail['additional_headers'];
+        $mail['recipient'] = sanitize_email($vcf_mail['recipient']);
+        $mail['sender'] = sanitize_email($vcf_mail['sender']);
+        $mail['subject'] = sanitize_text_field($vcf_mail['subject']);
+        $mail['attachments'] = wp_kses_post($vcf_mail['attachments']);
+        $mail['additional_headers'] = wp_kses_post($vcf_mail['additional_headers']);
 
         $vcf_mail2 = $_POST['vcf7-mail-2'];
-
-        $mail2['active'] = $vcf_mail2['active'];
-        $mail2['recipient'] = $vcf_mail2['recipient'];
-        $mail2['sender'] = $vcf_mail2['sender'];
-        $mail2['subject'] = $vcf_mail2['subject'];
-        $mail2['attachments'] = $vcf_mail2['attachments'];
-        $mail2['additional_headers'] = $vcf_mail2['additional_headers'];
+        $mail2['active'] = sanitize_text_field($vcf_mail2['active']);
+        $mail2['recipient'] = wp_kses_post($vcf_mail2['recipient']);
+        $mail2['sender'] = sanitize_email($vcf_mail2['sender']);
+        $mail2['subject'] = sanitize_text_field($vcf_mail2['subject']);
+        $mail2['attachments'] = wp_kses_post($vcf_mail2['attachments']);
+        $mail2['additional_headers'] = wp_kses_post($vcf_mail2['additional_headers']);
         $mail_data = serialize($mail);
         
         $vcf_mail21 = serialize($mail2);
         update_post_meta( $post_id, 'vcf_fields_data', $field_data);
         update_post_meta( $post_id, 'vcf_mail_data2', $vcf_mail21);
-        update_post_meta( $post_id, 'vcf_body_data', $vcf_mail['body']);
-        update_post_meta( $post_id, 'vcf_mail_body2', $vcf_mail2['body']);
+        update_post_meta( $post_id, 'vcf_body_data', wp_kses_post($vcf_mail['body']));
+        update_post_meta( $post_id, 'vcf_mail_body2', wp_kses_post($vcf_mail2['body']));
         update_post_meta( $post_id, 'vcf_mail_data', $mail_data);
 
-        $message = $_POST['vcf7-message'];
+        $message = wp_kses_post($_POST['vcf7-message']);
         $message = serialize($message);
         update_post_meta( $post_id, 'vcf_success_sms', $message);
     }
@@ -294,11 +288,11 @@ class All_Advanced_Form_Class{
         $table_name2 = $wpdb->prefix . "advanced_all_form_entry";
         $params = array();
         parse_str($_POST['fields'], $params);
-        $vcfid = $_POST['vcf_id'];
+        $vcfid = sanitize_text_field($_POST['vcf_id']);
         if(!empty($_FILES['file'])){
             $file = $_FILES['file'];
-            $filesize = $_POST['filesize'];
-            $extension = $_POST['extension'];
+            $filesize = sanitize_text_field($_POST['filesize']);
+            $extension = sanitize_text_field($_POST['extension']);
             $file_img = $this->image_upload($file,$filesize,$extension);
             if($file_img['success']){
                 $file_img1 = $file_img['success'];

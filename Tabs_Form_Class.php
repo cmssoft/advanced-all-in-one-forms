@@ -8,7 +8,7 @@ class Tabs_Form_Class{
             echo '<div class="form_details">';
             if(!empty($_GET['post'])){
                 echo '<p>Copy this shortcode and paste it into your post, page, or text widget content:</p>
-                <span class="shortcode wp-ui-highlight"><input type="text" id="vcf-shortcode" readonly="readonly" class="large-text code" value="[advanced-form id='.$_GET['post'].']"></span><br><br>';
+                <span class="shortcode wp-ui-highlight"><input type="text" id="vcf-shortcode" readonly="readonly" class="large-text code" value="[advanced-form id='.sanitize_text_field($_GET['post']).']"></span><br><br>';
             }
             echo '<div id="vcf7_tabs">
                 <ul>

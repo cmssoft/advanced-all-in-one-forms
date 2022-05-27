@@ -37,7 +37,7 @@ class Advance_Form_Class{
                                             <select id="pdetail_form_id" name="pdetail_form_id" class="form-control">';
 
                                             global $post;
-                                            $args = array( 'post_type' => $_GET['post_type'],'post_status' => 'publish');
+                                            $args = array( 'post_type' => sanitize_text_field($_GET['post_type']),'post_status' => 'publish');
                                             $myposts = get_posts( $args );
                                             echo '<option value="">Select Form</option>';
                                             foreach ( $myposts as $post ){
@@ -88,7 +88,7 @@ class Advance_Form_Class{
                                             <select id="cart_form_id" name="cart_form_id" class="form-control">';
 
                                                 global $post;
-                                                $args = array( 'post_type' => $_GET['post_type'],'post_status' => 'publish');
+                                                $args = array( 'post_type' => sanitize_text_field($_GET['post_type']),'post_status' => 'publish');
                                                 $myposts = get_posts( $args );
                                                 echo '<option value="">Select Form</option>';
                                                 foreach ( $myposts as $post ){

@@ -1,8 +1,9 @@
 <?php
 class Custom_Fields_Class{
     public function text($field,$rand){
+        $rand = esc_html($rand);
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
                     		<h2>Text Field</h2>
@@ -12,7 +13,7 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                     	<input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="text">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="text-'.$rand.'">
@@ -88,8 +89,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function description($field,$rand){
+        $rand = esc_html($rand);
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
                             <h2>Description Field</h2>
@@ -99,7 +101,7 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                         <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="description">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="description-'.$rand.'">
@@ -163,8 +165,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function rating($field,$rand){
+        $rand = esc_html($rand);
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
                             <h2>Rating Field</h2>
@@ -174,7 +177,7 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                         <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="rating">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="rating-'.$rand.'">
@@ -238,8 +241,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function password($field,$rand){
+        $rand = esc_html($rand);
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
                             <h2>Password Field</h2>
@@ -249,7 +253,7 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                         <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="password">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="password-'.$rand.'">
@@ -325,8 +329,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function email($field,$rand){
+        $rand = esc_html($rand);
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
                     		<h2>Email Field</h2>
@@ -336,7 +341,7 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                     	<input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="email">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="email-'.$rand.'">
@@ -404,8 +409,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function phone($field,$rand){
+        $rand = esc_html($rand);
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
                     		<h2>Phone Field</h2>
@@ -415,7 +421,7 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                     	<input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="phone">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="phone-'.$rand.'">
@@ -491,8 +497,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function textarea($field,$rand){
+        $rand = esc_html($rand);
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
                     		<h2>Textarea Field</h2>
@@ -502,7 +509,7 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                     	<input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="textarea">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="textarea-'.$rand.'">
@@ -578,8 +585,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function url($field,$rand){
+        $rand = esc_html($rand);
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
                     		<h2>URL Field</h2>
@@ -589,7 +597,7 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                     	<input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="url">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="url-'.$rand.'">
@@ -657,8 +665,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function date($field,$rand){
+        $rand = esc_html($rand);
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
                     		<h2>Date Field</h2>
@@ -668,7 +677,7 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                     	<input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="date">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="date-'.$rand.'">
@@ -732,8 +741,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function time($field,$rand){
+        $rand = esc_html($rand);
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
                             <h2>Time Field</h2>
@@ -743,7 +753,7 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                         <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="time">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="time-'.$rand.'">
@@ -807,8 +817,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function file($field,$rand){
+        $rand = esc_html($rand);
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
                     		<h2>File Field</h2>
@@ -818,7 +829,7 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                     	<input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="file">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="file-'.$rand.'">
@@ -890,8 +901,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function select($field,$rand){
+        $rand = esc_html($rand);
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
                     		<h2>Select Field</h2>
@@ -941,7 +953,7 @@ class Custom_Fields_Class{
                             </select>
                         </div>
 
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                     	<input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="select">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="select-'.$rand.'">
@@ -1013,8 +1025,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function radio($field,$rand){
+        $rand = esc_html($rand);
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
                     		<h2>Radio Field</h2>
@@ -1065,7 +1078,7 @@ class Custom_Fields_Class{
                                  <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
                             </select>
                         </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                     	<input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="radio">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="radio-'.$rand.'">
@@ -1134,8 +1147,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function checkbox($field,$rand){
+        $rand = esc_html($rand);
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
                     		<h2>Checkbox Field</h2>
@@ -1186,7 +1200,7 @@ class Custom_Fields_Class{
                                  <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
                             </select>
                         </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                     	<input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="checkbox">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="checkbox-'.$rand.'">
@@ -1259,8 +1273,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function submit($field,$rand){
+        $rand = esc_html($rand);
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
                     		<h2>Submit</h2>
@@ -1309,7 +1324,7 @@ class Custom_Fields_Class{
                                  <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
                             </select>
                         </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                     	<input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="submit">
                     	<div class="form-group">
@@ -1329,8 +1344,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function recaptcha($field,$rand){
+        $rand = esc_html($rand);
     	echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
                     		<h2>reCaptcha</h2>
@@ -1379,7 +1395,7 @@ class Custom_Fields_Class{
                                  <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
                             </select>
                         </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                     	<input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="recaptcha">
                     	<div class="form-group">
@@ -1399,8 +1415,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function acceptance($field,$rand){
+        $rand = esc_html($rand);
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
                             <h2>Acceptance Field</h2>
@@ -1449,7 +1466,7 @@ class Custom_Fields_Class{
                                  <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
                             </select>
                         </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                         <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="acceptance">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="acceptance-'.$rand.'">
@@ -1475,8 +1492,9 @@ class Custom_Fields_Class{
     }
     /** Product Title and Urls Details **/
     public function product_title($field,$rand){
+        $rand = esc_html($rand);
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
                             <h2>Product Title</h2>
@@ -1525,7 +1543,7 @@ class Custom_Fields_Class{
                                  <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
                             </select>
                         </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                         <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="product_title">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="product_title-'.$rand.'">
@@ -1538,8 +1556,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function product_url($field,$rand){
+        $rand = esc_html($rand);
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
                             <h2>Product Url</h2>
@@ -1590,7 +1609,7 @@ class Custom_Fields_Class{
                                  <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
                             </select>
                         </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                         <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="product_url">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="product_url-'.$rand.'">
@@ -1603,8 +1622,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function product_price($field,$rand){
+        $rand = esc_html($rand);
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
                             <h2>Product Price</h2>
@@ -1655,7 +1675,7 @@ class Custom_Fields_Class{
                                  <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
                             </select>
                         </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                         <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="product_price">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="product_price-'.$rand.'">
@@ -1668,8 +1688,9 @@ class Custom_Fields_Class{
             </li>';
     }
     public function product_qty($field,$rand){
+        $rand = esc_html($rand);
         echo '<li class="ui-state-default card" id="box-'.$rand.'">
-                <div class="card-header" id="'.$field.'-'.$rand.'">
+                <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
                             <h2>Product Quantity</h2>
@@ -1718,7 +1739,7 @@ class Custom_Fields_Class{
                                  <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
                             </select>
                         </div>
-                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="'.$field.'-'.$rand.'">
+                <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                     <div class="card-body">
                         <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="product_qty">
                         <input type="hidden" class="form-control" name="name['.$rand.']" value="product_qty-'.$rand.'">
