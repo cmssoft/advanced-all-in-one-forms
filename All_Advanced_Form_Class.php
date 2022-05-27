@@ -353,14 +353,29 @@ class All_Advanced_Form_Class{
             }
             
             if(empty($errors)==true){
-                mkdir("../wp-content/uploads/contact_form");
-                move_uploaded_file($file_tmp,"../wp-content/uploads/contact_form/".$newfilename);
+                $upload = wp_upload_dir();
+                $upload_dir = $upload['basedir'];
+                $upload_dir = $upload_dir . '/contact_form';
+                if (!is_dir($upload_dir)){
+                    mkdir($upload_dir,0777);                    
+                }else{
+                    chmod($upload_dir,0777);
+                }
 
+                if (!function_exists('wp_handle_upload')){ 
+                    require_once( ABSPATH . 'wp-admin/includes/file.php' ); 
+                }
+                $uploadedfile = $file;
+                $upload_overrides = array( 'test_form' => false );
+                add_filter('upload_dir', 'my_upload_dir');
+                $movefile = wp_handle_upload( $uploadedfile, $upload_overrides );
+                remove_filter('upload_dir', 'my_upload_dir');                
                 $errors['success'] = $newfilename;
             }
             return $errors;
         }
     }
+
     /** Start Woocommerce Hooks **/
     public function action_woocommerce_after_cart_table(){
         $show_enquiry_cart_page = get_option('show_enquiry_cart_page');
@@ -442,4 +457,10 @@ class All_Advanced_Form_Class{
         }
     }
     /** End Woocommerce Hooks **/
+}
+function my_upload_dir($upload) {
+    $upload['subdir'] = '/contact_form';      
+    $upload['path']   = $upload['basedir'] . $upload['subdir'];    
+    $upload['url']    = $upload['baseurl'] . $upload['subdir'];      
+    return $upload;      
 }
