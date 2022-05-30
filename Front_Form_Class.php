@@ -1,6 +1,7 @@
 <?php
 class Front_Form_Class{
     public function front_design_view($attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
     	$vcf_data = get_post_meta( $attr['id'], 'vcf_fields_data', true);
         $get_vcf_data = unserialize($vcf_data);
         echo '<form action="" method="post" id="vcf7form-'.$attr['id'].'" class="vcf7form" data-id="'.$attr['id'].'" enctype="multipart/form-data">';
@@ -11,6 +12,8 @@ class Front_Form_Class{
         echo '</form>';
 	}
     public function text($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -40,6 +43,8 @@ class Front_Form_Class{
         }
     }
     public function description($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -63,6 +68,8 @@ class Front_Form_Class{
         echo $rawed;
     }
     public function rating($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -112,6 +119,8 @@ class Front_Form_Class{
         echo $rawed;
     }
     public function password($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -146,6 +155,8 @@ class Front_Form_Class{
         echo $rawed;
     }
     public function email($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -166,6 +177,8 @@ class Front_Form_Class{
         echo $rawed;
     }
     public function phone($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -193,6 +206,8 @@ class Front_Form_Class{
         echo $rawed;
     }
     public function textarea($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes'){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -220,6 +235,8 @@ class Front_Form_Class{
         echo $rawed;
     }
     public function url($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -240,6 +257,8 @@ class Front_Form_Class{
         echo $rawed;
     }
     public function date($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -260,6 +279,8 @@ class Front_Form_Class{
         echo $rawed;
     }
     public function file($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -281,6 +302,8 @@ class Front_Form_Class{
         echo $rawed;
     }
     public function time($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -301,6 +324,8 @@ class Front_Form_Class{
         echo $rawed;
     }
     public function select($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -336,6 +361,8 @@ class Front_Form_Class{
         echo $rawed;
     }
     public function radio($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -363,6 +390,8 @@ class Front_Form_Class{
         echo $rawed;
     }
     public function checkbox($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -390,6 +419,8 @@ class Front_Form_Class{
         echo $rawed;
     }
     public function product_title($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         $show_enquiry_cart_page = get_option('show_enquiry_cart_page');
         if($show_enquiry_cart_page == 1 && is_cart()){
             global $woocommerce;
@@ -423,6 +454,8 @@ class Front_Form_Class{
         }
     }
     public function product_url($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         $show_enquiry_cart_page = get_option('show_enquiry_cart_page');
         if($show_enquiry_cart_page == 1 && is_cart()){
             global $woocommerce;
@@ -463,6 +496,8 @@ class Front_Form_Class{
         }
     }
     public function product_price($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         $show_enquiry_cart_page = get_option('show_enquiry_cart_page');
         if($show_enquiry_cart_page == 1 && is_cart()){
             global $woocommerce;
@@ -506,6 +541,8 @@ class Front_Form_Class{
         }
     }
     public function product_qty($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         $show_enquiry_cart_page = get_option('show_enquiry_cart_page');
         if($show_enquiry_cart_page == 1 && is_cart()){
             global $woocommerce;
@@ -538,6 +575,8 @@ class Front_Form_Class{
         }
     }
     public function submit($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -558,6 +597,8 @@ class Front_Form_Class{
         echo $rawed;        
     }
     public function recaptcha($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{
@@ -581,6 +622,8 @@ class Front_Form_Class{
         echo $rawed;
     }
     public function acceptance($k,$data,$attr){
+        foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
+        foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
         if($data['raws'] == 'yes' ){
             $raws = '<div class="row '.$data['rw-cls'].'">';
         }else{

@@ -93,8 +93,12 @@ class Mail_Form_Class{
                     }
                 }
                 if(!empty($attachments1)){
-                    $attachments1 = array(WP_CONTENT_DIR . '/uploads/contact_form/'.$params['file']);
-                    $mailResult = wp_mail($to1, $subject1, $content1, $headers1, $attachments1);
+                    if (file_exists(WP_CONTENT_DIR . '/uploads/contact_form/'.$params['file']) && $params['file']!=""){
+                        $attachments1 = array(WP_CONTENT_DIR . '/uploads/contact_form/'.$params['file']);
+                        $mailResult = wp_mail($to1, $subject1, $content1, $headers1, $attachments1);
+                    }else{
+                        $mailResult = wp_mail($to1, $subject1, $content1, $headers1);    
+                    }
                 }else{
                     $mailResult = wp_mail($to1, $subject1, $content1, $headers1);
                 }
@@ -102,8 +106,12 @@ class Mail_Form_Class{
             try
             {   
                 if(!empty($attachments)){
-                    $attachments1 = array(WP_CONTENT_DIR . '/uploads/contact_form/'.$params['file']);
-                    $mailResult = wp_mail($toemail, $subject, $content, $headers, $attachments1);
+                    if (file_exists(WP_CONTENT_DIR . '/uploads/contact_form/'.$params['file']) && $params['file']!=""){
+                        $attachments1 = array(WP_CONTENT_DIR . '/uploads/contact_form/'.$params['file']);
+                        $mailResult = wp_mail($toemail, $subject, $content, $headers, $attachments1);
+                    }else{
+                        $mailResult = wp_mail($toemail, $subject, $content, $headers);    
+                    }
                 }else{
                     $mailResult = wp_mail($toemail, $subject, $content, $headers);
                 }

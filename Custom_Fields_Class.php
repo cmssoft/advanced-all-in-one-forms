@@ -54,7 +54,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>                        
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -130,7 +130,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -206,7 +206,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -294,7 +294,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -374,7 +374,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -462,7 +462,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -550,7 +550,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -630,7 +630,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -706,7 +706,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -782,7 +782,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -866,7 +866,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -930,7 +930,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -1056,7 +1056,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -1178,7 +1178,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -1302,7 +1302,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -1373,7 +1373,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -1444,7 +1444,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -1521,7 +1521,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -1587,7 +1587,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -1653,7 +1653,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
@@ -1717,7 +1717,7 @@ class Custom_Fields_Class{
                             <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
                         </div>
                         <div class="form-group">
-                            <label for="column-'.$rand.'">Culumn :</label>
+                            <label for="column-'.$rand.'">Column :</label>
                             col-
                             <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
                                  <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>

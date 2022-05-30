@@ -364,7 +364,7 @@ class All_Advanced_Form_Class{
                 add_filter('upload_dir', 'my_upload_dir');
                 $movefile = wp_handle_upload( $uploadedfile, $upload_overrides );
                 remove_filter('upload_dir', 'my_upload_dir');                
-                $errors['success'] = $newfilename;
+                $errors['success'] = basename($movefile['url']);
             }
             return $errors;
         }
