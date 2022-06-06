@@ -13,7 +13,8 @@ class Overview_Class{
     public function get_list_columns(){
 		global $wpdb;
 		$table_name = $wpdb->prefix . "advanced_all_form_entry";
-        $data = $wpdb->get_results("SELECT * FROM ".$table_name." WHERE vcf_id = ".sanitize_text_field($_GET['form_id']));
+		$data = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$table_name." WHERE vcf_id = %d", sanitize_text_field($_GET['form_id'])) );
+
         foreach($data as $columns){
             $data_id[] = $columns->data_id;
             $k_name[] = $columns->name;
@@ -31,7 +32,8 @@ class Overview_Class{
 	public function get_list_value(){
 		global $wpdb;
         $table_name = $wpdb->prefix . "advanced_all_form_entry";
-    	$data = $wpdb->get_results("SELECT * FROM ".$table_name." WHERE vcf_id = ".sanitize_text_field($_GET['form_id']));
+		$data = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$table_name." WHERE vcf_id = %d", sanitize_text_field($_GET['form_id'])) );
+
     	foreach($data as $columns){
     		$data_id[] = $columns->data_id;
             $k_name[] = $columns->name;
@@ -41,8 +43,8 @@ class Overview_Class{
     	foreach($unique as $list){
             echo '<tr>';
                 foreach($kname as $name_val){
-                    if($name_val != 'file' && $name_val != 'hiddenRecaptcha'){
-                        $data1 = $wpdb->get_results('SELECT value FROM '.$table_name.' WHERE vcf_id = '.sanitize_text_field($_GET['form_id']).' && data_id = '.sanitize_text_field($list).' && name = "'.sanitize_text_field($name_val).'"');
+                    if($name_val != 'file' && $name_val != 'hiddenRecaptcha'){                        
+						$data1 = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$table_name." WHERE vcf_id = %d AND data_id = %d AND name = %s", sanitize_text_field($_GET['form_id']), sanitize_text_field($list), sanitize_text_field($name_val)) );
                         echo '<td>'.$data1[0]->value.'</td>';
                     }
                 }
