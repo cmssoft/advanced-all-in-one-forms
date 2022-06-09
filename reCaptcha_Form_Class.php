@@ -1,9 +1,12 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 class reCaptcha_Form_Class{
     public function recaptcha_form_details(){
         $sitekey = get_option('gcaptcha_sitekey');
         $secretkey = get_option('gcaptcha_secret');
-        echo '<div class="captcha_details" id="captcha-integration">
+        _e('<div class="captcha_details" id="captcha-integration">
                 <h1>Integration reCAPTCHA</h1>
                 <div class="" id="recaptcha">
                     <div class="infobox">CAPTCHA
@@ -39,7 +42,7 @@ class reCaptcha_Form_Class{
                         </form>
                     </div>
                 </div>
-            </div>';
+        </div>');
     }
 }
 ?>

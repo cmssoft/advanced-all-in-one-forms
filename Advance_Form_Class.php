@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 class Advance_Form_Class{
     public function advance_form_details(){
         $show_enquiry_detail_page = get_option('show_enquiry_detail_page');
@@ -10,7 +13,7 @@ class Advance_Form_Class{
 		$add_enquiry_btn_details = get_option('add_enquiry_btn_details');
 		$add_enquiry_btn_cart = get_option('add_enquiry_btn_cart');
 
-        echo '<div class="captcha_details" id="captcha-integration">
+        _e('<div class="captcha_details" id="captcha-integration">
                 <h1>Integration Advance Product Setting</h1>
                 <div class="" id="recaptcha">
                     <div class="inside">
@@ -34,19 +37,18 @@ class Advance_Form_Class{
                                             <label for="pdetail_form_id">Select  enquiry form for product detail page</label>
                                         </th>
                                         <td>
-                                            <select id="pdetail_form_id" name="pdetail_form_id" class="form-control">';
+                                            <select id="pdetail_form_id" name="pdetail_form_id" class="form-control">');
 
                                             global $post;
                                             $args = array( 'post_type' => sanitize_text_field($_GET['post_type']),'post_status' => 'publish');
                                             $myposts = get_posts( $args );
-                                            echo '<option value="">Select Form</option>';
+                                            _e('<option value="">Select Form</option>');
                                             foreach ( $myposts as $post ){
-                                                echo '<option value="'.get_the_ID().'" '.(($pdetail_form_id==get_the_ID())?'selected':"").'>'.get_the_title().'</option>';
+                                                _e('<option value="'.get_the_ID().'" '.(($pdetail_form_id==get_the_ID())?'selected':"").'>'.get_the_title().'</option>');
                                             }
                                             wp_reset_postdata();
                                                 
-                                            echo '</select>
-											
+                                            _e('</select>											
                                         </td>
                                     </tr>
 									<tr class="advanced_product_form_shortcode">
@@ -85,18 +87,18 @@ class Advance_Form_Class{
                                             <label for="cart_form_id">Select enquiry form for cart page</label>
                                         </th>
                                         <td>
-                                            <select id="cart_form_id" name="cart_form_id" class="form-control">';
+                                            <select id="cart_form_id" name="cart_form_id" class="form-control">');
 
                                                 global $post;
                                                 $args = array( 'post_type' => sanitize_text_field($_GET['post_type']),'post_status' => 'publish');
                                                 $myposts = get_posts( $args );
-                                                echo '<option value="">Select Form</option>';
+                                                _e('<option value="">Select Form</option>');
                                                 foreach ( $myposts as $post ){
-                                                    echo '<option value="'.get_the_ID().'" '.(($cart_form_id==get_the_ID())?'selected':"").'>'.get_the_title().'</option>';
+                                                    _e('<option value="'.get_the_ID().'" '.(($cart_form_id==get_the_ID())?'selected':"").'>'.get_the_title().'</option>');
                                                 }
                                                 wp_reset_postdata();
                                                 
-                                         echo '</select>
+                                        _e('</select>
                                         </td>
                                     </tr>
 									<tr class="advanced_cart_form_shortcode">
@@ -151,6 +153,6 @@ class Advance_Form_Class{
                         </form>
                     </div>
                 </div>
-            </div>';
+            </div>');
     }
 }

@@ -66,9 +66,9 @@ jQuery(document).ready(function(){
 								jQuery('.vcf7form button[type=submit]').prop('disabled', true);
 							},
 							success: function(result){
-							jQuery('.loader_gif').hide();
-
-							if(result == 0)
+								jQuery('.loader_gif').hide();
+														
+								if(result == 0)
 								{
 									var redirect_url = jQuery('.success-error').data('url');
 									if(redirect_url != '')

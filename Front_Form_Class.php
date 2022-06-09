@@ -1,15 +1,18 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 class Front_Form_Class{
     public function front_design_view($attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
     	$vcf_data = get_post_meta( $attr['id'], 'vcf_fields_data', true);
         $get_vcf_data = unserialize($vcf_data);
-        echo '<form action="" method="post" id="vcf7form-'.$attr['id'].'" class="vcf7form" data-id="'.$attr['id'].'" enctype="multipart/form-data">';
+        _e('<form action="" method="post" id="vcf7form-'.$attr['id'].'" class="vcf7form" data-id="'.$attr['id'].'" enctype="multipart/form-data">');
         foreach($get_vcf_data as $k=>$data){
             $type = $data['type'];
             $this->$type($k,$data,$attr);
         }
-        echo '</form>';
+        _e('</form>');
 	}
     public function text($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -25,21 +28,21 @@ class Front_Form_Class{
             $rawed = '';
         }
         if($data['max'] == '' && $data['min'] == ''){
-            echo $raws;
-            echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-            echo '<div class="form-group" id="'.$data['id'].'">
+            _e($raws);
+            _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+            _e('<div class="form-group" id="'.$data['id'].'">
             <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</label>
             <input type="'.$data['type'].'" class="form-control '.$data['class'].'" id="'.$data['type'].'-'.$k.'-'.$key.'" placeholder="'.$data['placeholder'].'" name="'.$data['type'].'-'.$k.'" '.(($data['required']=='yes')?'required="required"':"").'>
-            </div></div>';
-            echo $rawed;
+            </div></div>');
+            _e($rawed);
         }else{
-            echo $raws;
-            echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-            echo '<div class="form-group" id="'.$data['id'].'">
+            _e($raws);
+            _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+            _e('<div class="form-group" id="'.$data['id'].'">
             <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</label>
             <input type="'.$data['type'].'" class="form-control '.$data['class'].'" id="'.$data['type'].'-'.$k.'-'.$key.'" placeholder="'.$data['placeholder'].'" name="'.$data['type'].'-'.$k.'" '.(($data['required']=='yes')?'required="required"':"").' maxlength = "'.$data['max'].'" minlength = "'.$data['min'].'">
-            </div></div>';
-            echo $rawed;
+            </div></div>');
+            _e($rawed);
         }
     }
     public function description($k,$data,$attr){
@@ -55,17 +58,17 @@ class Front_Form_Class{
         }else{
             $rawed = '';
         }
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-        echo '<div class="form-group" id="'.$data['id'].'">';
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+        _e('<div class="form-group" id="'.$data['id'].'">');
             if($data['placeholder'] == ''){
-                echo '<p>'.$data['label'].'</p>';
+                _e('<p>'.$data['label'].'</p>');
             }else{
-                echo '<'.$data['placeholder'].'>'.$data['label'].'</'.$data['placeholder'].'>';
+                _e('<'.$data['placeholder'].'>'.$data['label'].'</'.$data['placeholder'].'>');
             }                    
-        echo '</div>';
-        echo '</div>';
-        echo $rawed;
+        _e('</div>');
+        _e('</div>');
+        _e($rawed);
     }
     public function rating($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -80,11 +83,11 @@ class Front_Form_Class{
         }else{
             $rawed = '';
         }
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-        echo '<div class="form-group"><div><p for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</p>';
-        echo '<div class="form-group rating '.$data['class'].'" id="'.$data['id'].'">';
-        echo '<label>
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+        _e('<div class="form-group"><div><p for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</p>');
+        _e('<div class="form-group rating '.$data['class'].'" id="'.$data['id'].'">');
+        _e('<label>
                 <input type="radio" name="'.$data['type'].'-'.$k.'" value="1" '.(($data['required']=='yes')?'required="required"':"").' />
                 <span class="icon">★</span>
                 </label>
@@ -113,10 +116,10 @@ class Front_Form_Class{
                 <span class="icon">★</span>
                 <span class="icon">★</span>
                 <span class="icon">★</span>
-                </label>';                    
-        echo '</div></div></div>';
-        echo '</div>';
-        echo $rawed;
+                </label>');                    
+        _e('</div></div></div>');
+        _e('</div>');
+        _e($rawed);
     }
     public function password($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -131,28 +134,28 @@ class Front_Form_Class{
         }else{
             $rawed = '';
         }
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
         if($data['max'] == 'yes'){   
             if($data['min'] == ''){
-                echo '<div class="form-group" id="'.$data['id'].'">
+                _e('<div class="form-group" id="'.$data['id'].'">
                 <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'  <span> (Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters)</span></label>
                 <input type="password" class="form-control '.$data['class'].'" id="'.$data['type'].'-'.$k.'-'.$key.'" placeholder="'.$data['placeholder'].'" name="'.$data['type'].'-'.$k.'" '.(($data['required']=='yes')?'required="required"':"").' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-                </div>';
+                </div>');
             }else{
-                echo '<div class="form-group" id="'.$data['id'].'">
+                _e('<div class="form-group" id="'.$data['id'].'">
                 <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'  <span> (Must contain at least one number and one uppercase and lowercase letter, and at least '.$data['min'].' or more characters)</span></label>
                 <input type="password" class="form-control '.$data['class'].'" id="'.$data['type'].'-'.$k.'-'.$key.'" placeholder="'.$data['placeholder'].'" name="'.$data['type'].'-'.$k.'" '.(($data['required']=='yes')?'required="required"':"").' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{'.$data['min'].',}">
-                </div>';
+                </div>');
             }
         }else{
-            echo '<div class="form-group" id="'.$data['id'].'">
+            _e('<div class="form-group" id="'.$data['id'].'">
             <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</label>
             <input type="password" class="form-control '.$data['class'].'" id="'.$data['type'].'-'.$k.'-'.$key.'" placeholder="'.$data['placeholder'].'" name="'.$data['type'].'-'.$k.'" '.(($data['required']=='yes')?'required="required"':"").' minlength="'.$data['min'].'">
-            </div>';
+            </div>');
         }
-        echo '</div>';
-        echo $rawed;
+        _e('</div>');
+        _e($rawed);
     }
     public function email($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -167,14 +170,14 @@ class Front_Form_Class{
         }else{
             $rawed = '';
         }
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-        echo '<div class="form-group" id="'.$data['id'].'">
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+        _e('<div class="form-group" id="'.$data['id'].'">
         <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</label>
         <input type="email" class="form-control '.$data['class'].'" id="'.$data['type'].'-'.$k.'-'.$key.'" placeholder="'.$data['placeholder'].'" name="'.$data['type'].'-'.$k.'" '.(($data['required']=='yes')?'required="required"':"").' pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$">
-        </div>';
-        echo '</div>';
-        echo $rawed;
+        </div>');
+        _e('</div>');
+        _e($rawed);
     }
     public function phone($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -189,21 +192,21 @@ class Front_Form_Class{
         }else{
             $rawed = '';
         }
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
         if($data['max'] == '' && $data['min'] == ''){
-            echo '<div class="form-group" id="'.$data['id'].'">
+            _e('<div class="form-group" id="'.$data['id'].'">
             <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</label>
             <input type="tel" class="form-control '.$data['class'].'" id="'.$data['type'].'-'.$k.'-'.$key.'" placeholder="'.$data['placeholder'].'" name="'.$data['type'].'-'.$k.'" '.(($data['required']=='yes')?'required="required"':"").'>
-            </div>';
+            </div>');
         }else{
-            echo '<div class="form-group" id="'.$data['id'].'">
+            _e('<div class="form-group" id="'.$data['id'].'">
             <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</label>
             <input type="tel" class="form-control '.$data['class'].'" id="'.$data['type'].'-'.$k.'-'.$key.'" placeholder="'.$data['placeholder'].'" name="'.$data['type'].'-'.$k.'" '.(($data['required']=='yes')?'required="required"':"").' maxlength = "'.$data['max'].'" minlength = "'.$data['min'].'">
-            </div>';
+            </div>');
         }
-        echo '</div>';
-        echo $rawed;
+        _e('</div>');
+        _e($rawed);
     }
     public function textarea($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -218,21 +221,21 @@ class Front_Form_Class{
         }else{
             $rawed = '';
         }
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
         if($data['max'] == ''){
-            echo '<div class="form-group" id="'.$data['id'].'">
+            _e('<div class="form-group" id="'.$data['id'].'">
             <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</label>
             <textarea name="'.$data['type'].'-'.$k.'" class="form-control '.$data['class'].'" id="'.$data['type'].'-'.$k.'-'.$key.'" '.(($data['required']=='yes')?'required="required"':"").' rows="'.$data['rows'].'" cols="'.$data['columns'].'"></textarea>
-            </div>';
+            </div>');
         }else{
-            echo '<div class="form-group" id="'.$data['id'].'">
+            _e('<div class="form-group" id="'.$data['id'].'">
             <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</label>
             <textarea name="'.$data['type'].'-'.$k.'" class="form-control '.$data['class'].'" id="'.$data['type'].'-'.$k.'-'.$key.'" '.(($data['required']=='yes')?'required="required"':"").' rows="'.$data['rows'].'" cols="'.$data['columns'].'" maxlength="'.$data['max'].'"></textarea>
-            </div>';
+            </div>');
         }
-        echo '</div>';
-        echo $rawed;
+        _e('</div>');
+        _e($rawed);
     }
     public function url($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -247,14 +250,14 @@ class Front_Form_Class{
         }else{
             $rawed = '';
         }
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-        echo '<div class="form-group" id="'.$data['id'].'">
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+        _e('<div class="form-group" id="'.$data['id'].'">
         <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</label>
         <input type="url" class="form-control '.$data['class'].'" id="'.$data['type'].'-'.$k.'-'.$key.'" placeholder="'.$data['placeholder'].'" name="'.$data['type'].'-'.$k.'" '.(($data['required']=='yes')?'required="required"':"").'>
-        </div>';
-        echo '</div>';
-        echo $rawed;
+        </div>');
+        _e('</div>');
+        _e($rawed);
     }
     public function date($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -269,14 +272,14 @@ class Front_Form_Class{
         }else{
             $rawed = '';
         }
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-        echo '<div class="form-group" id="'.$data['id'].'">
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+        _e('<div class="form-group" id="'.$data['id'].'">
         <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</label>
         <input type="text" class="form-control datepicker '.$data['class'].'" id="'.$data['type'].'-'.$k.'-'.$key.'"  placeholder="MM/DD/YYYY" name="'.$data['type'].'-'.$k.'" '.(($data['required']=='yes')?'required="required"':"").'>
-        </div>';
-        echo '</div>';
-        echo $rawed;
+        </div>');
+        _e('</div>');
+        _e($rawed);
     }
     public function file($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -291,15 +294,15 @@ class Front_Form_Class{
         }else{
             $rawed = '';
         }
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-        echo '<div class="form-group '.$data['class'].' add_file" id="'.$data['id'].'">
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+        _e('<div class="form-group '.$data['class'].' add_file" id="'.$data['id'].'">
         <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</label>
         <input type="file" class="form-control '.$data['class'].'" id="'.$data['type'].'-'.$k.'-'.$key.'"  name="'.$data['type'].'-'.$k.'" accepted="'.$data['extension'].'" data-extension="'.$data['extension'].'" data-filesize="'.$data['filesize'].'" '.(($data['required']=='yes')?'required="required"':"").' >
         <label id="file_error" class="error"></label>
-        </div>';
-        echo '</div>';
-        echo $rawed;
+        </div>');
+        _e('</div>');
+        _e($rawed);
     }
     public function time($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -314,14 +317,14 @@ class Front_Form_Class{
         }else{
             $rawed = '';
         }
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-        echo '<div class="form-group" id="'.$data['id'].'">
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+        _e('<div class="form-group" id="'.$data['id'].'">
         <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</label>
         <input type="text" class="form-control timepicker '.$data['class'].'" id="'.$data['type'].'-'.$k.'-'.$key.'" placeholder="HH:MM" name="'.$data['type'].'-'.$k.'" '.(($data['required']=='yes')?'required="required"':"").' readonly>
-        </div>';
-        echo '</div>';
-        echo $rawed;
+        </div>');
+        _e('</div>');
+        _e($rawed);
     }
     public function select($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -354,11 +357,11 @@ class Front_Form_Class{
                     }
         $html .= '</select>
         </div>';
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-        echo $html;
-        echo '</div>';
-        echo $rawed;
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+        _e($html);
+        _e('</div>');
+        _e($rawed);
     }
     public function radio($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -383,11 +386,11 @@ class Front_Form_Class{
             }
         }
         $html .= '</div></div>';
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-        echo $html;
-        echo '</div>';
-        echo $rawed;
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+        _e($html);
+        _e('</div>');
+        _e($rawed);
     }
     public function checkbox($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -412,11 +415,11 @@ class Front_Form_Class{
             }
         }
         $html .= '</div></div>';
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-        echo $html;
-        echo '</div>';
-        echo $rawed;
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+        _e($html);
+        _e('</div>');
+        _e($rawed);
     }
     public function product_title($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -428,7 +431,7 @@ class Front_Form_Class{
             $count = 1;
             foreach($items as $item => $values){
                 $_product =  wc_get_product( $values['data']->get_id());
-				echo '<input type="hidden" class="form-control '.$data['class'].'" name="'.$data['type'].'-'.$k.'[]" value="'.$_product->get_title().'" readonly>';        
+				_e('<input type="hidden" class="form-control '.$data['class'].'" name="'.$data['type'].'-'.$k.'[]" value="'.$_product->get_title().'" readonly>');        
                 $count++;
             }
         }else{
@@ -442,15 +445,15 @@ class Front_Form_Class{
             }else{
                 $rawed = '';
             }
-            echo $raws;
-            echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-            echo '<div class="form-group">
+            _e($raws);
+            _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+            _e('<div class="form-group">
             <label>'.$data['label'].'</label>
             <p>'.get_the_title().'</p>
             <input type="hidden" class="form-control '.$data['class'].'" name="'.$data['type'].'-'.$k.'" value="'.get_the_title().'" readonly>
-            </div>';
-            echo '</div>';
-            echo $rawed;
+            </div>');
+            _e('</div>');
+            _e($rawed);
         }
     }
     public function product_url($k,$data,$attr){
@@ -463,7 +466,7 @@ class Front_Form_Class{
             $count = 1;
             foreach($items as $item => $values){
                 $_product =  wc_get_product( $values['data']->get_id());
-                echo '<input type="hidden" class="form-control '.$data['class'].'" name="'.$data['type'].'-'.$k.'[]" value="'.$_product->get_permalink().'" readonly>';
+                _e('<input type="hidden" class="form-control '.$data['class'].'" name="'.$data['type'].'-'.$k.'[]" value="'.$_product->get_permalink().'" readonly>');
                 $count++;
             }
         }else{         
@@ -484,15 +487,15 @@ class Front_Form_Class{
             }else{
                 $rawed = '';
             }
-            echo $raws;
-            echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-                echo '<div class="form-group">
+            _e($raws);
+            _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+                _e('<div class="form-group">
                         <label>'.$data['label'].'</label>
                         <p><a href="">'.$url.'</a></p>
                         <input type="hidden" class="form-control '.$data['class'].'" name="'.$data['type'].'-'.$k.'" value="'.$url.'" readonly>
-                    </div>';
-            echo '</div>';
-            echo $rawed;
+                    </div>');
+            _e('</div>');
+            _e($rawed);
         }
     }
     public function product_price($k,$data,$attr){
@@ -505,7 +508,7 @@ class Front_Form_Class{
             $count = 1;
             foreach($items as $item => $values){
                 $_product =  wc_get_product( $values['data']->get_id());
-                echo '<input type="hidden" class="form-control '.$data['class'].'" name="'.$data['type'].'-'.$k.'[]" value="'.$_product->get_price().'" readonly>';
+                _e('<input type="hidden" class="form-control '.$data['class'].'" name="'.$data['type'].'-'.$k.'[]" value="'.$_product->get_price().'" readonly>');
                 $count++;
             }
         }else{
@@ -529,15 +532,15 @@ class Front_Form_Class{
                 $rawed = '';
             }
 
-            echo $raws;
-            echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-            echo '<div class="form-group">
+            _e($raws);
+            _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+            _e('<div class="form-group">
             <label>'.$data['label'].'</label>
             <p>'.wc_price($p_price).'</p>
             <input type="hidden" class="form-control '.$data['class'].'" name="'.$data['type'].'-'.$k.'" value="'.$p_price.'" readonly>
-            </div>';
-            echo '</div>';
-            echo $rawed;
+            </div>');
+            _e('</div>');
+            _e($rawed);
         }
     }
     public function product_qty($k,$data,$attr){
@@ -550,7 +553,7 @@ class Front_Form_Class{
             $count = 1;
             foreach($items as $item => $values){
                 $quantity = $values['quantity'];
-                echo '<input type="hidden" class="form-control '.$data['class'].'" name="'.$data['type'].'-'.$k.'[]" value="'.$quantity.'" readonly>';
+                _e('<input type="hidden" class="form-control '.$data['class'].'" name="'.$data['type'].'-'.$k.'[]" value="'.$quantity.'" readonly>');
                 $count++;
             }
         }else{
@@ -564,14 +567,14 @@ class Front_Form_Class{
             }else{
                 $rawed = '';
             }
-            echo $raws;
-            echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-                echo '<div class="form-group">
+            _e($raws);
+            _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+                _e('<div class="form-group">
                     <label>'.$data['label'].'</label>
                     <input type="number" placeholder="Quantity" class="form-control '.$data['class'].'" name="'.$data['type'].'-'.$k.'" value="">
-                </div>';
-            echo '</div>';
-            echo $rawed;
+                </div>');
+            _e('</div>');
+            _e($rawed);
         }
     }
     public function submit($k,$data,$attr){
@@ -587,14 +590,15 @@ class Front_Form_Class{
         }else{
             $rawed = '';
         }
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
         $message = unserialize(get_post_meta( $attr['id'], 'vcf_success_sms', true));
-        echo '<button type="submit" class="btn btn-default  '.$data['class'].''.$data['class'].'" id="'.$data['id'].'">'.$data['label'].'</button>';
-        echo '<img src="'.plugin_dir_url( __FILE__ ).'/assets/images/loading.gif" class="loader_gif" />';
-        echo '<div class="form-group success-error" data-url="'.$message['thankyou'].'">'.$message['success'].'</div>';
-        echo '</div>';
-        echo $rawed;        
+        $thankyou = (isset($message['thankyou']) && trim($message['thankyou'])!="")?$message['thankyou']:home_url();
+        _e('<button type="submit" class="btn btn-default  '.$data['class'].''.$data['class'].'" id="'.$data['id'].'">'.$data['label'].'</button>');
+        _e('<img src="'.plugin_dir_url( __FILE__ ).'/assets/images/loading.gif" class="loader_gif" />');
+        _e('<div class="form-group success-error" data-url="'.$thankyou.'">'.$message['success'].'</div>');
+        _e('</div>');
+        _e($rawed);        
     }
     public function recaptcha($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -609,17 +613,17 @@ class Front_Form_Class{
         }else{
             $rawed = '';
         }
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
         $sitekey = get_option('gcaptcha_sitekey');
         $secretkey = get_option('gcaptcha_secret');
-        echo '<div class="form-group" id="'.$data['id'].'">
+        _e('<div class="form-group" id="'.$data['id'].'">
             <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</label>
             <script src="https://www.google.com/recaptcha/api.js" async defer></script><div class="g-recaptcha '.$data['class'].'" id="'.$data['id'].'" data-sitekey="'.$sitekey.'" data-callback="recaptchaCallback"></div><input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha">
-        </div>';
-        echo '<div class="form-group success-error-captcha">Your Captcha response was incorrect. Please try again.</div>';
-        echo '</div>';
-        echo $rawed;
+        </div>');
+        _e('<div class="form-group success-error-captcha">Your Captcha response was incorrect. Please try again.</div>');
+        _e('</div>');
+        _e($rawed);
     }
     public function acceptance($k,$data,$attr){
         foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
@@ -634,16 +638,16 @@ class Front_Form_Class{
         }else{
             $rawed = '';
         }
-        echo $raws;
-        echo '<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">';
-        echo '<div class="form-group" id="'.$data['id'].'">
+        _e($raws);
+        _e('<div class="col-'.$data['col-data'].'-'.$data['col-data-num'].' '.$data['cl-cls'].'">');
+        _e('<div class="form-group" id="'.$data['id'].'">
         <div>
         <div class="checkbox">
             <label for="'.$data['type'].'-'.$k.'-'.$key.'"><input type="checkbox" value="Yes" name="'.$data['type'].'-'.$k.'" id="'.$data['type'].'-'.$k.'-'.$key.'" '.(($data['required']=='yes')?'required="required"':"").'><span>'.$data['label'].'</span></label>
         </div>
         </div>
-        </div>';
-        echo '</div>';
-        echo $rawed;
+        </div>');
+        _e('</div>');
+        _e($rawed);
     }
 }

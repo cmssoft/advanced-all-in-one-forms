@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 class Mail_Form_Class{
     public function mail_sent_format($params,$vcfid){
         /** Start get mail, body **/

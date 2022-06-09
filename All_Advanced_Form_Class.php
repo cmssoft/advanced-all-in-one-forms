@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 class All_Advanced_Form_Class{
     protected static $instance;
     public static function init(){
@@ -9,7 +12,7 @@ class All_Advanced_Form_Class{
         global $wpdb;
         if ( ! current_user_can( 'activate_plugins' ) )
             return;
-        $plugin = isset( $_REQUEST['plugin'] ) ? $_REQUEST['plugin'] : '';
+        $plugin = isset( $_REQUEST['plugin'] ) ? sanitize_text_field($_REQUEST['plugin']) : '';
         
         check_admin_referer( "activate-plugin_{$plugin}" );
         
@@ -32,7 +35,7 @@ class All_Advanced_Form_Class{
     public static function on_deactivation(){
         if ( ! current_user_can( 'activate_plugins' ) )
             return;
-        $plugin = isset( $_REQUEST['plugin'] ) ? $_REQUEST['plugin'] : '';
+        $plugin = isset( $_REQUEST['plugin'] ) ? sanitize_text_field($_REQUEST['plugin']) : '';
         check_admin_referer( "deactivate-plugin_{$plugin}" );
     }
     public static function on_uninstall(){        
@@ -172,7 +175,7 @@ class All_Advanced_Form_Class{
         global $wpdb;
         $table = $wpdb->prefix . "advanced_all_form_entry";
         $results = $wpdb->delete( $table, array( 'data_id' => $id ) );
-        echo $results; die();
+        _e($results); die();
     }
     public function advance_setting_reset(){
         update_option('show_enquiry_detail_page','');
@@ -242,14 +245,14 @@ class All_Advanced_Form_Class{
         }
         $field_data = serialize($field);
 
-        $vcf_mail = $_POST['vcf7-mail'];
+        $vcf_mail = sanitize_post($_POST['vcf7-mail']);
         $mail['recipient'] = sanitize_email($vcf_mail['recipient']);
         $mail['sender'] = sanitize_email($vcf_mail['sender']);
         $mail['subject'] = sanitize_text_field($vcf_mail['subject']);
         $mail['attachments'] = wp_kses_post($vcf_mail['attachments']);
         $mail['additional_headers'] = wp_kses_post($vcf_mail['additional_headers']);
 
-        $vcf_mail2 = $_POST['vcf7-mail-2'];
+        $vcf_mail2 = sanitize_post($_POST['vcf7-mail-2']);
         $mail2['active'] = sanitize_text_field($vcf_mail2['active']);
         $mail2['recipient'] = wp_kses_post($vcf_mail2['recipient']);
         $mail2['sender'] = sanitize_email($vcf_mail2['sender']);
@@ -298,7 +301,7 @@ class All_Advanced_Form_Class{
                 $file_img1 = $file_img['success'];
             }
             else{
-                echo json_encode($file_img['error']);
+                _e(json_encode($file_img['error']));
                 die();
             }
             $params['file'] = $file_img1;
@@ -379,7 +382,7 @@ class All_Advanced_Form_Class{
         {
             $cart_form_id = get_option('cart_form_id');
 
-            echo '<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            _e('<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -388,12 +391,12 @@ class All_Advanced_Form_Class{
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <div class="modal-body">';
-                      echo do_shortcode('[advanced-form id='.$cart_form_id.']');
-                      echo '</div>
+                      <div class="modal-body">');
+                      _e(do_shortcode('[advanced-form id='.$cart_form_id.']'));
+                      _e('</div>
                     </div>
                   </div>
-                </div>';
+                </div>');
         }
     }
     public function woocommerce_after_add_to_cart_button(){        
@@ -403,7 +406,7 @@ class All_Advanced_Form_Class{
             $pdetail_form_id = get_option('pdetail_form_id');
             $pdetail_form_title = get_option('pdetail_form_title');
 
-            echo '<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            _e('<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -412,12 +415,12 @@ class All_Advanced_Form_Class{
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <div class="modal-body">';
-                      echo do_shortcode('[advanced-form id='.$pdetail_form_id.']');
-                      echo '</div>
+                      <div class="modal-body">');
+                      _e(do_shortcode('[advanced-form id='.$pdetail_form_id.']'));
+                      _e('</div>
                     </div>
                   </div>
-                </div>';
+                </div>');
         }
     }
     public function woocommerce_add_pinquiry_button(){
@@ -425,7 +428,7 @@ class All_Advanced_Form_Class{
         $add_btn_title_enquiry = get_option('add_btn_title_enquiry');
 		$add_enquiry_btn_details = get_option('add_enquiry_btn_details');
         if($show_enquiry_detail_page == 1 && $add_enquiry_btn_details == 1){
-            echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">'.$add_btn_title_enquiry.'</button>';
+            _e('<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">'.$add_btn_title_enquiry.'</button>');
         }
     }
     public function woocommerce_cart_pinquiry_button(){
@@ -433,21 +436,21 @@ class All_Advanced_Form_Class{
         $add_btn_title_enquiry = get_option('add_btn_title_enquiry');
 		$add_enquiry_btn_cart = get_option('add_enquiry_btn_cart');
         if($show_enquiry_cart_page == 1 && $add_enquiry_btn_cart == 1){
-            echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">'.$add_btn_title_enquiry.'</button>';
+            _e('<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">'.$add_btn_title_enquiry.'</button>');
         }
     }	
 	public function wc_cart_pinquiry_button_shortcode(){
         $show_enquiry_cart_page = get_option('show_enquiry_cart_page');
         $add_btn_title_enquiry = get_option('add_btn_title_enquiry');
         if($show_enquiry_cart_page == 1){
-            echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">'.$add_btn_title_enquiry.'</button>';
+            _e('<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">'.$add_btn_title_enquiry.'</button>');
         }
     }	
 	public function wc_add_pinquiry_button_shortcode(){
         $show_enquiry_detail_page = get_option('show_enquiry_detail_page');
         $add_btn_title_enquiry = get_option('add_btn_title_enquiry');
         if($show_enquiry_detail_page == 1){
-            echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">'.$add_btn_title_enquiry.'</button>';
+            _e('<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">'.$add_btn_title_enquiry.'</button>');
         }
     }
     /** End Woocommerce Hooks **/

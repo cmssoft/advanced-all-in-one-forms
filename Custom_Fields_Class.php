@@ -1,8 +1,11 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 class Custom_Fields_Class{
     public function text($field,$rand){
         $rand = esc_html($rand);
-    	echo '<li class="ui-state-default card" id="box-'.$rand.'">
+    	_e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
@@ -86,11 +89,11 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function description($field,$rand){
         $rand = esc_html($rand);
-        echo '<li class="ui-state-default card" id="box-'.$rand.'">
+        _e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
@@ -162,11 +165,11 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function rating($field,$rand){
         $rand = esc_html($rand);
-        echo '<li class="ui-state-default card" id="box-'.$rand.'">
+        _e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
@@ -238,11 +241,11 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function password($field,$rand){
         $rand = esc_html($rand);
-        echo '<li class="ui-state-default card" id="box-'.$rand.'">
+        _e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
@@ -326,11 +329,11 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function email($field,$rand){
         $rand = esc_html($rand);
-    	echo '<li class="ui-state-default card" id="box-'.$rand.'">
+    	_e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
@@ -406,11 +409,11 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function phone($field,$rand){
         $rand = esc_html($rand);
-    	echo '<li class="ui-state-default card" id="box-'.$rand.'">
+    	_e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
@@ -494,11 +497,11 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function textarea($field,$rand){
         $rand = esc_html($rand);
-    	echo '<li class="ui-state-default card" id="box-'.$rand.'">
+    	_e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
@@ -582,11 +585,11 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function url($field,$rand){
         $rand = esc_html($rand);
-    	echo '<li class="ui-state-default card" id="box-'.$rand.'">
+    	_e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
@@ -662,11 +665,11 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function date($field,$rand){
         $rand = esc_html($rand);
-    	echo '<li class="ui-state-default card" id="box-'.$rand.'">
+    	_e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
@@ -738,11 +741,11 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function time($field,$rand){
         $rand = esc_html($rand);
-        echo '<li class="ui-state-default card" id="box-'.$rand.'">
+        _e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
@@ -814,11 +817,11 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function file($field,$rand){
         $rand = esc_html($rand);
-    	echo '<li class="ui-state-default card" id="box-'.$rand.'">
+    	_e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
@@ -898,11 +901,11 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function select($field,$rand){
         $rand = esc_html($rand);
-    	echo '<li class="ui-state-default card" id="box-'.$rand.'">
+    	_e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
@@ -977,13 +980,13 @@ class Custom_Fields_Class{
 					    	<label for="required-'.$rand.'">Required:</label>
 					    	<input type="checkbox" class="form-control" id="required-'.$rand.'" name="required['.$rand.']" value="yes" '.(($field['required']=='yes')?'checked':"").'>
 					  	</div>
-					  	<div class="option_'.$rand.' options_vcf7">';
+					  	<div class="option_'.$rand.' options_vcf7">');
 
                             if(isset($field['option']))
                             {
                                 foreach($field['option'] as $key1=>$value1)
                                 {
-                                    echo  '<div class="row select_row_'.$rand.' select_row_'.$rand.'-'.$key1.'" id="select_option_list">
+                                    _e('<div class="row select_row_'.$rand.' select_row_'.$rand.'-'.$key1.'" id="select_option_list">
                                        <div class="col-md-4">
                                           <div class="form-group">
                                              <input type="text" Placeholder="Option" name="option['.$rand.']['.$key1.']" class="r_opt form-control" value="'.$value1.'">
@@ -998,12 +1001,12 @@ class Custom_Fields_Class{
                                           <i class="fa fa-plus-circle fa-2x add_more_radio" onclick=add_more_options(1,'.$rand.')></i>
                                           <i class="col-md-offset-1 fa fa-times-circle fa-2x remove_more_radio" onclick="remove_more_options('.$key1.','.$rand.')"></i>
                                        </div>
-                                    </div>';
+                                    </div>');
                                 }
                             }
                             else
                             {
-                                echo '<div class="row select_row_'.$rand.' " id="select_option_list">
+                                _e('<div class="row select_row_'.$rand.' " id="select_option_list">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <input type="text" Placeholder="Option" name="option['.$rand.'][0]" class="r_opt form-control">
@@ -1017,16 +1020,16 @@ class Custom_Fields_Class{
                                     <div class="col-md-4">
                                         <i class="margin-top-5 fa fa-plus-circle fa-2x default_blue add_more_radio" onclick=add_more_options(1,'.$rand.')></i>
                                     </div>
-                                </div>';
+                                </div>');
                             }
-					  	echo '</div>
+                        _e('</div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function radio($field,$rand){
         $rand = esc_html($rand);
-    	echo '<li class="ui-state-default card" id="box-'.$rand.'">
+    	_e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
@@ -1098,14 +1101,14 @@ class Custom_Fields_Class{
 					    	<label for="required-'.$rand.'">Required:</label>
 					    	<input type="checkbox" class="form-control" id="required-'.$rand.'" name="required['.$rand.']" value="yes" '.(($field['required']=='yes')?'checked':"").'>
 					  	</div>
-					  	<div class="option_'.$rand.' options_vcf7">';
+					  	<div class="option_'.$rand.' options_vcf7">');
 
                         if(isset($field['option']))
                         {
                             foreach($field['option'] as $key1=>$value1)
                             {
 
-                                echo  '<div class="row select_row_'.$rand.' select_row_'.$rand.'-'.$key1.'" id="select_option_list">
+                                _e('<div class="row select_row_'.$rand.' select_row_'.$rand.'-'.$key1.'" id="select_option_list">
                                    <div class="col-md-4">
                                       <div class="form-group">
                                          <input type="text" Placeholder="Option" name="option['.$rand.']['.$key1.']" class="r_opt form-control" value="'.$value1.'">
@@ -1120,12 +1123,12 @@ class Custom_Fields_Class{
                                       <i class="fa fa-plus-circle fa-2x add_more_radio" onclick=add_more_options(1,'.$rand.')></i>
                                       <i class="col-md-offset-1 fa fa-times-circle fa-2x remove_more_radio" onclick="remove_more_options('.$key1.','.$rand.')"></i>
                                    </div>
-                                </div>';
+                                </div>');
                             }
                         }
                         else
                         {    
-						  	echo '<div class="row select_row_'.$rand.' " id="select_option_list">
+                            _e('<div class="row select_row_'.$rand.' " id="select_option_list">
 						  		<div class="col-md-4">
 								  	<div class="form-group">
 								  		<input type="text" Placeholder="Option" name="option['.$rand.'][0]" class="r_opt form-control">
@@ -1139,16 +1142,16 @@ class Custom_Fields_Class{
 						  		<div class="col-md-4">
 						  			<i class="margin-top-5 fa fa-plus-circle fa-2x default_blue add_more_radio" onclick=add_more_options(1,'.$rand.')></i>
 						  		</div>
-						  	</div>';
+						  	</div>');
                         }
-					  	echo '</div>
+                        _e('</div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function checkbox($field,$rand){
         $rand = esc_html($rand);
-    	echo '<li class="ui-state-default card" id="box-'.$rand.'">
+    	_e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
@@ -1224,13 +1227,13 @@ class Custom_Fields_Class{
 					    	<label for="required-'.$rand.'">Required:</label>
 					    	<input type="checkbox" class="form-control" id="required-'.$rand.'" name="required['.$rand.']" value="yes" '.(($field['required']=='yes')?'checked':"").'>
 					  	</div>
-					  	<div class="option_'.$rand.' options_vcf7">';
+					  	<div class="option_'.$rand.' options_vcf7">');
 
                             if(isset($field['option']))
                             {
                                 foreach($field['option'] as $key1=>$value1)
                                 {
-        						  	echo  '<div class="row select_row_'.$rand.' select_row_'.$rand.'-'.$key1.'" id="select_option_list">
+                                    _e('<div class="row select_row_'.$rand.' select_row_'.$rand.'-'.$key1.'" id="select_option_list">
                                            <div class="col-md-4">
                                               <div class="form-group">
                                                  <input type="text" Placeholder="Option" name="option['.$rand.']['.$key1.']" class="r_opt form-control" value="'.$value1.'">
@@ -1245,12 +1248,12 @@ class Custom_Fields_Class{
                                               <i class="fa fa-plus-circle fa-2x add_more_radio" onclick=add_more_options(1,'.$rand.')></i>
                                               <i class="col-md-offset-1 fa fa-times-circle fa-2x remove_more_radio" onclick="remove_more_options('.$key1.','.$rand.')"></i>
                                            </div>
-                                        </div>';
+                                        </div>');
                                 }
                             }
                             else
                             {
-                                echo '<div class="row select_row_'.$rand.' " id="select_option_list">
+                                _e('<div class="row select_row_'.$rand.' " id="select_option_list">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <input type="text" Placeholder="Option" name="option['.$rand.'][0]" class="r_opt form-control">
@@ -1264,17 +1267,17 @@ class Custom_Fields_Class{
                                     <div class="col-md-4">
                                         <i class="margin-top-5 fa fa-plus-circle fa-2x default_blue add_more_radio" onclick=add_more_options(1,'.$rand.')></i>
                                     </div>
-                                </div>';
+                                </div>');
                             }
 
-					  	echo '</div>
+                        _e('</div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function submit($field,$rand){
         $rand = esc_html($rand);
-    	echo '<li class="ui-state-default card" id="box-'.$rand.'">
+    	_e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
@@ -1341,11 +1344,11 @@ class Custom_Fields_Class{
 					  	</div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function recaptcha($field,$rand){
         $rand = esc_html($rand);
-    	echo '<li class="ui-state-default card" id="box-'.$rand.'">
+    	_e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                     	<div class="col-sm-8 head_box">
@@ -1412,11 +1415,11 @@ class Custom_Fields_Class{
 					  	</div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function acceptance($field,$rand){
         $rand = esc_html($rand);
-        echo '<li class="ui-state-default card" id="box-'.$rand.'">
+        _e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
@@ -1488,12 +1491,12 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     /** Product Title and Urls Details **/
     public function product_title($field,$rand){
         $rand = esc_html($rand);
-        echo '<li class="ui-state-default card" id="box-'.$rand.'">
+        _e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
@@ -1553,11 +1556,11 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function product_url($field,$rand){
         $rand = esc_html($rand);
-        echo '<li class="ui-state-default card" id="box-'.$rand.'">
+        _e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
@@ -1619,11 +1622,11 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function product_price($field,$rand){
         $rand = esc_html($rand);
-        echo '<li class="ui-state-default card" id="box-'.$rand.'">
+        _e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
@@ -1685,11 +1688,11 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
     public function product_qty($field,$rand){
         $rand = esc_html($rand);
-        echo '<li class="ui-state-default card" id="box-'.$rand.'">
+        _e('<li class="ui-state-default card" id="box-'.$rand.'">
                 <div class="card-header" id="card-'.$rand.'">
                     <div class="row">
                         <div class="col-sm-8 head_box">
@@ -1749,6 +1752,6 @@ class Custom_Fields_Class{
                         </div>
                     </div>
                 </div>
-            </li>';
+            </li>');
     }
 }
