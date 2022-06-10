@@ -1,7 +1,8 @@
 <?php
+namespace AdvancedAllInOneForms;
 if (!defined( 'ABSPATH')) exit;
-if (!class_exists( 'AI_Overview')){
-	class AI_Overview {
+if (!class_exists( 'AAIOF_Overview')){
+	class AAIOF_Overview {
 		public function wp_list_tables(){
 			$this->dropdown_contact_lists();    	
 			_e('<table id="example" class="display wp_list_vcf" cellspacing="0" width="100%"><thead><tr>');

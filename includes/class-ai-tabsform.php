@@ -1,10 +1,11 @@
 <?php
+namespace AdvancedAllInOneForms;
 if (!defined( 'ABSPATH')) exit;
-if(!class_exists( 'AI_Customfields')){
+if(!class_exists( 'AAIOF_Customfields')){
   require_once('class-ai-customfields.php');
 }
-if (!class_exists( 'AI_Tabsform')){
-    class AI_Tabsform {
+if (!class_exists( 'AAIOF_Tabsform')){
+    class AAIOF_Tabsform {
     public function contact_form_tab_content($post){
             if($post->post_type == 'advanced_form'){
                 _e('<div class="form_details">');
@@ -85,13 +86,15 @@ if (!class_exists( 'AI_Tabsform')){
                                 $field = get_post_meta( $post->ID, 'vcf_fields_data', true);
                                 $get_fields = unserialize($field);
                                 
-                                $fieldsobj = new AI_Customfields;
+                                $fieldsobj = new \AdvancedAllInOneForms\AAIOF_Customfields();
                                 if(isset($get_fields))
                                 {
                                     foreach($get_fields as $key=>$value)
                                     {
                                         $fields = $value['type'];
-                                        $fieldsobj->$fields($value,$key);
+                                        if(method_exists(AAIOF_Customfields::class, $fields)){  
+                                            $fieldsobj->$fields($value,$key);
+                                        }                                         
                                     }
                                 }
                                 _e('</ul>');

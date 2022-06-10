@@ -1,7 +1,8 @@
 <?php
+namespace AdvancedAllInOneForms;
 if (!defined( 'ABSPATH')) exit;
-if (!class_exists( 'AI_Alladvancedform')){
-    class AI_Alladvancedform {
+if (!class_exists( 'AAIOF_Alladvancedform')){
+    class AAIOF_Alladvancedform {
         protected static $instance;
         public static function init(){
             is_null( self::$instance ) AND self::$instance = new self;
@@ -71,32 +72,32 @@ if (!class_exists( 'AI_Alladvancedform')){
             /** End Woocommerce Hooks **/
         }
         public function backend_scripts(){
-            wp_register_style( 'backend', AI_ADVANCE_FORM_URL . 'assets/css/backend.css' );
+            wp_register_style( 'backend', AAIOF_ADVANCE_FORM_URL . 'assets/css/backend.css' );
             wp_enqueue_style( 'backend' );
-            wp_register_style( 'font-awesome', AI_ADVANCE_FORM_URL . 'assets/css/font-awesome.min.css' );
+            wp_register_style( 'font-awesome', AAIOF_ADVANCE_FORM_URL . 'assets/css/font-awesome.min.css' );
             wp_enqueue_style( 'font-awesome' );
-            wp_register_style( 'dataTable', AI_ADVANCE_FORM_URL . 'assets/css/jquery.dataTables.min.css' );
+            wp_register_style( 'dataTable', AAIOF_ADVANCE_FORM_URL . 'assets/css/jquery.dataTables.min.css' );
             wp_enqueue_style( 'dataTable' );
             wp_enqueue_script('jquery-ui-core');
             wp_enqueue_script("jquery-ui-tabs");
-            wp_enqueue_script( 'jquery-validate', AI_ADVANCE_FORM_URL . 'assets/js/jquery.validate.min.js', array( 'jquery' ) );
-            wp_enqueue_script( 'dataTables', AI_ADVANCE_FORM_URL . 'assets/js/jquery.dataTables.min.js', array( 'jquery' ) );
-            wp_enqueue_script( 'backend', AI_ADVANCE_FORM_URL . 'assets/js/backend.js', array( 'jquery' ) );
+            wp_enqueue_script( 'jquery-validate', AAIOF_ADVANCE_FORM_URL . 'assets/js/jquery.validate.min.js', array( 'jquery' ) );
+            wp_enqueue_script( 'dataTables', AAIOF_ADVANCE_FORM_URL . 'assets/js/jquery.dataTables.min.js', array( 'jquery' ) );
+            wp_enqueue_script( 'backend', AAIOF_ADVANCE_FORM_URL . 'assets/js/backend.js', array( 'jquery' ) );
             wp_localize_script( 'backend', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
         }
         public function frontend_scripts(){
-            wp_register_style( 'frontend', AI_ADVANCE_FORM_URL . 'assets/css/frontend.css' );
+            wp_register_style( 'frontend', AAIOF_ADVANCE_FORM_URL . 'assets/css/frontend.css' );
             wp_enqueue_style( 'frontend' );
-            wp_register_style( 'timepicker', AI_ADVANCE_FORM_URL . 'assets/css/jquery.timepicker.min.css' );
+            wp_register_style( 'timepicker', AAIOF_ADVANCE_FORM_URL . 'assets/css/jquery.timepicker.min.css' );
             wp_enqueue_style( 'timepicker' );
-            wp_register_style( 'jquery-ui', AI_ADVANCE_FORM_URL . 'assets/css/jquery-ui.css' );
+            wp_register_style( 'jquery-ui', AAIOF_ADVANCE_FORM_URL . 'assets/css/jquery-ui.css' );
             wp_enqueue_style( 'jquery-ui' );
             wp_enqueue_script('jquery-ui-core');
             wp_enqueue_script( 'jquery-ui-datepicker' );
-            wp_enqueue_script( 'jquery-validate', AI_ADVANCE_FORM_URL . 'assets/js/jquery.validate.min.js', array( 'jquery' ) );
-            wp_enqueue_script( 'frontend', AI_ADVANCE_FORM_URL . 'assets/js/frontend.js', array( 'jquery' ) );
-            wp_enqueue_script( 'additional', AI_ADVANCE_FORM_URL . 'assets/js/additional-methods.min.js', array( 'jquery' ) );
-            wp_enqueue_script( 'timepicker', AI_ADVANCE_FORM_URL . 'assets/js/jquery.timepicker.min.js', array( 'jquery' ) );
+            wp_enqueue_script( 'jquery-validate', AAIOF_ADVANCE_FORM_URL . 'assets/js/jquery.validate.min.js', array( 'jquery' ) );
+            wp_enqueue_script( 'frontend', AAIOF_ADVANCE_FORM_URL . 'assets/js/frontend.js', array( 'jquery' ) );
+            wp_enqueue_script( 'additional', AAIOF_ADVANCE_FORM_URL . 'assets/js/additional-methods.min.js', array( 'jquery' ) );
+            wp_enqueue_script( 'timepicker', AAIOF_ADVANCE_FORM_URL . 'assets/js/jquery.timepicker.min.js', array( 'jquery' ) );
             wp_localize_script( 'frontend', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
         }    
         public function my_custom_post_type(){
@@ -183,34 +184,42 @@ if (!class_exists( 'AI_Alladvancedform')){
             update_option('cart_form_id', '');
         }
         public function advanced_form_submenu_captcha_page(){
-            if ( ! class_exists( 'AI_Recaptchaform' ) ){
+            if ( ! class_exists( 'AAIOF_Recaptchaform' ) ){
                 require_once('class-ai-recaptchaform.php');
             }
-            $captcha = new AI_Recaptchaform;
-            $captcha->recaptcha_form_details();
+            $captcha = new \AdvancedAllInOneForms\AAIOF_Recaptchaform();
+            if(method_exists(AAIOF_Recaptchaform::class, 'recaptcha_form_details')){  
+                $captcha->recaptcha_form_details();
+            }            
         }
         public function advanced_form_submenu_overview_page(){
-            if ( ! class_exists( 'AI_Overview' ) ){
+            if ( ! class_exists( 'AAIOF_Overview' ) ){
                 require_once('class-ai-overview.php');
             }
-            $overviw = new AI_Overview;
-            $overviw->wp_list_tables();
+            $overviw = new \AdvancedAllInOneForms\AAIOF_Overview();
+            if(method_exists(AAIOF_Overview::class, 'wp_list_tables')){  
+                $overviw->wp_list_tables();
+            }            
         }
         public function advanced_form_submenu_advance_page(){
-            if ( ! class_exists( 'AI_Advanceform' ) ){
+            if ( ! class_exists( 'AAIOF_Advanceform' ) ){
                 require_once('class-ai-advanceform.php');
             }
-            $advance = new AI_Advanceform;
-            $advance->advance_form_details();
+            $advance = new \AdvancedAllInOneForms\AAIOF_Advanceform();            
+            if(method_exists(AAIOF_Advanceform::class, 'advance_form_details')){  
+                $advance->advance_form_details();
+            }
         }    
         public function select_field(){
-            if ( ! class_exists( 'AI_Customfields' ) ){
+            if ( ! class_exists( 'AAIOF_Customfields' ) ){
                 require_once('class-ai-customfields.php');
             }
             $field = sanitize_text_field($_POST['field']);
-            $fieldsobj = new AI_Customfields;
+            $fieldsobj = new \AdvancedAllInOneForms\AAIOF_Customfields();
             $rand = rand();
-            $fieldsobj->$field($field,$rand);
+            if(method_exists(AAIOF_Customfields::class, $field)){  
+                $fieldsobj->$field($field,$rand);
+            }            
             die();  
         }
         public function get_before_update_postdata( $post_id ){
@@ -272,18 +281,22 @@ if (!class_exists( 'AI_Alladvancedform')){
             update_post_meta( $post_id, 'vcf_success_sms', $message);
         }
         public function contact_form_tab_content($post){
-            if ( ! class_exists( 'AI_Tabsform' ) ){
+            if ( ! class_exists( 'AAIOF_Tabsform' ) ){
                 require_once('class-ai-tabsform.php');
             }
-            $tabs = new AI_Tabsform;
-            $tabs->contact_form_tab_content($post);
+            $tabs = new \AdvancedAllInOneForms\AAIOF_Tabsform();
+            if(method_exists(AAIOF_Tabsform::class, 'contact_form_tab_content')){  
+                $tabs->contact_form_tab_content($post);
+            }            
         }
         public function advanced_form_front_view($attr){
-            if ( ! class_exists( 'AI_Frontform' ) ){
+            if ( ! class_exists( 'AAIOF_Frontform' ) ){
                 require_once('class-ai-frontform.php');
             }
-            $front = new AI_Frontform;
-            $front->front_design_view($attr);
+            $front = new \AdvancedAllInOneForms\AAIOF_Frontform();
+            if(method_exists(AAIOF_Frontform::class, 'front_design_view')){  
+                $front->front_design_view($attr);
+            }
         }
         public function vcfform_insert_data(){
             global $wpdb;
@@ -296,6 +309,7 @@ if (!class_exists( 'AI_Alladvancedform')){
                 $filesize = sanitize_text_field($_POST['filesize']);
                 $extension = sanitize_text_field($_POST['extension']);
                 $file_img = $this->image_upload($file,$filesize,$extension);
+                
                 if($file_img['success']){
                     $file_img1 = $file_img['success'];
                 }
@@ -304,27 +318,28 @@ if (!class_exists( 'AI_Alladvancedform')){
                     die();
                 }
                 $params['file'] = $file_img1;
-            }
-            if ( ! class_exists( 'AI_Mailform' ) ){
+            }            
+            if ( ! class_exists( 'AAIOF_Mailform' ) ){
                 require_once('class-ai-mailform.php');
             }
-            $front = new AI_Mailform;
-            $result = $front->mail_sent_format($params,$vcfid);
-
-            if($result == 1){
-                $last_id = $wpdb->get_var( 'SELECT data_id FROM ' . $table_name2 .' ORDER BY data_id DESC LIMIT 1');
-                $data_id = $last_id+1;
-                foreach($params as $key=>$value){
-                    if($key == 'g-recaptcha-response'){                    
-                    }
-                    else{
-                        if(is_array($value)){
-                            $value = implode( ", ", $value);
+            $front = new \AdvancedAllInOneForms\AAIOF_Mailform();
+            if(method_exists(AAIOF_Mailform::class, 'mail_sent_format')){  
+                $result = $front->mail_sent_format($params,$vcfid);                
+                if($result == 1){
+                    $last_id = $wpdb->get_var( 'SELECT data_id FROM ' . $table_name2 .' ORDER BY data_id DESC LIMIT 1');
+                    $data_id = $last_id+1;
+                    foreach($params as $key=>$value){
+                        if($key == 'g-recaptcha-response'){                    
                         }
-                        $result_check = $wpdb->insert($table_name2, array('vcf_id'=>$vcfid, 'data_id'=>$data_id, 'name' => $key, 'value' => $value) );
+                        else{
+                            if(is_array($value)){
+                                $value = implode( ", ", $value);
+                            }
+                            $result_check = $wpdb->insert($table_name2, array('vcf_id'=>$vcfid, 'data_id'=>$data_id, 'name' => $key, 'value' => $value) );
+                        }
                     }
+                    return $result_check;
                 }
-                return $result_check;
             }
             die();
         }
@@ -362,11 +377,16 @@ if (!class_exists( 'AI_Alladvancedform')){
                         require_once( ABSPATH . 'wp-admin/includes/file.php' ); 
                     }
                     $uploadedfile = $file;
+                    
                     $upload_overrides = array( 'test_form' => false );
-                    add_filter('upload_dir', 'my_upload_dir');
+                    add_filter('upload_dir', 'AAIOF_upload_dir');
                     $movefile = wp_handle_upload( $uploadedfile, $upload_overrides );
-                    remove_filter('upload_dir', 'my_upload_dir');                
-                    $errors['success'] = basename($movefile['url']);
+                    remove_filter('upload_dir', 'AAIOF_upload_dir');                
+                    if(isset($movefile['url'])){
+                        $errors['success'] = basename($movefile['url']);
+                    }else{
+                        $errors['success'] = basename($uploadedfile['name']);
+                    }
                 }
                 return $errors;
             }
@@ -453,11 +473,13 @@ if (!class_exists( 'AI_Alladvancedform')){
             }
         }
         /** End Woocommerce Hooks **/
-    }
-    function my_upload_dir($upload) {
-        $upload['subdir'] = '/contact_form';      
-        $upload['path']   = $upload['basedir'] . $upload['subdir'];    
-        $upload['url']    = $upload['baseurl'] . $upload['subdir'];      
-        return $upload;      
+    }    
+    if (!function_exists( 'AAIOF_upload_dir')){
+        function AAIOF_upload_dir($upload) {
+            $upload['subdir'] = '/contact_form';      
+            $upload['path']   = $upload['basedir'] . $upload['subdir'];    
+            $upload['url']    = $upload['baseurl'] . $upload['subdir'];      
+            return $upload;      
+        }
     }
 }

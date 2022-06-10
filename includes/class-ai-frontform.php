@@ -1,7 +1,8 @@
 <?php
+namespace AdvancedAllInOneForms;
 if (!defined( 'ABSPATH')) exit;
-if (!class_exists( 'AI_Frontform')){
-    class AI_Frontform {
+if (!class_exists( 'AAIOF_Frontform')){
+    class AAIOF_Frontform {
         public function front_design_view($attr){
             foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
             $vcf_data = get_post_meta( $attr['id'], 'vcf_fields_data', true);
@@ -594,7 +595,7 @@ if (!class_exists( 'AI_Frontform')){
             $message = unserialize(get_post_meta( $attr['id'], 'vcf_success_sms', true));
             $thankyou = (isset($message['thankyou']) && trim($message['thankyou'])!="")?$message['thankyou']:home_url();
             _e('<button type="submit" class="btn btn-default  '.$data['class'].''.$data['class'].'" id="'.$data['id'].'">'.$data['label'].'</button>');
-            _e('<img src="'.AI_ADVANCE_FORM_URL.'assets/images/loading.gif" class="loader_gif" />');
+            _e('<img src="'.AAIOF_ADVANCE_FORM_URL.'assets/images/loading.gif" class="loader_gif" />');
             _e('<div class="form-group success-error" data-url="'.$thankyou.'">'.$message['success'].'</div>');
             _e('</div>');
             _e($rawed);        

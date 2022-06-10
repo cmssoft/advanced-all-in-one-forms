@@ -1,7 +1,8 @@
 <?php
+namespace AdvancedAllInOneForms;
 if (!defined( 'ABSPATH')) exit;
-if (!class_exists( 'AI_Mailform')){
-    class AI_Mailform {
+if (!class_exists( 'AAIOF_Mailform')){
+    class AAIOF_Mailform {
         public function mail_sent_format($params,$vcfid){
             try{   
                 /** Start get mail, body **/

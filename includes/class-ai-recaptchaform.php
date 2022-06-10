@@ -1,7 +1,8 @@
 <?php
+namespace AdvancedAllInOneForms;
 if (!defined( 'ABSPATH')) exit;
-if (!class_exists( 'AI_Recaptchaform')){
-    class AI_Recaptchaform {
+if (!class_exists( 'AAIOF_Recaptchaform')){
+    class AAIOF_Recaptchaform {
         public function recaptcha_form_details(){
             $sitekey = get_option('gcaptcha_sitekey');
             $secretkey = get_option('gcaptcha_secret');

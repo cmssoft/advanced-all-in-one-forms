@@ -1,7 +1,8 @@
 <?php
+namespace AdvancedAllInOneForms;
 if (!defined( 'ABSPATH')) exit;
-if (!class_exists( 'AI_Customfields')){
-    class AI_Customfields {
+if (!class_exists( 'AAIOF_Customfields')){
+    class AAIOF_Customfields {
         public function text($field,$rand){
             $rand = esc_html($rand);
             _e('<li class="ui-state-default card" id="box-'.$rand.'">

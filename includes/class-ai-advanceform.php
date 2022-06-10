@@ -1,7 +1,8 @@
 <?php
+namespace AdvancedAllInOneForms;
 if (!defined( 'ABSPATH')) exit;
-if (!class_exists( 'AI_Advanceform')){
-    class AI_Advanceform {
+if (!class_exists( 'AAIOF_Advanceform')){
+    class AAIOF_Advanceform {
         public function advance_form_details(){
             $show_enquiry_detail_page = get_option('show_enquiry_detail_page');
             $pdetail_form_id = get_option('pdetail_form_id');
