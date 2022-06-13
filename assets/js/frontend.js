@@ -49,7 +49,7 @@ jQuery(document).ready(function(){
 
 						var formData1 = new FormData();
 						formData1.append('file', file_Arr[0]);
-						formData1.append('action', 'vcfform_insert_data');
+						formData1.append('action', 'aaiof_vcfform_insert_data');
 						formData1.append('vcf_id', formid);
 						formData1.append('fields', jQuery("#"+vcid).serialize());
 						
@@ -57,7 +57,7 @@ jQuery(document).ready(function(){
 						formData1.append('extension', extension);
 						jQuery.ajax({
 							url: my_ajax_object.ajax_url,
-							dataType: "json",
+							/*dataType: "json",*/
 							type: "post",
 							contentType: false,
 							processData: false,
@@ -103,7 +103,7 @@ jQuery(document).ready(function(){
 					
 					var formData1 = new FormData();
 		    		formData1.append('file', file_Arr[0]);
-		    		formData1.append('action', 'vcfform_insert_data');
+		    		formData1.append('action', 'aaiof_vcfform_insert_data');
 		    		formData1.append('vcf_id', formid);
 		    		formData1.append('fields', jQuery("#"+vcid).serialize());
 		    		
@@ -111,7 +111,7 @@ jQuery(document).ready(function(){
 		    		formData1.append('extension', extension);
 					jQuery.ajax({
 					    url: my_ajax_object.ajax_url,
-					    dataType: "json",
+					    /*dataType: "json",*/
 					    type: "post",
 				        contentType: false,
 				        processData: false,

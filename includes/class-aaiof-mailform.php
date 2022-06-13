@@ -3,7 +3,7 @@ namespace AdvancedAllInOneForms;
 if (!defined( 'ABSPATH')) exit;
 if (!class_exists( 'AAIOF_Mailform')){
     class AAIOF_Mailform {
-        public function mail_sent_format($params,$vcfid){
+        public function aaiof_mail_sent_format($params,$vcfid){
             try{   
                 /** Start get mail, body **/
                 $mail_data = unserialize(get_post_meta( $vcfid, 'vcf_mail_data', true));

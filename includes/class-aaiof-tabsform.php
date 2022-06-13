@@ -2,11 +2,11 @@
 namespace AdvancedAllInOneForms;
 if (!defined( 'ABSPATH')) exit;
 if(!class_exists( 'AAIOF_Customfields')){
-  require_once('class-ai-customfields.php');
+  require_once('class-aaiof-customfields.php');
 }
 if (!class_exists( 'AAIOF_Tabsform')){
     class AAIOF_Tabsform {
-    public function contact_form_tab_content($post){
+        public function aaiof_contact_form_tab_content($post){
             if($post->post_type == 'advanced_form'){
                 _e('<div class="form_details">');
                 if(!empty($_GET['post'])){
@@ -20,19 +20,19 @@ if (!class_exists( 'AAIOF_Tabsform')){
                     <li><a href="#tabs-3">Message</a></li>
                     </ul>
                     <div id="tabs-1">');
-                    $this->get_tab1_html($post);
+                    $this->aaiof_get_tab1_html($post);
                     _e('</div>
                     <div id="tabs-2">');
-                    $this->get_tab2_html($post);
+                    $this->aaiof_get_tab2_html($post);
                     _e('</div>
                     <div id="tabs-3">');
-                        $this->get_tab3_html($post);
+                        $this->aaiof_get_tab3_html($post);
                     _e('</div>
                     </div>
                 </div>');
             }
         }
-        public function get_mail_tags($post){
+        public function aaiof_get_mail_tags($post){
             $field = get_post_meta( $post->ID, 'vcf_fields_data', true);
             $get_fields = unserialize($field);
             _e('<h3>In the following fields, you can use these mail-tags : ');
@@ -46,7 +46,7 @@ if (!class_exists( 'AAIOF_Tabsform')){
             }
             _e('</h3>');
         }
-        public function get_tab1_html($post){
+        public function aaiof_get_tab1_html($post){
             _e('<div class="container">
                     <div class="form-group dropdown_fields">
                     <label for="field">Select Fields:</label>
@@ -103,7 +103,7 @@ if (!class_exists( 'AAIOF_Tabsform')){
                     </div>
                 </div>');
         }
-        public function get_tab2_html($post){
+        public function aaiof_get_tab2_html($post){
                 $mail_field = get_post_meta( $post->ID, 'vcf_mail_data', true);
                 $mail_body = get_post_meta( $post->ID, 'vcf_body_data', true);
 
@@ -119,7 +119,7 @@ if (!class_exists( 'AAIOF_Tabsform')){
                     <tbody>
                     <tr>');
 
-                    $this->get_mail_tags($post);
+                    $this->aaiof_get_mail_tags($post);
                     
                     _e('</tr>
                     <tr>
@@ -238,7 +238,7 @@ if (!class_exists( 'AAIOF_Tabsform')){
                 </fieldset>
                 </div>');
         }
-        public function get_tab3_html($post){
+        public function aaiof_get_tab3_html($post){
             $message = unserialize(get_post_meta( $post->ID, 'vcf_success_sms', true));
                 _e('<table class="form-table">
                 <tbody>

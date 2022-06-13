@@ -1493,7 +1493,6 @@ if (!class_exists( 'AAIOF_Customfields')){
                     </div>
                 </li>');
         }
-        /** Product Title and Urls Details **/
         public function product_title($field,$rand){
             $rand = esc_html($rand);
             _e('<li class="ui-state-default card" id="box-'.$rand.'">

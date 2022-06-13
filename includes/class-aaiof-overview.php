@@ -3,17 +3,17 @@ namespace AdvancedAllInOneForms;
 if (!defined( 'ABSPATH')) exit;
 if (!class_exists( 'AAIOF_Overview')){
 	class AAIOF_Overview {
-		public function wp_list_tables(){
-			$this->dropdown_contact_lists();    	
+		public function aaiof_wp_list_tables(){
+			$this->aaiof_dropdown_contact_lists();    	
 			_e('<table id="example" class="display wp_list_vcf" cellspacing="0" width="100%"><thead><tr>');
-			$this->get_list_columns();        
+			$this->aaiof_get_list_columns();        
 			_e('</tr></thead><tfoot><tr>');		
-			$this->get_list_columns();    	
+			$this->aaiof_get_list_columns();    	
 			_e('</tr></tfoot><tbody>');
-			$this->get_list_value();
+			$this->aaiof_get_list_value();
 			_e('</tbody></table>');
 		}
-		public function get_list_columns(){
+		public function aaiof_get_list_columns(){
 			global $wpdb;
 			$table_name = $wpdb->prefix . "advanced_all_form_entry";
 			$data = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$table_name." WHERE vcf_id = %d", sanitize_text_field($_GET['form_id'])) );
@@ -32,7 +32,7 @@ if (!class_exists( 'AAIOF_Overview')){
 				_e('<th>Action</th>');
 			}
 		}
-		public function get_list_value(){
+		public function aaiof_get_list_value(){
 			global $wpdb;
 			$table_name = $wpdb->prefix . "advanced_all_form_entry";
 			$data = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$table_name." WHERE vcf_id = %d", sanitize_text_field($_GET['form_id'])) );
@@ -51,11 +51,11 @@ if (!class_exists( 'AAIOF_Overview')){
 							_e('<td>'.$data1[0]->value.'</td>');
 						}
 					}
-					_e('<td><a class="btn btn-primary" href="javascript:void(0)" onclick=delete_list_view('.$list.')>Remove</a></td>');
+					_e('<td><a class="btn btn-primary" href="javascript:void(0)" onclick=aaiof_delete_list_view('.$list.')>Remove</a></td>');
 				_e('</tr>');
 			}
 		}
-		public function dropdown_contact_lists(){
+		public function aaiof_dropdown_contact_lists(){
 			_e('<form action="" method="GET" class="overview_vcfform">
 					<div class="form-group dropdown_fields">
 						<label for="posts">Choose a Form:</label>

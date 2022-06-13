@@ -1,9 +1,9 @@
 <?php
 namespace AdvancedAllInOneForms;
-if (!defined( 'ABSPATH')) exit;
+if (!defined( 'ABSPATH')) exit; 
 if (!class_exists( 'AAIOF_Frontform')){
     class AAIOF_Frontform {
-        public function front_design_view($attr){
+        public function aaiof_front_design_view($attr){
             foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
             $vcf_data = get_post_meta( $attr['id'], 'vcf_fields_data', true);
             $get_vcf_data = unserialize($vcf_data);
@@ -475,8 +475,8 @@ if (!class_exists( 'AAIOF_Frontform')){
                 }else{
                     $url = "http://";
                 }            
-                $url.= $_SERVER['HTTP_HOST'];
-                $url.= $_SERVER['REQUEST_URI'];
+                $url.= esc_url($_SERVER['HTTP_HOST']);
+                $url.= esc_url($_SERVER['REQUEST_URI']);
                 if($data['raws'] == 'yes' ){
                     $raws = '<div class="row '.$data['rw-cls'].'">';
                 }else{
@@ -601,6 +601,9 @@ if (!class_exists( 'AAIOF_Frontform')){
             _e($rawed);        
         }
         public function recaptcha($k,$data,$attr){
+            wp_register_script('recaptcha', 'https://www.google.com/recaptcha/api.js');
+            wp_enqueue_script('recaptcha'); 
+
             foreach($attr as $ky=>$vl){ $attr[$ky] = esc_html($vl);}
             foreach($data as $ky=>$vl){ $data[$ky] = esc_html($vl);}
             if($data['raws'] == 'yes' ){
@@ -619,7 +622,7 @@ if (!class_exists( 'AAIOF_Frontform')){
             $secretkey = get_option('gcaptcha_secret');
             _e('<div class="form-group" id="'.$data['id'].'">
                 <label for="'.$data['type'].'-'.$k.'-'.$key.'">'.$data['label'].'</label>
-                <script src="https://www.google.com/recaptcha/api.js" async defer></script><div class="g-recaptcha '.$data['class'].'" id="'.$data['id'].'" data-sitekey="'.$sitekey.'" data-callback="recaptchaCallback"></div><input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha">
+                <div class="g-recaptcha '.$data['class'].'" id="'.$data['id'].'" data-sitekey="'.$sitekey.'" data-callback="recaptchaCallback"></div><input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha">
             </div>');
             _e('<div class="form-group success-error-captcha">Your Captcha response was incorrect. Please try again.</div>');
             _e('</div>');

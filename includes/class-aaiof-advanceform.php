@@ -3,7 +3,7 @@ namespace AdvancedAllInOneForms;
 if (!defined( 'ABSPATH')) exit;
 if (!class_exists( 'AAIOF_Advanceform')){
     class AAIOF_Advanceform {
-        public function advance_form_details(){
+        public function aaiof_advance_form_details(){
             $show_enquiry_detail_page = get_option('show_enquiry_detail_page');
             $pdetail_form_id = get_option('pdetail_form_id');
             $show_enquiry_cart_page = get_option('show_enquiry_cart_page');
@@ -147,7 +147,7 @@ if (!class_exists( 'AAIOF_Advanceform')){
                                 </table>
                                 <p class="submit">
                                     <input type="submit" id="submit" class="button button-primary" value="Save">
-                                    <input type="button" id="reset" class="button button-primary" value="Reset" onclick="advance_setting_reset()">
+                                    <input type="button" id="reset" class="button button-primary" value="Reset" onclick="aaiof_advance_setting_reset()">
                                 </p>
                                 <span class="success_msg">Setting Saved.</span>
                             </form>

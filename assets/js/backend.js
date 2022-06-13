@@ -14,7 +14,7 @@ jQuery(document).ready(function()
 	jQuery.ajax({
 	    type: 'POST',
 	    url: ajaxurl,
-	    data: {"action": "select_field", field:field},
+	    data: {"action": "aaiof_select_field", field:field},
 	    success: function(data)
 	    {
 	    	jQuery("#sortable1").append(data);
@@ -44,7 +44,7 @@ jQuery(document).ready(function()
 							    type: "post",
 							    dataType: "json",
 							    url: my_ajax_object.ajax_url,
-							    data: {formData:formData,action:'recaptcha_generate'},
+							    data: {formData:formData,action:'aaiof_recaptcha_generate'},
 							    success: function(msg)
 							    {
 							       	jQuery(".captcha_details span.success_msg").show();
@@ -114,7 +114,7 @@ jQuery(document).ready(function()
 							    type: "post",
 							    dataType: "json",
 							    url: my_ajax_object.ajax_url,
-							    data: {formData:formData,action:'advance_setting_form'},
+							    data: {formData:formData,action:'aaiof_advance_setting_form'},
 							    success: function(msg)
 							    {
 							       	jQuery(".captcha_details span.success_msg").show();
@@ -202,7 +202,7 @@ function remove(val)
 	}
 }
 
-function recaptcha_reset()
+function aaiof_recaptcha_reset()
 {
 	if (confirm("Are you sure reset data?"))
 	{
@@ -211,7 +211,7 @@ function recaptcha_reset()
 					    type: "post",
 					    dataType: "json",
 					    url: my_ajax_object.ajax_url,
-					    data: {formData:formData,action:'recaptcha_reset'},
+					    data: {formData:formData,action:'aaiof_recaptcha_reset'},
 					    success: function(msg)
 					    {
 					    	jQuery(".captcha_details span.success_msg").show();
@@ -240,7 +240,7 @@ function smtp_reset()
 	}
 }
 
-function advance_setting_reset()
+function aaiof_advance_setting_reset()
 {
 	if (confirm("Are you sure you want to reset this field?"))
 	{
@@ -249,7 +249,7 @@ function advance_setting_reset()
 					    type: "post",
 					    dataType: "json",
 					    url: my_ajax_object.ajax_url,
-					    data: {formData:formData,action:'advance_setting_reset'},
+					    data: {formData:formData,action:'aaiof_advance_setting_reset'},
 					    success: function(msg)
 					    {
 					    	jQuery(".captcha_details span.success_msg").show();
@@ -259,7 +259,7 @@ function advance_setting_reset()
 	}
 }
 
-function delete_list_view(num)
+function aaiof_delete_list_view(num)
 {
 	if (confirm("Are you sure you want to delete this field?"))
 	{
@@ -267,7 +267,7 @@ function delete_list_view(num)
 		    type: "post",
 		    dataType: "json",
 		    url: my_ajax_object.ajax_url,
-		    data: {data_id:num,action:'delete_list_view'},
+		    data: {data_id:num,action:'aaiof_delete_list_view'},
 		    success: function(msg)
 		    {
 		    	jQuery(".delete_error_overview").show();
