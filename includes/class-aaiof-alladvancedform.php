@@ -137,7 +137,7 @@ if (!class_exists( 'AAIOF_Alladvancedform')){
         }
         public function aaiof_recaptcha_generate(){
             $params = array();
-            parse_str($_POST['formData'], $params);
+            parse_str(sanitize_post($_POST['formData']), $params);
             $sitekey = $params['sitekey'];
             $secretkey = $params['secret'];
 
@@ -146,7 +146,7 @@ if (!class_exists( 'AAIOF_Alladvancedform')){
         }
         public function aaiof_advance_setting_form(){
             $params = array();
-            parse_str($_POST['formData'], $params);
+            parse_str(sanitize_post($_POST['formData']), $params);
 
             $show_enquiry_detail_page = sanitize_text_field($params['show_enquiry_detail_page']);
             $pdetail_form_id = sanitize_text_field($params['pdetail_form_id']);
@@ -224,7 +224,7 @@ if (!class_exists( 'AAIOF_Alladvancedform')){
         }
         public function aaiof_get_before_update_postdata( $post_id ){
             if(isset($_POST['input'])){
-                foreach($_POST['input'] as $key=>$value){
+                foreach(sanitize_post($_POST['input']) as $key=>$value){
                     $data['type'] = $value;
                     $data['label'] = sanitize_text_field($_POST['label'][$key]);
                     $data['name'] = sanitize_text_field($_POST['name'][$key]);
@@ -302,7 +302,7 @@ if (!class_exists( 'AAIOF_Alladvancedform')){
             global $wpdb;
             $table_name2 = $wpdb->prefix . "advanced_all_form_entry";
             $params = array();
-            parse_str($_POST['fields'], $params);
+            parse_str(sanitize_post($_POST['fields']), $params);
             $vcfid = sanitize_text_field($_POST['vcf_id']);
             if(!empty($_FILES['file'])){
                 $file = $_FILES['file'];

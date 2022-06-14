@@ -475,8 +475,8 @@ if (!class_exists( 'AAIOF_Frontform')){
                 }else{
                     $url = "http://";
                 }            
-                $url.= esc_url($_SERVER['HTTP_HOST']);
-                $url.= esc_url($_SERVER['REQUEST_URI']);
+                $url.= sanitize_url(esc_url($_SERVER['HTTP_HOST']));
+                $url.= sanitize_url(esc_url($_SERVER['REQUEST_URI']));
                 if($data['raws'] == 'yes' ){
                     $raws = '<div class="row '.$data['rw-cls'].'">';
                 }else{
