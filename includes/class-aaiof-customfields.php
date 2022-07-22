@@ -916,46 +916,6 @@ if (!class_exists( 'AAIOF_Customfields')){
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                                <label for="class-'.$rand.'">Raw class:</label>
-                                <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
-                            </div>
-                            <div class="form-group">
-                                <label for="class-'.$rand.'">Column  class:</label>
-                                <input type="text" class="form-control" id="cl-cls-'.$rand.'" name="cl-cls['.$rand.']" value="'.(isset($field['cl-cls'])?''.$field['cl-cls'].'':"").'">
-                            </div>
-                    <div class="form-group">
-                                <label for="raws-'.$rand.'">Raw Start:</label>
-                                <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
-                            </div>
-                            <div class="form-group">
-                                <label for="rawed-'.$rand.'">Raw End:</label>
-                                <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
-                            </div>
-                            <div class="form-group">
-                                <label for="column-'.$rand.'">Column :</label>
-                                col-
-                                <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
-                                    <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
-                                    <option value="md" '.(($field['col-data-num']=='sm')?'selected':"").'>md</option>
-                                    <option value="sm" '.(($field['col-data-num']=='md')?'selected':"").'>sm</option>
-                                </select>
-                                -<select class="form-control" id="col-data-num-'.$rand.'" name="col-data-num['.$rand.']">
-                                    <option value="1" '.(($field['col-data-num']=='1')?'selected':"").'>1</option>
-                                    <option value="2" '.(($field['col-data-num']=='2')?'selected':"").'>2</option>
-                                    <option value="3" '.(($field['col-data-num']=='3')?'selected':"").'>3</option>
-                                    <option value="4" '.(($field['col-data-num']=='4')?'selected':"").'>4</option>
-                                    <option value="5" '.(($field['col-data-num']=='5')?'selected':"").'>5</option>
-                                    <option value="6" '.(($field['col-data-num']=='6')?'selected':"").'>6</option>
-                                    <option value="7" '.(($field['col-data-num']=='7')?'selected':"").'>7</option>
-                                    <option value="8" '.(($field['col-data-num']=='8')?'selected':"").'>8</option>
-                                    <option value="9" '.(($field['col-data-num']=='9')?'selected':"").'>9</option>
-                                    <option value="10" '.(($field['col-data-num']=='10')?'selected':"").'>10</option>
-                                    <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
-                                    <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
-                                </select>
-                            </div>
-
                     <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                         <div class="card-body">
                             <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="select">
@@ -1023,6 +983,45 @@ if (!class_exists( 'AAIOF_Customfields')){
                                     </div>');
                                 }
                             _e('</div>
+                            <div class="form-group">
+                            <label for="class-'.$rand.'">Raw class:</label>
+                            <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
+                        </div>
+                        <div class="form-group">
+                            <label for="class-'.$rand.'">Column  class:</label>
+                            <input type="text" class="form-control" id="cl-cls-'.$rand.'" name="cl-cls['.$rand.']" value="'.(isset($field['cl-cls'])?''.$field['cl-cls'].'':"").'">
+                        </div>
+                <div class="form-group">
+                            <label for="raws-'.$rand.'">Raw Start:</label>
+                            <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
+                        </div>
+                        <div class="form-group">
+                            <label for="rawed-'.$rand.'">Raw End:</label>
+                            <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
+                        </div>
+                        <div class="form-group">
+                            <label for="column-'.$rand.'">Column :</label>
+                            col-
+                            <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
+                                <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
+                                <option value="md" '.(($field['col-data-num']=='sm')?'selected':"").'>md</option>
+                                <option value="sm" '.(($field['col-data-num']=='md')?'selected':"").'>sm</option>
+                            </select>
+                            -<select class="form-control" id="col-data-num-'.$rand.'" name="col-data-num['.$rand.']">
+                                <option value="1" '.(($field['col-data-num']=='1')?'selected':"").'>1</option>
+                                <option value="2" '.(($field['col-data-num']=='2')?'selected':"").'>2</option>
+                                <option value="3" '.(($field['col-data-num']=='3')?'selected':"").'>3</option>
+                                <option value="4" '.(($field['col-data-num']=='4')?'selected':"").'>4</option>
+                                <option value="5" '.(($field['col-data-num']=='5')?'selected':"").'>5</option>
+                                <option value="6" '.(($field['col-data-num']=='6')?'selected':"").'>6</option>
+                                <option value="7" '.(($field['col-data-num']=='7')?'selected':"").'>7</option>
+                                <option value="8" '.(($field['col-data-num']=='8')?'selected':"").'>8</option>
+                                <option value="9" '.(($field['col-data-num']=='9')?'selected':"").'>9</option>
+                                <option value="10" '.(($field['col-data-num']=='10')?'selected':"").'>10</option>
+                                <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
+                                <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
+                            </select>
+                        </div>
                         </div>
                     </div>
                 </li>');
@@ -1042,45 +1041,7 @@ if (!class_exists( 'AAIOF_Customfields')){
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                                <label for="class-'.$rand.'">Raw class:</label>
-                                <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
-                            </div>
-                            <div class="form-group">
-                                <label for="class-'.$rand.'">Column  class:</label>
-                                <input type="text" class="form-control" id="cl-cls-'.$rand.'" name="cl-cls['.$rand.']" value="'.(isset($field['cl-cls'])?''.$field['cl-cls'].'':"").'">
-                            </div>
-                    <div class="form-group">
-                                <label for="raws-'.$rand.'">Raw Start:</label>
-                                <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
-                            </div>
-                            <div class="form-group">
-                                <label for="rawed-'.$rand.'">Raw End:</label>
-                                <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
-                            </div>
-                            <div class="form-group">
-                                <label for="column-'.$rand.'">Column :</label>
-                                col-
-                                <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
-                                    <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
-                                    <option value="md" '.(($field['col-data-num']=='sm')?'selected':"").'>md</option>
-                                    <option value="sm" '.(($field['col-data-num']=='md')?'selected':"").'>sm</option>
-                                </select>
-                                -<select class="form-control" id="col-data-num-'.$rand.'" name="col-data-num['.$rand.']">
-                                    <option value="1" '.(($field['col-data-num']=='1')?'selected':"").'>1</option>
-                                    <option value="2" '.(($field['col-data-num']=='2')?'selected':"").'>2</option>
-                                    <option value="3" '.(($field['col-data-num']=='3')?'selected':"").'>3</option>
-                                    <option value="4" '.(($field['col-data-num']=='4')?'selected':"").'>4</option>
-                                    <option value="5" '.(($field['col-data-num']=='5')?'selected':"").'>5</option>
-                                    <option value="6" '.(($field['col-data-num']=='6')?'selected':"").'>6</option>
-                                    <option value="7" '.(($field['col-data-num']=='7')?'selected':"").'>7</option>
-                                    <option value="8" '.(($field['col-data-num']=='8')?'selected':"").'>8</option>
-                                    <option value="9" '.(($field['col-data-num']=='9')?'selected':"").'>9</option>
-                                    <option value="10" '.(($field['col-data-num']=='10')?'selected':"").'>10</option>
-                                    <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
-                                    <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
-                                </select>
-                            </div>
+                   
                     <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                         <div class="card-body">
                             <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="radio">
@@ -1145,6 +1106,45 @@ if (!class_exists( 'AAIOF_Customfields')){
                                 </div>');
                             }
                             _e('</div>
+                            <div class="form-group">
+                            <label for="class-'.$rand.'">Raw class:</label>
+                            <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
+                        </div>
+                        <div class="form-group">
+                            <label for="class-'.$rand.'">Column  class:</label>
+                            <input type="text" class="form-control" id="cl-cls-'.$rand.'" name="cl-cls['.$rand.']" value="'.(isset($field['cl-cls'])?''.$field['cl-cls'].'':"").'">
+                        </div>
+                <div class="form-group">
+                            <label for="raws-'.$rand.'">Raw Start:</label>
+                            <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
+                        </div>
+                        <div class="form-group">
+                            <label for="rawed-'.$rand.'">Raw End:</label>
+                            <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
+                        </div>
+                        <div class="form-group">
+                            <label for="column-'.$rand.'">Column :</label>
+                            col-
+                            <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
+                                <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
+                                <option value="md" '.(($field['col-data-num']=='sm')?'selected':"").'>md</option>
+                                <option value="sm" '.(($field['col-data-num']=='md')?'selected':"").'>sm</option>
+                            </select>
+                            -<select class="form-control" id="col-data-num-'.$rand.'" name="col-data-num['.$rand.']">
+                                <option value="1" '.(($field['col-data-num']=='1')?'selected':"").'>1</option>
+                                <option value="2" '.(($field['col-data-num']=='2')?'selected':"").'>2</option>
+                                <option value="3" '.(($field['col-data-num']=='3')?'selected':"").'>3</option>
+                                <option value="4" '.(($field['col-data-num']=='4')?'selected':"").'>4</option>
+                                <option value="5" '.(($field['col-data-num']=='5')?'selected':"").'>5</option>
+                                <option value="6" '.(($field['col-data-num']=='6')?'selected':"").'>6</option>
+                                <option value="7" '.(($field['col-data-num']=='7')?'selected':"").'>7</option>
+                                <option value="8" '.(($field['col-data-num']=='8')?'selected':"").'>8</option>
+                                <option value="9" '.(($field['col-data-num']=='9')?'selected':"").'>9</option>
+                                <option value="10" '.(($field['col-data-num']=='10')?'selected':"").'>10</option>
+                                <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
+                                <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
+                            </select>
+                        </div>
                         </div>
                     </div>
                 </li>');
@@ -1164,45 +1164,6 @@ if (!class_exists( 'AAIOF_Customfields')){
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                                <label for="class-'.$rand.'">Raw class:</label>
-                                <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
-                            </div>
-                            <div class="form-group">
-                                <label for="class-'.$rand.'">Column  class:</label>
-                                <input type="text" class="form-control" id="cl-cls-'.$rand.'" name="cl-cls['.$rand.']" value="'.(isset($field['cl-cls'])?''.$field['cl-cls'].'':"").'">
-                            </div>
-                    <div class="form-group">
-                                <label for="raws-'.$rand.'">Raw Start:</label>
-                                <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
-                            </div>
-                            <div class="form-group">
-                                <label for="rawed-'.$rand.'">Raw End:</label>
-                                <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
-                            </div>
-                            <div class="form-group">
-                                <label for="column-'.$rand.'">Column :</label>
-                                col-
-                                <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
-                                    <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
-                                    <option value="md" '.(($field['col-data-num']=='sm')?'selected':"").'>md</option>
-                                    <option value="sm" '.(($field['col-data-num']=='md')?'selected':"").'>sm</option>
-                                </select>
-                                -<select class="form-control" id="col-data-num-'.$rand.'" name="col-data-num['.$rand.']">
-                                    <option value="1" '.(($field['col-data-num']=='1')?'selected':"").'>1</option>
-                                    <option value="2" '.(($field['col-data-num']=='2')?'selected':"").'>2</option>
-                                    <option value="3" '.(($field['col-data-num']=='3')?'selected':"").'>3</option>
-                                    <option value="4" '.(($field['col-data-num']=='4')?'selected':"").'>4</option>
-                                    <option value="5" '.(($field['col-data-num']=='5')?'selected':"").'>5</option>
-                                    <option value="6" '.(($field['col-data-num']=='6')?'selected':"").'>6</option>
-                                    <option value="7" '.(($field['col-data-num']=='7')?'selected':"").'>7</option>
-                                    <option value="8" '.(($field['col-data-num']=='8')?'selected':"").'>8</option>
-                                    <option value="9" '.(($field['col-data-num']=='9')?'selected':"").'>9</option>
-                                    <option value="10" '.(($field['col-data-num']=='10')?'selected':"").'>10</option>
-                                    <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
-                                    <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
-                                </select>
-                            </div>
                     <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                         <div class="card-body">
                             <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="checkbox">
@@ -1271,6 +1232,45 @@ if (!class_exists( 'AAIOF_Customfields')){
                                 }
 
                             _e('</div>
+                            <div class="form-group">
+                            <label for="class-'.$rand.'">Raw class:</label>
+                            <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
+                        </div>
+                        <div class="form-group">
+                            <label for="class-'.$rand.'">Column  class:</label>
+                            <input type="text" class="form-control" id="cl-cls-'.$rand.'" name="cl-cls['.$rand.']" value="'.(isset($field['cl-cls'])?''.$field['cl-cls'].'':"").'">
+                        </div>
+                <div class="form-group">
+                            <label for="raws-'.$rand.'">Raw Start:</label>
+                            <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
+                        </div>
+                        <div class="form-group">
+                            <label for="rawed-'.$rand.'">Raw End:</label>
+                            <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
+                        </div>
+                        <div class="form-group">
+                            <label for="column-'.$rand.'">Column :</label>
+                            col-
+                            <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
+                                <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
+                                <option value="md" '.(($field['col-data-num']=='sm')?'selected':"").'>md</option>
+                                <option value="sm" '.(($field['col-data-num']=='md')?'selected':"").'>sm</option>
+                            </select>
+                            -<select class="form-control" id="col-data-num-'.$rand.'" name="col-data-num['.$rand.']">
+                                <option value="1" '.(($field['col-data-num']=='1')?'selected':"").'>1</option>
+                                <option value="2" '.(($field['col-data-num']=='2')?'selected':"").'>2</option>
+                                <option value="3" '.(($field['col-data-num']=='3')?'selected':"").'>3</option>
+                                <option value="4" '.(($field['col-data-num']=='4')?'selected':"").'>4</option>
+                                <option value="5" '.(($field['col-data-num']=='5')?'selected':"").'>5</option>
+                                <option value="6" '.(($field['col-data-num']=='6')?'selected':"").'>6</option>
+                                <option value="7" '.(($field['col-data-num']=='7')?'selected':"").'>7</option>
+                                <option value="8" '.(($field['col-data-num']=='8')?'selected':"").'>8</option>
+                                <option value="9" '.(($field['col-data-num']=='9')?'selected':"").'>9</option>
+                                <option value="10" '.(($field['col-data-num']=='10')?'selected':"").'>10</option>
+                                <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
+                                <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
+                            </select>
+                        </div>
                         </div>
                     </div>
                 </li>');
@@ -1288,45 +1288,6 @@ if (!class_exists( 'AAIOF_Customfields')){
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                                <label for="class-'.$rand.'">Raw class:</label>
-                                <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
-                            </div>
-                            <div class="form-group">
-                                <label for="class-'.$rand.'">Column  class:</label>
-                                <input type="text" class="form-control" id="cl-cls-'.$rand.'" name="cl-cls['.$rand.']" value="'.(isset($field['cl-cls'])?''.$field['cl-cls'].'':"").'">
-                            </div>
-                    <div class="form-group">
-                                <label for="raws-'.$rand.'">Raw Start:</label>
-                                <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
-                            </div>
-                            <div class="form-group">
-                                <label for="rawed-'.$rand.'">Raw End:</label>
-                                <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
-                            </div>
-                            <div class="form-group">
-                                <label for="column-'.$rand.'">Column :</label>
-                                col-
-                                <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
-                                    <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
-                                    <option value="md" '.(($field['col-data-num']=='sm')?'selected':"").'>md</option>
-                                    <option value="sm" '.(($field['col-data-num']=='md')?'selected':"").'>sm</option>
-                                </select>
-                                -<select class="form-control" id="col-data-num-'.$rand.'" name="col-data-num['.$rand.']">
-                                    <option value="1" '.(($field['col-data-num']=='1')?'selected':"").'>1</option>
-                                    <option value="2" '.(($field['col-data-num']=='2')?'selected':"").'>2</option>
-                                    <option value="3" '.(($field['col-data-num']=='3')?'selected':"").'>3</option>
-                                    <option value="4" '.(($field['col-data-num']=='4')?'selected':"").'>4</option>
-                                    <option value="5" '.(($field['col-data-num']=='5')?'selected':"").'>5</option>
-                                    <option value="6" '.(($field['col-data-num']=='6')?'selected':"").'>6</option>
-                                    <option value="7" '.(($field['col-data-num']=='7')?'selected':"").'>7</option>
-                                    <option value="8" '.(($field['col-data-num']=='8')?'selected':"").'>8</option>
-                                    <option value="9" '.(($field['col-data-num']=='9')?'selected':"").'>9</option>
-                                    <option value="10" '.(($field['col-data-num']=='10')?'selected':"").'>10</option>
-                                    <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
-                                    <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
-                                </select>
-                            </div>
                     <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                         <div class="card-body">
                             <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="submit">
@@ -1342,6 +1303,45 @@ if (!class_exists( 'AAIOF_Customfields')){
                                 <label for="class-'.$rand.'">Class:</label>
                                 <input type="text" class="form-control" id="class-'.$rand.'" name="class['.$rand.']" value="'.(isset($field['class'])?''.$field['class'].'':"").'">
                             </div>
+                            <div class="form-group">
+                            <label for="class-'.$rand.'">Raw class:</label>
+                            <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
+                        </div>
+                        <div class="form-group">
+                            <label for="class-'.$rand.'">Column  class:</label>
+                            <input type="text" class="form-control" id="cl-cls-'.$rand.'" name="cl-cls['.$rand.']" value="'.(isset($field['cl-cls'])?''.$field['cl-cls'].'':"").'">
+                        </div>
+                <div class="form-group">
+                            <label for="raws-'.$rand.'">Raw Start:</label>
+                            <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
+                        </div>
+                        <div class="form-group">
+                            <label for="rawed-'.$rand.'">Raw End:</label>
+                            <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
+                        </div>
+                        <div class="form-group">
+                            <label for="column-'.$rand.'">Column :</label>
+                            col-
+                            <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
+                                <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
+                                <option value="md" '.(($field['col-data-num']=='sm')?'selected':"").'>md</option>
+                                <option value="sm" '.(($field['col-data-num']=='md')?'selected':"").'>sm</option>
+                            </select>
+                            -<select class="form-control" id="col-data-num-'.$rand.'" name="col-data-num['.$rand.']">
+                                <option value="1" '.(($field['col-data-num']=='1')?'selected':"").'>1</option>
+                                <option value="2" '.(($field['col-data-num']=='2')?'selected':"").'>2</option>
+                                <option value="3" '.(($field['col-data-num']=='3')?'selected':"").'>3</option>
+                                <option value="4" '.(($field['col-data-num']=='4')?'selected':"").'>4</option>
+                                <option value="5" '.(($field['col-data-num']=='5')?'selected':"").'>5</option>
+                                <option value="6" '.(($field['col-data-num']=='6')?'selected':"").'>6</option>
+                                <option value="7" '.(($field['col-data-num']=='7')?'selected':"").'>7</option>
+                                <option value="8" '.(($field['col-data-num']=='8')?'selected':"").'>8</option>
+                                <option value="9" '.(($field['col-data-num']=='9')?'selected':"").'>9</option>
+                                <option value="10" '.(($field['col-data-num']=='10')?'selected':"").'>10</option>
+                                <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
+                                <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
+                            </select>
+                        </div>
                         </div>
                     </div>
                 </li>');
@@ -1359,7 +1359,22 @@ if (!class_exists( 'AAIOF_Customfields')){
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
+                        <div class="card-body">
+                            <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="recaptcha">
+                            <div class="form-group">
+                                <label for="label-'.$rand.'">Label:</label>
+                                <input type="text" class="form-control" id="label-'.$rand.'" name="label['.$rand.']" value="'.(isset($field['label'])?''.$field['label'].'':"").'">
+                            </div>
+                            <div class="form-group">
+                                <label for="id-'.$rand.'">ID:</label>
+                                <input type="text" class="form-control" id="id-'.$rand.'" name="id['.$rand.']" value="'.(isset($field['id'])?''.$field['id'].'':"").'">
+                            </div>
+                            <div class="form-group">
+                                <label for="class-'.$rand.'">Class:</label>
+                                <input type="text" class="form-control" id="class-'.$rand.'" name="class['.$rand.']" value="'.(isset($field['class'])?''.$field['class'].'':"").'">
+                            </div>
+                            <div class="form-group">
                                 <label for="class-'.$rand.'">Raw class:</label>
                                 <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
                             </div>
@@ -1397,21 +1412,6 @@ if (!class_exists( 'AAIOF_Customfields')){
                                     <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
                                     <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
                                 </select>
-                            </div>
-                    <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
-                        <div class="card-body">
-                            <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="recaptcha">
-                            <div class="form-group">
-                                <label for="label-'.$rand.'">Label:</label>
-                                <input type="text" class="form-control" id="label-'.$rand.'" name="label['.$rand.']" value="'.(isset($field['label'])?''.$field['label'].'':"").'">
-                            </div>
-                            <div class="form-group">
-                                <label for="id-'.$rand.'">ID:</label>
-                                <input type="text" class="form-control" id="id-'.$rand.'" name="id['.$rand.']" value="'.(isset($field['id'])?''.$field['id'].'':"").'">
-                            </div>
-                            <div class="form-group">
-                                <label for="class-'.$rand.'">Class:</label>
-                                <input type="text" class="form-control" id="class-'.$rand.'" name="class['.$rand.']" value="'.(isset($field['class'])?''.$field['class'].'':"").'">
                             </div>
                         </div>
                     </div>
@@ -1430,45 +1430,6 @@ if (!class_exists( 'AAIOF_Customfields')){
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                                <label for="class-'.$rand.'">Raw class:</label>
-                                <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
-                            </div>
-                            <div class="form-group">
-                                <label for="class-'.$rand.'">Column  class:</label>
-                                <input type="text" class="form-control" id="cl-cls-'.$rand.'" name="cl-cls['.$rand.']" value="'.(isset($field['cl-cls'])?''.$field['cl-cls'].'':"").'">
-                            </div>
-                    <div class="form-group">
-                                <label for="raws-'.$rand.'">Raw Start:</label>
-                                <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
-                            </div>
-                            <div class="form-group">
-                                <label for="rawed-'.$rand.'">Raw End:</label>
-                                <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
-                            </div>
-                            <div class="form-group">
-                                <label for="column-'.$rand.'">Column :</label>
-                                col-
-                                <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
-                                    <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
-                                    <option value="md" '.(($field['col-data-num']=='sm')?'selected':"").'>md</option>
-                                    <option value="sm" '.(($field['col-data-num']=='md')?'selected':"").'>sm</option>
-                                </select>
-                                -<select class="form-control" id="col-data-num-'.$rand.'" name="col-data-num['.$rand.']">
-                                    <option value="1" '.(($field['col-data-num']=='1')?'selected':"").'>1</option>
-                                    <option value="2" '.(($field['col-data-num']=='2')?'selected':"").'>2</option>
-                                    <option value="3" '.(($field['col-data-num']=='3')?'selected':"").'>3</option>
-                                    <option value="4" '.(($field['col-data-num']=='4')?'selected':"").'>4</option>
-                                    <option value="5" '.(($field['col-data-num']=='5')?'selected':"").'>5</option>
-                                    <option value="6" '.(($field['col-data-num']=='6')?'selected':"").'>6</option>
-                                    <option value="7" '.(($field['col-data-num']=='7')?'selected':"").'>7</option>
-                                    <option value="8" '.(($field['col-data-num']=='8')?'selected':"").'>8</option>
-                                    <option value="9" '.(($field['col-data-num']=='9')?'selected':"").'>9</option>
-                                    <option value="10" '.(($field['col-data-num']=='10')?'selected':"").'>10</option>
-                                    <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
-                                    <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
-                                </select>
-                            </div>
                     <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                         <div class="card-body">
                             <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="acceptance">
@@ -1489,24 +1450,7 @@ if (!class_exists( 'AAIOF_Customfields')){
                                 <label for="required-'.$rand.'">Required:</label>
                                 <input type="checkbox" class="form-control" id="required-'.$rand.'" name="required['.$rand.']" value="yes" '.(($field['required']=='yes')?'checked':"").'>
                             </div>
-                        </div>
-                    </div>
-                </li>');
-        }
-        public function product_title($field,$rand){
-            $rand = esc_html($rand);
-            _e('<li class="ui-state-default card" id="box-'.$rand.'">
-                    <div class="card-header" id="card-'.$rand.'">
-                        <div class="row">
-                            <div class="col-sm-8 head_box">
-                                <h2>Product Title</h2>
-                            </div>
-                            <div class="col-sm-4 box_button">
-                            <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
+                            <div class="form-group">
                                 <label for="class-'.$rand.'">Raw class:</label>
                                 <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
                             </div>
@@ -1545,6 +1489,23 @@ if (!class_exists( 'AAIOF_Customfields')){
                                     <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
                                 </select>
                             </div>
+                        </div>
+                    </div>
+                </li>');
+        }
+        public function product_title($field,$rand){
+            $rand = esc_html($rand);
+            _e('<li class="ui-state-default card" id="box-'.$rand.'">
+                    <div class="card-header" id="card-'.$rand.'">
+                        <div class="row">
+                            <div class="col-sm-8 head_box">
+                                <h2>Product Title</h2>
+                            </div>
+                            <div class="col-sm-4 box_button">
+                            <button type="button" class="btn btn-link" onclick=remove('.$rand.')><i class="fa fa-remove"></i></button>
+                            </div>
+                        </div>
+                    </div>
                     <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                         <div class="card-body">
                             <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="product_title">
@@ -1553,6 +1514,45 @@ if (!class_exists( 'AAIOF_Customfields')){
                                 <label for="label-'.$rand.'">Label:</label>
                                 <input type="text" class="form-control" id="label-'.$rand.'" name="label['.$rand.']" value="'.(isset($field['label'])?''.$field['label'].'':"").'">
                             </div>
+                            <div class="form-group">
+                            <label for="class-'.$rand.'">Raw class:</label>
+                            <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
+                        </div>
+                        <div class="form-group">
+                            <label for="class-'.$rand.'">Column  class:</label>
+                            <input type="text" class="form-control" id="cl-cls-'.$rand.'" name="cl-cls['.$rand.']" value="'.(isset($field['cl-cls'])?''.$field['cl-cls'].'':"").'">
+                        </div>
+                <div class="form-group">
+                            <label for="raws-'.$rand.'">Raw Start:</label>
+                            <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
+                        </div>
+                        <div class="form-group">
+                            <label for="rawed-'.$rand.'">Raw End:</label>
+                            <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
+                        </div>
+                        <div class="form-group">
+                            <label for="column-'.$rand.'">Column :</label>
+                            col-
+                            <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
+                                <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
+                                <option value="md" '.(($field['col-data-num']=='sm')?'selected':"").'>md</option>
+                                <option value="sm" '.(($field['col-data-num']=='md')?'selected':"").'>sm</option>
+                            </select>
+                            -<select class="form-control" id="col-data-num-'.$rand.'" name="col-data-num['.$rand.']">
+                                <option value="1" '.(($field['col-data-num']=='1')?'selected':"").'>1</option>
+                                <option value="2" '.(($field['col-data-num']=='2')?'selected':"").'>2</option>
+                                <option value="3" '.(($field['col-data-num']=='3')?'selected':"").'>3</option>
+                                <option value="4" '.(($field['col-data-num']=='4')?'selected':"").'>4</option>
+                                <option value="5" '.(($field['col-data-num']=='5')?'selected':"").'>5</option>
+                                <option value="6" '.(($field['col-data-num']=='6')?'selected':"").'>6</option>
+                                <option value="7" '.(($field['col-data-num']=='7')?'selected':"").'>7</option>
+                                <option value="8" '.(($field['col-data-num']=='8')?'selected':"").'>8</option>
+                                <option value="9" '.(($field['col-data-num']=='9')?'selected':"").'>9</option>
+                                <option value="10" '.(($field['col-data-num']=='10')?'selected':"").'>10</option>
+                                <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
+                                <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
+                            </select>
+                        </div>
                         </div>
                     </div>
                 </li>');
@@ -1572,7 +1572,16 @@ if (!class_exists( 'AAIOF_Customfields')){
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    
+                    <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
+                        <div class="card-body">
+                            <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="product_url">
+                            <input type="hidden" class="form-control" name="name['.$rand.']" value="product_url-'.$rand.'">
+                            <div class="form-group">
+                                <label for="label-'.$rand.'">Label:</label>
+                                <input type="text" class="form-control" id="label-'.$rand.'" name="label['.$rand.']" value="'.(isset($field['label'])?''.$field['label'].'':"").'">
+                            </div>
+                            <div class="form-group">
                                 <label for="class-'.$rand.'">Raw class:</label>
                                 <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
                             </div>
@@ -1610,14 +1619,6 @@ if (!class_exists( 'AAIOF_Customfields')){
                                     <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
                                     <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
                                 </select>
-                            </div>
-                    <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
-                        <div class="card-body">
-                            <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="product_url">
-                            <input type="hidden" class="form-control" name="name['.$rand.']" value="product_url-'.$rand.'">
-                            <div class="form-group">
-                                <label for="label-'.$rand.'">Label:</label>
-                                <input type="text" class="form-control" id="label-'.$rand.'" name="label['.$rand.']" value="'.(isset($field['label'])?''.$field['label'].'':"").'">
                             </div>
                         </div>
                     </div>
@@ -1638,45 +1639,6 @@ if (!class_exists( 'AAIOF_Customfields')){
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                                <label for="class-'.$rand.'">Raw class:</label>
-                                <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
-                            </div>
-                            <div class="form-group">
-                                <label for="class-'.$rand.'">Column  class:</label>
-                                <input type="text" class="form-control" id="cl-cls-'.$rand.'" name="cl-cls['.$rand.']" value="'.(isset($field['cl-cls'])?''.$field['cl-cls'].'':"").'">
-                            </div>
-                    <div class="form-group">
-                                <label for="raws-'.$rand.'">Raw Start:</label>
-                                <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
-                            </div>
-                            <div class="form-group">
-                                <label for="rawed-'.$rand.'">Raw End:</label>
-                                <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
-                            </div>
-                            <div class="form-group">
-                                <label for="column-'.$rand.'">Column :</label>
-                                col-
-                                <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
-                                    <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
-                                    <option value="md" '.(($field['col-data-num']=='sm')?'selected':"").'>md</option>
-                                    <option value="sm" '.(($field['col-data-num']=='md')?'selected':"").'>sm</option>
-                                </select>
-                                -<select class="form-control" id="col-data-num-'.$rand.'" name="col-data-num['.$rand.']">
-                                    <option value="1" '.(($field['col-data-num']=='1')?'selected':"").'>1</option>
-                                    <option value="2" '.(($field['col-data-num']=='2')?'selected':"").'>2</option>
-                                    <option value="3" '.(($field['col-data-num']=='3')?'selected':"").'>3</option>
-                                    <option value="4" '.(($field['col-data-num']=='4')?'selected':"").'>4</option>
-                                    <option value="5" '.(($field['col-data-num']=='5')?'selected':"").'>5</option>
-                                    <option value="6" '.(($field['col-data-num']=='6')?'selected':"").'>6</option>
-                                    <option value="7" '.(($field['col-data-num']=='7')?'selected':"").'>7</option>
-                                    <option value="8" '.(($field['col-data-num']=='8')?'selected':"").'>8</option>
-                                    <option value="9" '.(($field['col-data-num']=='9')?'selected':"").'>9</option>
-                                    <option value="10" '.(($field['col-data-num']=='10')?'selected':"").'>10</option>
-                                    <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
-                                    <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
-                                </select>
-                            </div>
                     <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                         <div class="card-body">
                             <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="product_price">
@@ -1685,6 +1647,45 @@ if (!class_exists( 'AAIOF_Customfields')){
                                 <label for="label-'.$rand.'">Label:</label>
                                 <input type="text" class="form-control" id="label-'.$rand.'" name="label['.$rand.']" value="'.(isset($field['label'])?''.$field['label'].'':"").'">
                             </div>
+                            <div class="form-group">
+                            <label for="class-'.$rand.'">Raw class:</label>
+                            <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
+                        </div>
+                        <div class="form-group">
+                            <label for="class-'.$rand.'">Column  class:</label>
+                            <input type="text" class="form-control" id="cl-cls-'.$rand.'" name="cl-cls['.$rand.']" value="'.(isset($field['cl-cls'])?''.$field['cl-cls'].'':"").'">
+                        </div>
+                <div class="form-group">
+                            <label for="raws-'.$rand.'">Raw Start:</label>
+                            <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
+                        </div>
+                        <div class="form-group">
+                            <label for="rawed-'.$rand.'">Raw End:</label>
+                            <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
+                        </div>
+                        <div class="form-group">
+                            <label for="column-'.$rand.'">Column :</label>
+                            col-
+                            <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
+                                <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
+                                <option value="md" '.(($field['col-data-num']=='sm')?'selected':"").'>md</option>
+                                <option value="sm" '.(($field['col-data-num']=='md')?'selected':"").'>sm</option>
+                            </select>
+                            -<select class="form-control" id="col-data-num-'.$rand.'" name="col-data-num['.$rand.']">
+                                <option value="1" '.(($field['col-data-num']=='1')?'selected':"").'>1</option>
+                                <option value="2" '.(($field['col-data-num']=='2')?'selected':"").'>2</option>
+                                <option value="3" '.(($field['col-data-num']=='3')?'selected':"").'>3</option>
+                                <option value="4" '.(($field['col-data-num']=='4')?'selected':"").'>4</option>
+                                <option value="5" '.(($field['col-data-num']=='5')?'selected':"").'>5</option>
+                                <option value="6" '.(($field['col-data-num']=='6')?'selected':"").'>6</option>
+                                <option value="7" '.(($field['col-data-num']=='7')?'selected':"").'>7</option>
+                                <option value="8" '.(($field['col-data-num']=='8')?'selected':"").'>8</option>
+                                <option value="9" '.(($field['col-data-num']=='9')?'selected':"").'>9</option>
+                                <option value="10" '.(($field['col-data-num']=='10')?'selected':"").'>10</option>
+                                <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
+                                <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
+                            </select>
+                        </div>
                         </div>
                     </div>
                 </li>');
@@ -1702,45 +1703,6 @@ if (!class_exists( 'AAIOF_Customfields')){
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                                <label for="class-'.$rand.'">Raw class:</label>
-                                <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
-                            </div>
-                            <div class="form-group">
-                                <label for="class-'.$rand.'">Column  class:</label>
-                                <input type="text" class="form-control" id="cl-cls-'.$rand.'" name="cl-cls['.$rand.']" value="'.(isset($field['cl-cls'])?''.$field['cl-cls'].'':"").'">
-                            </div>
-                    <div class="form-group">
-                                <label for="raws-'.$rand.'">Raw Start:</label>
-                                <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
-                            </div>
-                            <div class="form-group">
-                                <label for="rawed-'.$rand.'">Raw End:</label>
-                                <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
-                            </div>
-                            <div class="form-group">
-                                <label for="column-'.$rand.'">Column :</label>
-                                col-
-                                <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
-                                    <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
-                                    <option value="md" '.(($field['col-data-num']=='sm')?'selected':"").'>md</option>
-                                    <option value="sm" '.(($field['col-data-num']=='md')?'selected':"").'>sm</option>
-                                </select>
-                                -<select class="form-control" id="col-data-num-'.$rand.'" name="col-data-num['.$rand.']">
-                                    <option value="1" '.(($field['col-data-num']=='1')?'selected':"").'>1</option>
-                                    <option value="2" '.(($field['col-data-num']=='2')?'selected':"").'>2</option>
-                                    <option value="3" '.(($field['col-data-num']=='3')?'selected':"").'>3</option>
-                                    <option value="4" '.(($field['col-data-num']=='4')?'selected':"").'>4</option>
-                                    <option value="5" '.(($field['col-data-num']=='5')?'selected':"").'>5</option>
-                                    <option value="6" '.(($field['col-data-num']=='6')?'selected':"").'>6</option>
-                                    <option value="7" '.(($field['col-data-num']=='7')?'selected':"").'>7</option>
-                                    <option value="8" '.(($field['col-data-num']=='8')?'selected':"").'>8</option>
-                                    <option value="9" '.(($field['col-data-num']=='9')?'selected':"").'>9</option>
-                                    <option value="10" '.(($field['col-data-num']=='10')?'selected':"").'>10</option>
-                                    <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
-                                    <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
-                                </select>
-                            </div>
                     <div id="collapse-'.$rand.'" class="collapse in" aria-labelledby="card-'.$rand.'">
                         <div class="card-body">
                             <input type="hidden" class="form-control" name="input['.$rand.']" id="input-'.$rand.'" value="product_qty">
@@ -1749,6 +1711,45 @@ if (!class_exists( 'AAIOF_Customfields')){
                                 <label for="label-'.$rand.'">Label:</label>
                                 <input type="text" class="form-control" id="label-'.$rand.'" name="label['.$rand.']" value="'.(isset($field['label'])?''.$field['label'].'':"").'">
                             </div>
+                            <div class="form-group">
+                            <label for="class-'.$rand.'">Raw class:</label>
+                            <input type="text" class="form-control" id="rw-cls-'.$rand.'" name="rw-cls['.$rand.']" value="'.(isset($field['rw-cls'])?''.$field['rw-cls'].'':"").'">
+                        </div>
+                        <div class="form-group">
+                            <label for="class-'.$rand.'">Column  class:</label>
+                            <input type="text" class="form-control" id="cl-cls-'.$rand.'" name="cl-cls['.$rand.']" value="'.(isset($field['cl-cls'])?''.$field['cl-cls'].'':"").'">
+                        </div>
+                <div class="form-group">
+                            <label for="raws-'.$rand.'">Raw Start:</label>
+                            <input type="checkbox" class="form-control" id="raws-'.$rand.'" name="raws['.$rand.']" value="yes" '.(($field['raws']=='yes')?'checked':"").'>
+                        </div>
+                        <div class="form-group">
+                            <label for="rawed-'.$rand.'">Raw End:</label>
+                            <input type="checkbox" class="form-control" id="rawed-'.$rand.'" name="rawed['.$rand.']" value="yes" '.(($field['rawed']=='yes')?'checked':"").'>
+                        </div>
+                        <div class="form-group">
+                            <label for="column-'.$rand.'">Column :</label>
+                            col-
+                            <select class="form-control" id="col-data-'.$rand.'" name="col-data['.$rand.']">
+                                <option value="lg" '.(($field['col-data-num']=='lg')?'selected':"").'>lg</option>
+                                <option value="md" '.(($field['col-data-num']=='sm')?'selected':"").'>md</option>
+                                <option value="sm" '.(($field['col-data-num']=='md')?'selected':"").'>sm</option>
+                            </select>
+                            -<select class="form-control" id="col-data-num-'.$rand.'" name="col-data-num['.$rand.']">
+                                <option value="1" '.(($field['col-data-num']=='1')?'selected':"").'>1</option>
+                                <option value="2" '.(($field['col-data-num']=='2')?'selected':"").'>2</option>
+                                <option value="3" '.(($field['col-data-num']=='3')?'selected':"").'>3</option>
+                                <option value="4" '.(($field['col-data-num']=='4')?'selected':"").'>4</option>
+                                <option value="5" '.(($field['col-data-num']=='5')?'selected':"").'>5</option>
+                                <option value="6" '.(($field['col-data-num']=='6')?'selected':"").'>6</option>
+                                <option value="7" '.(($field['col-data-num']=='7')?'selected':"").'>7</option>
+                                <option value="8" '.(($field['col-data-num']=='8')?'selected':"").'>8</option>
+                                <option value="9" '.(($field['col-data-num']=='9')?'selected':"").'>9</option>
+                                <option value="10" '.(($field['col-data-num']=='10')?'selected':"").'>10</option>
+                                <option value="11" '.(($field['col-data-num']=='11')?'selected':"").'>11</option>
+                                <option value="12" '.(($field['col-data-num']=='12')?'selected':"").'>12</option>
+                            </select>
+                        </div>
                         </div>
                     </div>
                 </li>');

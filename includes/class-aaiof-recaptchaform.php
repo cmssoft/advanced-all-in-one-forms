@@ -6,11 +6,10 @@ if (!class_exists( 'AAIOF_Recaptchaform')){
         public function aaiof_recaptcha_form_details(){
             $sitekey = get_option('gcaptcha_sitekey');
             $secretkey = get_option('gcaptcha_secret');
-            _e('<div class="captcha_details" id="captcha-integration">
-                    <h1>Integration reCAPTCHA</h1>
+            _e('<div class="captcha_details wrap" id="captcha-integration">
+                    <h1 class="wp-heading-inline">Integration reCAPTCHA</h1>
                     <div class="" id="recaptcha">
-                        <div class="infobox">CAPTCHA
-                            <br> <a href="https://www.google.com/recaptcha/intro/index.html" target="_blank">google.com/recaptcha</a>
+                        <div class="infobox">Whast is CAPTCHA? <a href="https://www.google.com/recaptcha/intro/index.html" target="_blank">google.com/recaptcha</a>
                         </div>
                         <div class="inside">
                             <form id="recaptcha_form" method="post" action="">

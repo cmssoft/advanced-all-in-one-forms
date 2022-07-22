@@ -4,7 +4,7 @@ if (!defined( 'ABSPATH')) exit;
 if (!class_exists( 'AAIOF_Overview')){
 	class AAIOF_Overview {
 		public function aaiof_wp_list_tables(){
-			$this->aaiof_dropdown_contact_lists();    	
+			$this->aaiof_dropdown_contact_lists();    
 			_e('<table id="example" class="display wp_list_vcf" cellspacing="0" width="100%"><thead><tr>');
 			$this->aaiof_get_list_columns();        
 			_e('</tr></thead><tfoot><tr>');		
@@ -18,10 +18,19 @@ if (!class_exists( 'AAIOF_Overview')){
 			$table_name = $wpdb->prefix . "advanced_all_form_entry";
 			$data = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$table_name." WHERE vcf_id = %d", sanitize_text_field($_GET['form_id'])) );
 
+			$field = get_post_meta(sanitize_text_field($_GET['form_id']), 'vcf_fields_data', true);
+            $get_fields = unserialize($field);
+
 			foreach($data as $columns){
 				$data_id[] = $columns->data_id;
-				$k_name[] = $columns->name;
+				/*$k_name[] = $columns->name;*/
+				foreach($get_fields as $k=>$v){
+					if($get_fields[$k]['name']==$columns->name){
+						$k_name[] = $get_fields[$k]['label'];
+					}
+				}
 			}
+			
 			$kname = array_unique($k_name);
 			foreach($kname as $column){
 				if($column != 'file' && $column != 'hiddenRecaptcha'){
@@ -56,7 +65,7 @@ if (!class_exists( 'AAIOF_Overview')){
 			}
 		}
 		public function aaiof_dropdown_contact_lists(){
-			_e('<form action="" method="GET" class="overview_vcfform">
+			_e('<div class="wrap"><h1 class="wp-heading-inline">Overview</h1><form action="" method="GET" class="overview_vcfform">
 					<div class="form-group dropdown_fields">
 						<label for="posts">Choose a Form:</label>
 						<input type="hidden" name="post_type" value="'.sanitize_text_field($_GET['post_type']).'"/>
@@ -72,9 +81,9 @@ if (!class_exists( 'AAIOF_Overview')){
 						}
 						wp_reset_postdata();
 						_e('</select>
-						<input type="submit" class="btn btn-link" value="Submit">
+						<input type="submit" class="button button-primary" value="Submit">
 					</div>
-				</form>');
+				</form></div>');
 			_e('<div class="delete_error_overview">Record deleted successfully.</div>');    
 		}
 	}

@@ -9,24 +9,26 @@
 }
 
 li.ui-tabs-tab {
-    display: inline-block;
+    display: block;
     margin: 10px 10px 10px 17px;
     border: 1px solid;
     padding: 10px;
 }
 ul#sortable1 li {
     max-width: 100%;
-    margin: 30px;
+    margin-bottom: 30px;
+    padding: 0;
 }
-.form_details li.ui-tabs-tab
-{
+.form_details li.ui-tabs-tab{
     font-size: 16px;
     color: #fff;
-    margin: 0;
+    margin: 0 0 -1px;
     border: 1px solid #5b9dd9;
+    background: #3c92bb;
+    border-right-color: #89c6e3;
 }
 .form_details li.ui-tabs-tab.ui-corner-top.ui-state-default.ui-tab.ui-tabs-active.ui-state-active {
-    
+    border-bottom-color: #fff;
     background: #fff;
 }
 .card .card-header .row div {
@@ -36,8 +38,9 @@ ul#sortable1 li {
     float: right;
 }
 .card .form-group {
-    margin: 10px 10px 15px 10px;
+    margin: 0 0 20px;
     display: flex;
+    align-items: center;
 }
 .card label {
     margin: 0px 10px 10px 0px;
@@ -51,11 +54,11 @@ ul#sortable1 li {
         display: table-cell;
 }
 .form-group.dropdown_fields {
-    margin: 35px;
+    margin: 0;
 }
 .form-group.dropdown_fields label, .form-group.dropdown_fields select, .form-group.dropdown_fields button{
-    margin: 10px 30px 10px 10px;
-    font-size: 16px;
+    margin: 0 15px 0 0;
+    /*font-size: 16px;*/
 }
 .form-group.dropdown_fields select{
     width:100%;
@@ -68,9 +71,11 @@ ul#sortable1 li {
     border: 1px solid #5b9dd9;
     background: #ffff;
     padding: 20px;
+    border-top: 0;
 }
 .form_details li.ui-tabs-tab a {
     text-decoration: none;
+    color: #fff;
 }
 .captcha_details span.success_msg, .delete_error_overview {
     color: #1f941f;
@@ -91,15 +96,11 @@ ul#sortable1 li {
 .wp_list_vcf th, td {
   padding: 0.5rem;
 }
-.wp_list_vcf td:hover {
-  background-color: lightsalmon;
-}
 .wp_list_vcf .paginate_button {
   border-radius: 0 !important;
 }
-div#example_wrapper
-{
-    margin: 20px;
+div#example_wrapper{
+    margin: 20px 20px 20px 0;
 }
 .wp_list_vcf
 {
@@ -113,9 +114,8 @@ div#example_wrapper
     color: #fff;
     border: none;
 }
-div#tabs-2 h3
-{
-    margin: 0px;
+div#tabs-2 h3{
+    margin: 0 0 30px;
 }
 button#add_fields
 {
@@ -148,7 +148,7 @@ body a:focus .media-icon img {
 div#vcf7_tabs input[type=date], div#vcf7_tabs input[type=datetime-local], div#vcf7_tabs input[type=datetime], div#vcf7_tabs input[type=email],
 div#vcf7_tabs input[type=month], div#vcf7_tabs input[type=number], div#vcf7_tabs input[type=password], div#vcf7_tabs input[type=search],div#vcf7_tabs input[type=tel],
 div#vcf7_tabs input[type=text], div#vcf7_tabs input[type=time], div#vcf7_tabs input[type=url], div#vcf7_tabs input[type=week], div#vcf7_tabs textarea {
-    width: 100%;
+    width: 87%;
     border-radius: 1px;
 }
 div#vcf7_tabs input[type=checkbox], div#vcf7_tabs input[type=radio]
@@ -157,15 +157,189 @@ div#vcf7_tabs input[type=checkbox], div#vcf7_tabs input[type=radio]
 }
 
 .form_details .card-header .row {
-    background: #201a1f1f;
+    background: #83c5e5;
     padding: 5px;
-    margin-bottom: 25px;
+    margin-bottom: 0;
 }
 .form_details .card-header h2
 {
-    background: #201a1f1f;
-    width: 100%
+    background: #83c5e5;
+    width: 100%;
+    color: #000;
 }
 .col-sm-4.box_button button.btn.btn-link {
     cursor: pointer;
+}
+/* 19th July 2022 */
+.ui-tabs-nav{
+    margin-bottom: 0;
+    border-bottom: 1px solid #5b9dd9;
+    display: flex;
+}
+.form_details li.ui-tabs-active.ui-state-active a{
+    color: #3c92bb;
+}
+.form_details div.ui-tabs-panel .container{
+    max-width: 100%;
+    padding: 0;
+}
+.connectedSortable.ui-sortable{
+    margin-top: 0;
+}
+.form_details .form-fields{
+    margin-top: 30px;
+}
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea{
+    border: 1px solid #ddd;
+    /*padding: 6px 10px;*/
+}
+input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=datetime]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, input[type=password]:focus, input[type=radio]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, select:focus, textarea:focus{
+    box-shadow: none;
+    outline: 0;
+}
+.ui-sortable-handle .card-body,.ui-state-default .card-body{
+    padding: 20px;
+}
+.wp-core-ui select{
+    max-width: 10rem;
+}
+.add_more_radio{
+    color: #3d9506;
+}
+.remove_more_radio{
+    color: #f30f0f;
+}
+.mail-info-title{
+    color: #818080;
+    font-size: 16px;
+    line-height: 28px;
+}
+.mail-info-title span{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000;
+}
+.form-table{
+    margin-top: 0;
+}
+div#vcf7_tabs td input[type=email],div#vcf7_tabs td input[type=text],div#vcf7_tabs td textarea, div#vcf7_tabs td input[type=url]{
+    width: 100%;
+}
+#poststuff .stuffbox>h3, #poststuff h2, #poststuff h3.hndle{
+    padding: 8px 0;
+}
+.contact-form-editor-box-mail table{
+    margin-top: 30px;
+}
+.form-table th{
+    width: 150px;
+    padding: 15px 10px 15px 0;
+    vertical-align: middle;
+}
+/* captcha styles */
+/*.captcha_details h1{
+    font-size: 30px;
+    line-height: 40px;
+    margin: 30px 0;
+}*/
+#recaptcha{
+    max-width: 600px;
+}
+.infobox{
+    background: #cff4fc;
+    border: 1px solid #b6effb;
+    padding: 16px;
+    border-radius: 4px;
+    color: #055160;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#recaptcha .inside{
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 20px 16px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top: 0;
+}
+#recaptcha  .inside .form-table th{
+    width: 100px;
+}
+#recaptcha .inside .form-table .regular-text{
+    width: 100%;
+}
+#recaptcha  .inside p.submit{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.captcha_details span.success_msg, .delete_error_overview{
+    margin: 20px 0 0;
+}
+/* overview form */
+.overview_vcfform{
+    margin: 30px 0;
+}
+.delete_error_overview{
+    border: 1px solid #badbcc;
+    background: #d1e7dd;
+    color: #0f5132;
+    padding: 16px;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+.display.wp_list_vcf.dataTable{
+    padding: 0;
+}
+table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1,table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1{
+    background-color: transparent !important;
+}
+table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover{
+    background-color: #fafafa;
+}
+table.dataTable thead th, table.dataTable thead td,table.dataTable tfoot th, table.dataTable tfoot td{
+    text-transform: capitalize;
+}
+.dataTables_scrollHeadInner table.dataTable thead th,.dataTables_scrollFoot table.dataTable tfoot th{
+    padding: 10px;
+    border-color: #999;
+}
+.dataTables_wrapper .dataTables_scroll, .dataTables_wrapper .dataTables_filter{margin-bottom: 20px;}
+.dataTables_wrapper .dataTables_paginate,.dataTables_wrapper .dataTables_info{
+    padding-top: 0 !important;
+}
+#wpbody-content .dataTables_wrapper .dataTables_paginate .paginate_button.current,#wpbody-content .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+    background: #0073aa !important;
+    color: #fff !important;
+    border: 0 !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    padding: 2px 12px !important;
+}
+table.dataTable tbody th, table.dataTable tbody td{
+    padding: 14px 10px !important;
+}
+
+/* advance seting */
+#advance_product_setting .inside{
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 0 20px 10px;
+    max-width: 800px;
+}
+#advance_product_setting .form-table th{
+    width: 40%;
+    padding: 10px;
+}
+#advance_product_setting .form-table td{
+    padding: 10px;
+}
+#advance_product_setting .form-table .or-details{
+    color: #0073aa;
+}
+#advance_product_setting h5{
+    font-size: 18px;
+    line-height: 30px;
+    margin:20px 0 0;
 }

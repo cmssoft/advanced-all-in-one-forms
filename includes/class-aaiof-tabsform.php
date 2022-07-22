@@ -35,7 +35,7 @@ if (!class_exists( 'AAIOF_Tabsform')){
         public function aaiof_get_mail_tags($post){
             $field = get_post_meta( $post->ID, 'vcf_fields_data', true);
             $get_fields = unserialize($field);
-            _e('<h3>In the following fields, you can use these mail-tags : ');
+            _e('<h3 class="mail-info-title"><span>In the following fields, you can use these mail-tags :</span> ');
             foreach($get_fields as $key=>$value){
                 if($value['type'] != 'recaptcha' && $value['type'] != 'submit'){
                     if($value['type'] == 'password' || $value['type'] == 'description'){

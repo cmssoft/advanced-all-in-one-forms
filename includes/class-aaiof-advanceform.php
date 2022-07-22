@@ -13,16 +13,16 @@ if (!class_exists( 'AAIOF_Advanceform')){
             $add_enquiry_btn_details = get_option('add_enquiry_btn_details');
             $add_enquiry_btn_cart = get_option('add_enquiry_btn_cart');
 
-            _e('<div class="captcha_details" id="captcha-integration">
-                    <h1>Integration Advance Product Setting</h1>
-                    <div class="" id="recaptcha">
+            _e('<div class="captcha_details wrap" id="captcha-integration">
+                    <h1 class="wp-heading-inline">Integration Advance Product Setting</h1>
+                    <div class="" id="advance_product_setting">
                         <div class="inside">
                             <form id="advance_form_setting" method="post" action="">
                                 <table class="form-table">
                                     <tbody>
                     
                                         <tr>
-                                            <th>Product Detail Page Setting : </th>
+                                            <th><h5>Product Detail Page Setting : </h5></th>
                                         </tr>
                                         <tr>
                                             <th scope="row">
@@ -60,8 +60,7 @@ if (!class_exists( 'AAIOF_Advanceform')){
                                             </td>
                                         </tr>
                                         <tr class="advanced_product_form_shortcode">
-                                            <th></th>
-                                            <td>OR</td>
+                                            <th colspan="2" class="or-details"><strong>OR</strong></th>
                                         </tr>
                                         <tr class="advanced_product_form_shortcode">
                                             <th scope="row">
@@ -72,7 +71,7 @@ if (!class_exists( 'AAIOF_Advanceform')){
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Product Cart Page Setting : </th>
+                                            <th><h5>Product Cart Page Setting :</h5> </th>
                                         </tr>
                                         <tr>
                                             <th scope="row">
@@ -110,8 +109,7 @@ if (!class_exists( 'AAIOF_Advanceform')){
                                             </td>
                                         </tr>
                                         <tr class="advanced_cart_form_shortcode">
-                                            <th></th>
-                                            <td>OR</td>
+                                            <th colspan="2" class="or-details"><strong>OR</strong></th>
                                         </tr>
                                         <tr class="advanced_cart_form_shortcode">
                                             <th scope="row">
@@ -123,7 +121,7 @@ if (!class_exists( 'AAIOF_Advanceform')){
                                         </tr>
                                         
                                         <tr >
-                                            <th>Enquiry Button  Setting : </th>
+                                            <th><h5>Enquiry Button  Setting : </h5></th>
                                         </tr>
                                         <tr>
                                             <th scope="row">

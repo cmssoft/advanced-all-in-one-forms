@@ -5,7 +5,7 @@ Donate link: https://www.vrinsofts.com/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, overview, product enquiry, builder form, thank you page.
 Requires at least: 5.5
 Tested up to: 6.0
-Stable tag: 1.0.0
+Stable tag: 1.0.5
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,55 +13,66 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Advanced All In One Forms can manage multiple forms and product inquiry. The form supports Ajax-powered submitting, CAPTCHA, OVERVIEW and so on.
   
 == Description ==
-  
-Advanced all in one forms is an extremely feature-rich plugin, which will let you create any form quickly and easily. Vrinsoft has developed this keeping in mind the drawbacks of otherplugins. This plugin allows the users to make beautiful forms according to the requirements of their website.
-While creating this form, user experience was our top priority. We believe that you should not hire an expert separately to create different types of forms, thus we came up with this masterpiece plugin. Whether you want a simple form, or you want to make it look innovative and captivating enough, this plugin will help you for sure.
 
-100% secured and simple to use :
-If you are a beginner, you will think that you need a professional to make a form, but Advanced all in one forms plugin is at your rescue. The plugin will walk you through some easy steps, and you will have your form ready within few minutes.
+**Summary:**
 
-You can choose any theme to make it look ingenious:
-This plugin gives you chance to choose themes to make your form stand out. There are many options of themes in Advanced all in one forms plugin, and you can explore and choose any that matches your taste.
+Advanced all in one form which is a highly feature-rich plugin that will let you create any form quickly and easily. This plugin allows the users to make beautiful forms according to the requirements of their website. Vrinsoft has developed this, keeping in mind the drawbacks of other plugins.
 
-Multiple forms with single plugin :
-With the help of this single plugin, you can develop diversified range of forms. This plugin eases your work, and you can create different types of forms including email form, Captcha form, product inquiry and estimation form, and so much more.
+While creating this form, user experience was our top priority. We believe that you should not hire an expert separately to create different types of forms. Thus we came up with this masterpiece plugin. Whether you want a simple form or you want to make it look innovative and captivating enough, this plugin will help you for sure.
 
-SimpleDrag and Drop metho :
-To create a form, you simply need to drag and drop the fields you want in your form. There will be plenty of options like contact number, email, extra text, radio, so you will have to drag an field from the options and drop it in your form just like that.
+**Features:**
 
-All in one plugin:
-Advanced all in one form, as the name itself explains the plugin. You can create versatile range of forms with a single plugin, where you get perfect solution to develop a form conveniently. We understand the pain of drafting numerous forms, thus, all in one advanced forms plugin has got your back.
+&#9989;&nbsp;**1.** You do not have to use a different Captcha plugin to insert the Captcha column.
+&#9989;&nbsp;**2.** You can directly display the admin details from this plugin without using another one.
+&#9989;&nbsp;**3.** The plugin will help you in creating a dynamic Email form where you can insert fields the way you want.
+&#9989;&nbsp;**4.** You can also create custom quotation forms for your website.
+&#9989;&nbsp;**5.** Other forms created from this plugin are registration, product inquiry, and estimation forms, which ease your work and your website users.
+&#9989;&nbsp;**6.** You don’t need to customize the Thank you page after submitting the form because you can do everything with a single plugin
+&#9989;&nbsp;**7.** If the user wants to enquire about multiple products, then you can use our premium version to add this feature to your contact form
+&#9989;&nbsp;**8.** You can customize as many columns as you want, and you can also edit the fields like name, address, and others according to your requirement.
+&#9989;&nbsp;**9.** Insert, reengineer, or modify anything the way you want.
 
-Grievance and support:
-Everyone was tired complex procedure of creating many forms; therefore, Vrinsoft has brought solution to all those problems. If you face any problems while developing the form or you have any questions or queries, which are not covered in the FAQs, feel free to contact us. You will find the contact details on the website Link. You can also send the enquiry on the contact details of WordPress or you can ask the questions via email id.
+**Additional Features:**
 
-Advantages of Advanced all in one forms plugin:
-When you choose Advanced all in one forms plugin, the procedure is quite simple, and you don't have to..
-•	You do not have to use a different Captcha plugin to insert the Captcha column
-•	You can directly display the admin details from this plugin without using another one.
-•	The plugin will help you in creating a dynamic Email form where you can insert fields the way you want.
-•	You can also create custom quotation forms for your website 
-•	Other forms that can be created from this plugin are registration, product inquiry, estimations forms, which eases your work as well as for the users of your website.
-•	You don't need to customize the Thank you page after submitting the form because you can do everything with a single plugin
-•	If the user wants to enquire about multiple products, then you can use our premium version to add this feature to your contact form
-•	You can customize as many columns as you want, and you can also add the edit the fields like name, address, and others according to your requirement.
-•	Insert, reengineer, or modify anything the way you want.
+&#9989;&nbsp;**1.** You can create many forms with this plugin
+&#9989;&nbsp;**2.** Customization of fields is possible
+&#9989;&nbsp;**3.** Drag and drop methods make the plugin flexible and easy to use
+&#9989;&nbsp;**4.** Creative templates, which will make your form look amazing
+&#9989;&nbsp;**5.** SEO friendly
+&#9989;&nbsp;**6.** You can create forms for a website, as well as mobile
+&#9989;&nbsp;**7.** Simple steps to be followed to make a Thank you page
+&#9989;&nbsp;**8.** The plugin is consistent and developer-friendly
+&#9989;&nbsp;**9.** Personalization when it comes to the fields
+&#9989;&nbsp;**10.** Add the reCaptcha using the same plugin
+&#9989;&nbsp;**11.** Developer-friendly plugin
 
-Core features of the Advanced all in one forms plugin:
-•	You can create many forms with this plugin
-•	Customization of fields is possible
-•	Drag and drop methods makes the plugin flexible and easy to use
-•	Creative templates, which will make your form look amazing
-•	SEO friendly
-•	You can create forms for website, as well as mobiles
-•	Simple steps to be followed to make a Thank you page
-•	The plugin is consistent and developer-friendly
-•	Personalization when it comes to the fields
-•	Add the reCaptcha using the same plugin
-•	Developer friendly plugin
+**100% secured and simple to use:**
 
-Security:
-When it comes to the security, advanced all in one forms plugin is one of the safest places where you can make a diversified range of forms with a single plugin for the website. Personalization with this plugin is simple and flexible.
+&#9989;&nbsp;If you are a beginner, you will think that you need a professional to make a form, but the Advanced all-in-one forms plugin is at your rescue. The plugin will walk you through some easy steps, and you will have your form ready within a few minutes.
+
+**You can choose any theme to make it look ingenious:**
+
+&#9989;&nbsp;This plugin gives you a chance to select themes to make your form stand out. There are many options of themes in the Advanced all-in-one forms plugin, and you can explore and choose any that matches your taste.
+
+**Multiple forms with a single plugin:**
+
+&#9989;&nbsp;With the help of this single plugin, you can develop a diversified range of forms. This plugin eases your work, and you can create different types of forms, including email forms, Captcha forms, product inquiries, estimation forms, and so much more.
+
+**Simple Drag and Drop method:**
+
+&#9989;&nbsp;To create a form, you simply need to drag and drop the fields you want in your form. There will be plenty of options like contact number, email, extra text, and radio, so you will have to drag a field from the options and drop it in your form just like that.
+
+**All in one forms plugin:**
+
+&#9989;&nbsp;Advanced all in one form, as the name itself, explains the plugin. You can create a versatile range of forms with a single plugin, where you get a perfect solution to develop a form conveniently. We understand the pain of drafting numerous forms. Thus, the all-in-one, advanced form plugin has got your back.
+
+**Grievance and support:**
+
+&#9989;&nbsp;Everyone was tired due to the procedure of creating many forms; therefore, Vrinsoft has brought a solution to all those problems. If you face any issues while developing the form or have any questions or queries that are not covered in the FAQs, feel free to contact us. You will find the contact details on the website Link. You can also send the inquiry on the contact details of WordPress, or you can ask the questions via email id.
+
+**Security:**
+
+&#9989;&nbsp;When it comes to security, an advanced all-in-one forms plugin is one of the safest places where you can make a diversified range of forms with a single plugin for the website. Personalization with this plugin is simple and flexible.
   
 == Installation ==
   
@@ -74,19 +85,19 @@ When it comes to the security, advanced all in one forms plugin is one of the sa
 You can edit the fields of the forms or remove and modify the same according to your requirements. The plugin lets you make multiple types of form and you can make the changes according to the requirements of your business as well as the products you are selling.
 
 = How can I add a contact form into my post content? =
-First, you need to login into your Wordpress and install the said plugin. When you are done with installation, you can click on the ‘Plugin Create Form’. Now you can start making form and add to your post content.
+First, you need to login into your Wordpress and install the said plugin. When you are done with installation, you can click on the 'Plugin Create Form'. Now you can start making form and add to your post content.
 
 = What types of form I can create using this Plugin? =
 You can create different types of form which can be a simple contact form, Email form, registration, product inquiry forms, custom quotation, and estimation as well.
 
 = How can I add a field to my form? =
-It is very simple, you just need to select the field you want in your form and just drag it and drop. You just have to use the trouble-free ‘Drag and Drop’ method to add the fields.
+It is very simple, you just need to select the field you want in your form and just drag it and drop. You just have to use the trouble-free 'Drag and Drop' method to add the fields.
 
 = How can I specify a subject for the email? =
 All you need to do is just choose the subject name, and you can then specify the subject for your email.
 
 = How can I create thank you page with this plugin? =
-You need to go to the ‘Message’ section. Either you can type a message or you can add Thank you page and add any URL, where you want users to be redirected.
+You need to go to the 'Message' section. Either you can type a message or you can add Thank you page and add any URL, where you want users to be redirected.
 
 = Can I make product inquiry form? =
 Yes, you can make a product inquiry form, using this plugin, and you can also edit the fields too.
@@ -135,5 +146,5 @@ Simply deactivate and delete the plugin.
 * Plugin released. 
 
 == Upgrade Notice ==
-= 1.0.0 =
+= 1.0.4 =
 Upgrade notices describe the reason a user should upgrade.
